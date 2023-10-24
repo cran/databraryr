@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>databrary</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">databrary</h1>
+
+
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(databraryr)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="co">#&gt; Welcome to the databraryr package.</span></span></code></pre></div>
+<div id="vignette-info" class="section level2">
+<h2>Vignette Info</h2>
+<p>Databrary is a powerful tool for storing and sharing video data and
+documentation with other researchers. With the <code>databraryr</code>
+package, it becomes even more powerful. Rather than interact with
+Databrary through a web browser, users can write their own code to
+download participant data or even specific files.</p>
+<p>I wrote the Databrary API so I could better understand how the site
+works under the hood, so that I could streamline my own analysis and
+data sharing workflows. Let’s get started.</p>
+</div>
+<div id="registering" class="section level2">
+<h2>Registering</h2>
+<p>Access to most of the material on Databrary requires prior
+[registration]<a href="https://nyu.databrary.org/user/register" class="uri">https://nyu.databrary.org/user/register</a>) and <a href="https://databrary.org/about/agreement.html">authorization</a> from
+an institution. The authorization process requires formal agreement by
+an institution. But you’ll create an account ID (email) and secure
+password when you register. Then, when you log in with your new
+credentials, you’ll select an existing institution (if yours is on the
+list), a new institution (if yours isn’t), or an existing authorized
+investigator (if you are a student, postdoc, or collaborator) to request
+authorization from.</p>
+</div>
+<div id="first-steps-while-you-await-authorization" class="section level2">
+<h2>First steps (while you await authorization)</h2>
+<p>But even before formal authorization is complete, a user can access
+the public materials on Databrary. For this vignette, we’ll assume you
+fall into this category.</p>
+<p>First, we need to download and install the <code>devtools</code>
+package and then the <code>databraryr</code> package from GitHub.</p>
+<p>To install <code>devtools</code>, run
+<code>install.packages(&#39;devtools&#39;)</code>. To install
+<code>databraryr</code>, run
+<code>devtools::install_github(&quot;databrary/databraryr&quot;)</code></p>
+<p>It’s a good idea to check that your installation worked by loading it
+into your local workspace.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(databraryr)</span></code></pre></div>
+<p>Then, try this command to pull data about Databrary’s founders:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">list_people</span>()</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt;   id sortname prename                       affiliation</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; 1  5   Adolph   Karen               New York University</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; 2  6  Gilmore Rick O. The Pennsylvania State University</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; 3  7  Millman   David               New York University</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt;                                url               orcid</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; 1 http://www.psych.nyu.edu/adolph/                &lt;NA&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; 2     http://gilmore-lab.github.io 0000-0002-7676-3982</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; 3                             &lt;NA&gt;                &lt;NA&gt;</span></span></code></pre></div>
+<p>Note that this command returns a data frame (tibble) with columns
+that include the first name (<code>prename</code>), last name
+(<code>sortname</code>), affiliation, lab or personal website, and ORCID
+ID if available.</p>
+<p>Databrary assigns a unique number for each person and institution on
+the system called a ‘party id’. When we run
+<code>list_people(1:25)</code> we are asking the system to provide us
+information about all of the <em>people</em> whose party id’s are
+between 1 and 25. Let’s try it:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">list_people</span>(<span class="at">people_list =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt;    id        sortname       prename               orcid</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt; 1   1           Simon         Dylan 0000-0002-2793-1679</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt; 2   3         Steiger          Lisa                &lt;NA&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt; 3   4           Byrne        Andrea                &lt;NA&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; 4   5          Adolph         Karen                &lt;NA&gt;</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; 5   6         Gilmore       Rick O. 0000-0002-7676-3982</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt; 6   7         Millman         David                &lt;NA&gt;</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt; 7  11   Tamis-LeMonda     Catherine                &lt;NA&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt; 8  13             Roy Lina Wictoren                &lt;NA&gt;</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; 9  14        Franchak          John                &lt;NA&gt;</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt; 10 16       Professor    Suzanne Q.                &lt;NA&gt;</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; 11 17 Jimenez-Robbins        Carmen                &lt;NA&gt;</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; 12 18             Coe           Jon                &lt;NA&gt;</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; 13 19             Foo         Vicky                &lt;NA&gt;</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt; 14 20          Gordon         Peter                &lt;NA&gt;</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt; 15 24            Chan        Gladys                &lt;NA&gt;</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co">#&gt;                              affiliation                              url</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="co">#&gt; 1                                   &lt;NA&gt;                             &lt;NA&gt;</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co">#&gt; 2                              Databrary                             &lt;NA&gt;</span></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt; 3                              Databrary                             &lt;NA&gt;</span></span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="co">#&gt; 4                    New York University http://www.psych.nyu.edu/adolph/</span></span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="co">#&gt; 5      The Pennsylvania State University     http://gilmore-lab.github.io</span></span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="co">#&gt; 6                    New York University                             &lt;NA&gt;</span></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="co">#&gt; 7                    New York University                             &lt;NA&gt;</span></span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a><span class="co">#&gt; 8                                    NYU                             &lt;NA&gt;</span></span>
+<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a><span class="co">#&gt; 9    University of California, Riverside            http://padlab.ucr.edu</span></span>
+<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a><span class="co">#&gt; 10                             Databrary                             &lt;NA&gt;</span></span>
+<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a><span class="co">#&gt; 11                                  &lt;NA&gt;                             &lt;NA&gt;</span></span>
+<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a><span class="co">#&gt; 12                                  &lt;NA&gt;                             &lt;NA&gt;</span></span>
+<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a><span class="co">#&gt; 13                                  &lt;NA&gt;                             &lt;NA&gt;</span></span>
+<span id="cb4-32"><a href="#cb4-32" tabindex="-1"></a><span class="co">#&gt; 14 Teachers College, Columbia University                             &lt;NA&gt;</span></span>
+<span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a><span class="co">#&gt; 15                                   NYU                             &lt;NA&gt;</span></span></code></pre></div>
+<p>It’s a bit slow, but you should see information about people
+beginning with Dylan Simon, the developer who designed and built most of
+the Databrary system, and ending with Gladys Chan, a graphic designer
+who created the Databrary and Datavyu logos and other graphic identity
+elements.</p>
+<p>You can also try seeing what’s new on Databrary. The
+<code>get_db_stats()</code> command gives you information about the
+newly authorized people, institutions, and newly uploaded datasets. Try
+this:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">get_db_stats</span>(<span class="st">&quot;stats&quot;</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co">#&gt;                  date investigators affiliates institutions datasets_total</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt; 1 2023-10-23 13:42:23          1730        679          768           1613</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt;   datasets_shared n_files    hours       TB</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#&gt; 1             954  236998 113517.7 51.74739</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">get_db_stats</span>(<span class="st">&quot;people&quot;</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt; # A tibble: 5 × 4</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt;      id sortname prename affiliation             </span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">#&gt;   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;                   </span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="co">#&gt; 1 11557 Roth     Guy     Ben-Gurion university   </span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">#&gt; 2 11783 Fouhey   David   New York University     </span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="co">#&gt; 3 11824 Gervain  Judit   CNRS                    </span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co">#&gt; 4  2620 Herrera  Carol   Brigham Young University</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co">#&gt; 5 11844 Reschke  Peter   BYU</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">get_db_stats</span>(<span class="st">&quot;institutions&quot;</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co">#&gt; NULL</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">get_db_stats</span>(<span class="st">&quot;datasets&quot;</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="co">#&gt; # A tibble: 7 × 7</span></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="co">#&gt;      id name                    body  creation owners permission publicsharefull</span></span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="co">#&gt;   &lt;int&gt; &lt;chr&gt;                   &lt;chr&gt; &lt;chr&gt;    &lt;list&gt;      &lt;int&gt; &lt;lgl&gt;          </span></span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="co">#&gt; 1  1658 test-volume             &quot;tes… 2023-10… &lt;df&gt;            1 FALSE          </span></span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="co">#&gt; 2  1657 PLAYProject_PENNS       &quot;Hom… 2023-10… &lt;df&gt;            1 FALSE          </span></span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a><span class="co">#&gt; 3  1655 Learning to Walk over … &quot;Thi… 2023-10… &lt;df&gt;            1 FALSE          </span></span>
+<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a><span class="co">#&gt; 4  1653 Mitten data sharing fo… &quot;Dat… 2023-10… &lt;df&gt;            1 FALSE          </span></span>
+<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a><span class="co">#&gt; 5  1652 LR-MEL Year 1           &quot;Thi… 2023-10… &lt;df&gt;            1 FALSE          </span></span>
+<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a><span class="co">#&gt; 6  1632 Academic Language of P… &quot;Thi… 2023-07… &lt;df&gt;            1 FALSE          </span></span>
+<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a><span class="co">#&gt; 7  1651 Parent-Child Conversat… &quot;Vid… 2023-10… &lt;df&gt;            1 FALSE</span></span></code></pre></div>
+<p>Depending on when you run this command, there may or may not be new
+items.</p>
+</div>
+<div id="once-you-are-authorized" class="section level2">
+<h2>Once you are authorized</h2>
+<p>Congratulations! Your institution has approved your access to
+Databrary’s identifiable data. Now, it’s time to set-up
+<code>databraryr</code> so you can access these materials.</p>
+<p>Once you are authorized, you will gain access to a much wider range
+of materials on Databrary. When that happens, you’ll load the package
+with <code>library(databraryr)</code> and then run
+<code>login_db(email = &quot;&lt;YOUR_EMAIL@PROVIDER.COM&gt;&quot;)</code>,
+substituting your actual Databrary account for
+<code>&lt;YOUR_EMAIL@PROVIDER.COM&gt;</code>, of course. I prefer to
+give the package name when I do this, so the following is how I do the
+same thing.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">login_db</span>(<span class="at">email =</span> <span class="st">&quot;&lt;YOUR_EMAIL@PROVIDER.COM&gt;&quot;</span>)</span></code></pre></div>
+<p>If this is the first time you’ve logged in, you will be asked to
+enter your Databrary password in a separate window. If everything works
+out, you should see a <code>Login successful</code> message at the R
+console. Congratulations, you are ready to access Databrary’s restricted
+shared information along with any private, but unshared information you
+have access to.</p>
+<p><strong>NOTE</strong>: You can save yourself some time if you store
+your Databrary login (email) as an environment variable:</p>
+<ol style="list-style-type: decimal">
+<li>Install the <code>usethis</code> package via
+<code>install.packages(&#39;usethis&#39;)</code>.</li>
+<li>Run <code>usethis::edit_r_environ()</code>. This will open your
+<code>.Renviron</code> file in a new window.</li>
+<li>Edit the <code>.Renviron</code> file by adding a line with
+<code>DATABRARY_LOGIN=&quot;youremail@yourinstitution.edu&quot;</code>,
+substituting your actual Databrary log in email.</li>
+<li>Save the file, and restart R.</li>
+</ol>
+<p>Now, you can run <code>Sys.getenv(&quot;DATABRARY_LOGIN&quot;)</code> and it
+will return your Databrary login.</p>
+<p>And going forward, you can use
+<code>Sys.getenv(&quot;DATABRARY_LOGIN&quot;)</code> wherever you would enter your
+Databrary login:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">login_db</span>(<span class="at">email =</span> <span class="fu">Sys.getenv</span>(<span class="st">&quot;DATABRARY_LOGIN&quot;</span>))</span></code></pre></div>
+<p><strong>NOTE</strong>: You can also save yourself even more time by
+storing your Databrary user account (email) and password in your
+computer’s secure credentials database using the <code>keyring</code>
+package. The <code>keyring</code> package uses the encrypted file that
+your computer’s operating system uses for storing other passwords. There
+are alternative ways of storing user credentials, but this is the
+recommended one.</p>
+<p>To do this, use the <code>store</code> and <code>overwrite</code>
+parameters in <code>login_db()</code>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">login_db</span>(<span class="at">email =</span> <span class="st">&quot;&lt;YOUR_EMAIL@PROVIDER.COM&gt;&quot;</span>, <span class="at">store =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>                     <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>This overwrites and securely stores your credentials, so that the
+next time you log in, you need only use this command:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">login_db</span>(<span class="at">email =</span> <span class="st">&quot;&lt;YOUR_EMAIL@PROVIDER.COM&gt;&quot;</span>)</span></code></pre></div>
+<p>or if you’ve stored your email as an environment variable:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">login_db</span>(<span class="at">email =</span> <span class="fu">Sys.getenv</span>(<span class="st">&quot;DATABRARY_LOGIN&quot;</span>))</span></code></pre></div>
+<div id="logging-out" class="section level3">
+<h3>Logging out</h3>
+<p>The package also has a log out command.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">logout_db</span>()</span></code></pre></div>
+</div>
+</div>
+<div id="accessing-data" class="section level2">
+<h2>Accessing data</h2>
+<p>Databrary is a data library, one specialized for storing and sharing
+video. Let’s see how to use <em>databraryr</em> to access data.</p>
+<p>We’ll start simply. Let’s download a test video from <a href="https://databrary.org/volume/1">volume 1 on Databrary</a>.</p>
+<p>The <code>download_video()</code> function handles this for us.
+Running it with the default parameters downloads a simple test video
+with numbers than increment. The file is stored in a temporary directory
+created by the file system using the function <code>tempdir()</code>.
+The <code>download_asset()</code> function returns a character string
+with the full file name.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">download_video</span>()</span></code></pre></div>
+<p>Depending on your operating system, the following commands may open
+the file so that you can play it with your default video player.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>nums_vid <span class="ot">&lt;-</span> <span class="fu">download_video</span>()</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="fu">system</span>(<span class="fu">paste0</span>(<span class="st">&quot;open &quot;</span>, nums_vid))</span></code></pre></div>
+<p>Or, you can navigate to the temporary directory to open and play the
+video manually. Use <code>tempdir()</code> to find the directory where
+<code>test.mp4</code> is stored.</p>
+<p>Now, let’s see what other files are shared in volume 1. This takes a
+moment to run because there are <em>many</em> files in this volume.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>vol1_df <span class="ot">&lt;-</span> <span class="fu">list_assets_in_volume</span>()</span></code></pre></div>
+<p>The command returns a data frame we can manipulate using standard R
+commands. Here are the variables in the data frame.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">names</span>(vol1_df)</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="co">#&gt;  [1] &quot;asset_id&quot;       &quot;asset_type_id&quot;  &quot;duration&quot;       &quot;segment&quot;       </span></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="co">#&gt;  [5] &quot;name&quot;           &quot;permission&quot;     &quot;size&quot;           &quot;mimetype&quot;      </span></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="co">#&gt;  [9] &quot;extension&quot;      &quot;asset_type&quot;     &quot;transcodable&quot;   &quot;classification&quot;</span></span></code></pre></div>
+<p>The <code>asset_type</code> variable tells us the type of the data
+file.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">unique</span>(vol1_df<span class="sc">$</span>asset_type)</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;MPEG-4 video&quot;           &quot;Comma-separated values&quot; &quot;Portable document&quot;</span></span></code></pre></div>
+<p>We can summarize the number of files using the
+<code>stats::xtabs()</code> function:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">xtabs</span>(<span class="sc">~</span> asset_type, <span class="at">data =</span> vol1_df)</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="co">#&gt; asset_type</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="co">#&gt; Comma-separated values           MPEG-4 video      Portable document </span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="co">#&gt;                      1                     14                      1</span></span></code></pre></div>
+<p>So, there are lots of videos and PDFs to examine. Here is a table of
+the ten longest videos.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>vol1_df <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(asset_type <span class="sc">==</span> <span class="st">&quot;MPEG-4 video&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(name, duration) <span class="sc">|&gt;</span></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">hrs =</span> duration<span class="sc">/</span>(<span class="dv">60</span><span class="sc">*</span><span class="dv">60</span><span class="sc">*</span><span class="dv">1000</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(name, hrs) <span class="sc">|&gt;</span></span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(<span class="fu">desc</span>(hrs)) <span class="sc">|&gt;</span></span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a>  <span class="fu">head</span>() <span class="sc">|&gt;</span></span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">&#39;html&#39;</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+name
+</th>
+<th style="text-align:right;">
+hrs
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Florian
+</td>
+<td style="text-align:right;">
+0.1839478
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Rick
+</td>
+<td style="text-align:right;">
+0.1839172
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Florian part 1
+</td>
+<td style="text-align:right;">
+0.1762317
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Rick part 1
+</td>
+<td style="text-align:right;">
+0.1760950
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Florian part 2
+</td>
+<td style="text-align:right;">
+0.1055644
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Rick part 2
+</td>
+<td style="text-align:right;">
+0.1052267
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="accessing-metadata" class="section level2">
+<h2>Accessing metadata</h2>
+<p>Imagine you are interested in knowing more about this volume, the
+people who created it, or the agencies that funded it.</p>
+<p>The <code>list_volume_owners()</code> function returns a data frame
+with information about the people who created and “own” this particular
+dataset. The function has a parameter <code>this_vol_id</code> which is
+an integer, unique across Databrary, that refers to the specific
+dataset. The <code>list_volume_owners()</code> function uses volume 1 as
+the default.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">list_volume_owners</span>()</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="co">#&gt;   vol_id person_id sortname prename</span></span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="co">#&gt; 1      1         5   Adolph   Karen</span></span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a><span class="co">#&gt; 2      1         6  Gilmore Rick O.</span></span></code></pre></div>
+<p>The command (and many like it) can be “vectorized” using the
+<code>purrr</code> package.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">map</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>, list_volume_owners) <span class="sc">|&gt;</span> </span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">list_rbind</span>()</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a><span class="co">#&gt;    vol_id person_id      sortname   prename</span></span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="co">#&gt; 1       1         5        Adolph     Karen</span></span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a><span class="co">#&gt; 2       1         6       Gilmore   Rick O.</span></span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a><span class="co">#&gt; 3       2         6       Gilmore   Rick O.</span></span>
+<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a><span class="co">#&gt; 4       4         5        Adolph     Karen</span></span>
+<span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a><span class="co">#&gt; 5       5         5        Adolph     Karen</span></span>
+<span id="cb20-9"><a href="#cb20-9" tabindex="-1"></a><span class="co">#&gt; 6       7         5        Adolph     Karen</span></span>
+<span id="cb20-10"><a href="#cb20-10" tabindex="-1"></a><span class="co">#&gt; 7       8        11 Tamis-LeMonda Catherine</span></span>
+<span id="cb20-11"><a href="#cb20-11" tabindex="-1"></a><span class="co">#&gt; 8       9         5        Adolph     Karen</span></span>
+<span id="cb20-12"><a href="#cb20-12" tabindex="-1"></a><span class="co">#&gt; 9      10        20        Gordon     Peter</span></span>
+<span id="cb20-13"><a href="#cb20-13" tabindex="-1"></a><span class="co">#&gt; 10     11         5        Adolph     Karen</span></span>
+<span id="cb20-14"><a href="#cb20-14" tabindex="-1"></a><span class="co">#&gt; 11     11        11 Tamis-LeMonda Catherine</span></span>
+<span id="cb20-15"><a href="#cb20-15" tabindex="-1"></a><span class="co">#&gt; 12     11        32       Karasik      Lana</span></span>
+<span id="cb20-16"><a href="#cb20-16" tabindex="-1"></a><span class="co">#&gt; 13     15        70     Messinger    Daniel</span></span></code></pre></div>
+<p>The <code>list_volume_metadata()</code> command gives slightly more
+information.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">list_volume_metadata</span>()</span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="co">#&gt;   vol_id                                     name</span></span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a><span class="co">#&gt; 1      1 Databrary sponsored workshops and events</span></span>
+<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a><span class="co">#&gt;                                                     owners permission</span></span>
+<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a><span class="co">#&gt; 1 Adolph, Karen; Gilmore, Rick O.; Staff; Admin, Databrary          1</span></span>
+<span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a><span class="co">#&gt;                               doi</span></span>
+<span id="cb21-7"><a href="#cb21-7" tabindex="-1"></a><span class="co">#&gt; 1 https://doi.org/10.17910/B7159Q</span></span></code></pre></div>
+<p>This command can also be “vectorized.”</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">map</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>), list_volume_metadata) <span class="sc">|&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">list_rbind</span>()</span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a><span class="co">#&gt;    vol_id</span></span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a><span class="co">#&gt; 1       1</span></span>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a><span class="co">#&gt; 2       2</span></span>
+<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a><span class="co">#&gt; 3       4</span></span>
+<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a><span class="co">#&gt; 4       5</span></span>
+<span id="cb22-8"><a href="#cb22-8" tabindex="-1"></a><span class="co">#&gt; 5       7</span></span>
+<span id="cb22-9"><a href="#cb22-9" tabindex="-1"></a><span class="co">#&gt; 6       8</span></span>
+<span id="cb22-10"><a href="#cb22-10" tabindex="-1"></a><span class="co">#&gt; 7       9</span></span>
+<span id="cb22-11"><a href="#cb22-11" tabindex="-1"></a><span class="co">#&gt; 8      10</span></span>
+<span id="cb22-12"><a href="#cb22-12" tabindex="-1"></a><span class="co">#&gt; 9      11</span></span>
+<span id="cb22-13"><a href="#cb22-13" tabindex="-1"></a><span class="co">#&gt; 10     15</span></span>
+<span id="cb22-14"><a href="#cb22-14" tabindex="-1"></a><span class="co">#&gt; 11     16</span></span>
+<span id="cb22-15"><a href="#cb22-15" tabindex="-1"></a><span class="co">#&gt; 12     23</span></span>
+<span id="cb22-16"><a href="#cb22-16" tabindex="-1"></a><span class="co">#&gt; 13     24</span></span>
+<span id="cb22-17"><a href="#cb22-17" tabindex="-1"></a><span class="co">#&gt; 14     27</span></span>
+<span id="cb22-18"><a href="#cb22-18" tabindex="-1"></a><span class="co">#&gt; 15     28</span></span>
+<span id="cb22-19"><a href="#cb22-19" tabindex="-1"></a><span class="co">#&gt; 16     29</span></span>
+<span id="cb22-20"><a href="#cb22-20" tabindex="-1"></a><span class="co">#&gt; 17     30</span></span>
+<span id="cb22-21"><a href="#cb22-21" tabindex="-1"></a><span class="co">#&gt; 18     31</span></span>
+<span id="cb22-22"><a href="#cb22-22" tabindex="-1"></a><span class="co">#&gt; 19     32</span></span>
+<span id="cb22-23"><a href="#cb22-23" tabindex="-1"></a><span class="co">#&gt; 20     33</span></span>
+<span id="cb22-24"><a href="#cb22-24" tabindex="-1"></a><span class="co">#&gt; 21     34</span></span>
+<span id="cb22-25"><a href="#cb22-25" tabindex="-1"></a><span class="co">#&gt; 22     35</span></span>
+<span id="cb22-26"><a href="#cb22-26" tabindex="-1"></a><span class="co">#&gt; 23     36</span></span>
+<span id="cb22-27"><a href="#cb22-27" tabindex="-1"></a><span class="co">#&gt; 24     37</span></span>
+<span id="cb22-28"><a href="#cb22-28" tabindex="-1"></a><span class="co">#&gt; 25     38</span></span>
+<span id="cb22-29"><a href="#cb22-29" tabindex="-1"></a><span class="co">#&gt; 26     42</span></span>
+<span id="cb22-30"><a href="#cb22-30" tabindex="-1"></a><span class="co">#&gt; 27     43</span></span>
+<span id="cb22-31"><a href="#cb22-31" tabindex="-1"></a><span class="co">#&gt; 28     44</span></span>
+<span id="cb22-32"><a href="#cb22-32" tabindex="-1"></a><span class="co">#&gt; 29     45</span></span>
+<span id="cb22-33"><a href="#cb22-33" tabindex="-1"></a><span class="co">#&gt; 30     46</span></span>
+<span id="cb22-34"><a href="#cb22-34" tabindex="-1"></a><span class="co">#&gt; 31     47</span></span>
+<span id="cb22-35"><a href="#cb22-35" tabindex="-1"></a><span class="co">#&gt; 32     49</span></span>
+<span id="cb22-36"><a href="#cb22-36" tabindex="-1"></a><span class="co">#&gt; 33     50</span></span>
+<span id="cb22-37"><a href="#cb22-37" tabindex="-1"></a><span class="co">#&gt;                                                                                                                                                                                       name</span></span>
+<span id="cb22-38"><a href="#cb22-38" tabindex="-1"></a><span class="co">#&gt; 1                                                                                                                                                 Databrary sponsored workshops and events</span></span>
+<span id="cb22-39"><a href="#cb22-39" tabindex="-1"></a><span class="co">#&gt; 2                                                                                                                              Head-mounted camera views of adults in natural environments</span></span>
+<span id="cb22-40"><a href="#cb22-40" tabindex="-1"></a><span class="co">#&gt; 3                                                                                                                                   Crawling and walking infants see the world differently</span></span>
+<span id="cb22-41"><a href="#cb22-41" tabindex="-1"></a><span class="co">#&gt; 4                                                           No bridge too high: Infants decide whether to cross based on the probability of falling not the severity of the potential fall</span></span>
+<span id="cb22-42"><a href="#cb22-42" tabindex="-1"></a><span class="co">#&gt; 5                                                                                                            Ledge and wedge: Younger and older adults&#39; perception of action possibilities</span></span>
+<span id="cb22-43"><a href="#cb22-43" tabindex="-1"></a><span class="co">#&gt; 6  Language, cognitive, and socio-emotional skills from 9 months until their transition to first grade in U.S. children from African-American, Dominican, Mexican, and Chinese backgrounds</span></span>
+<span id="cb22-44"><a href="#cb22-44" tabindex="-1"></a><span class="co">#&gt; 7                                                                                                                                         Children&#39;s social and motor play on a playground</span></span>
+<span id="cb22-45"><a href="#cb22-45" tabindex="-1"></a><span class="co">#&gt; 8                                                                                                                                Numerical Cognition Without Words: Evidence from Amazonia</span></span>
+<span id="cb22-46"><a href="#cb22-46" tabindex="-1"></a><span class="co">#&gt; 9                                                                                                                                               The Ties That Bind: Cradling in Tajikistan</span></span>
+<span id="cb22-47"><a href="#cb22-47" tabindex="-1"></a><span class="co">#&gt; 10                                             Facial expressions in 6-month old infants and their parents in the still face paradigm and attachment at 15 months in the Strange Situation</span></span>
+<span id="cb22-48"><a href="#cb22-48" tabindex="-1"></a><span class="co">#&gt; 11                                                                                                         Excerpt volume: Human quadrupeds, primate quadrupedalism, and Uner Tan Syndrome</span></span>
+<span id="cb22-49"><a href="#cb22-49" tabindex="-1"></a><span class="co">#&gt; 12                                                                                                                 An analysis of optic flow observed by infants during natural activities</span></span>
+<span id="cb22-50"><a href="#cb22-50" tabindex="-1"></a><span class="co">#&gt; 13                                                                                                        Excerpt volume: Specificity of learning: Why infants fall over a veritable cliff</span></span>
+<span id="cb22-51"><a href="#cb22-51" tabindex="-1"></a><span class="co">#&gt; 14                               Preliminary investigation of visual attention to human figures in photographs: Potential considerations for the design of aided AAC visual scene displays</span></span>
+<span id="cb22-52"><a href="#cb22-52" tabindex="-1"></a><span class="co">#&gt; 15                                                                                                                        Excerpt volume: Learning in the development of infant locomotion</span></span>
+<span id="cb22-53"><a href="#cb22-53" tabindex="-1"></a><span class="co">#&gt; 16                                                                             Where infants look determines how they see: eye movements and object perception performance in 3-month-olds</span></span>
+<span id="cb22-54"><a href="#cb22-54" tabindex="-1"></a><span class="co">#&gt; 17                                                                                                                                        The Child Affective Facial Expression (CAFE) set</span></span>
+<span id="cb22-55"><a href="#cb22-55" tabindex="-1"></a><span class="co">#&gt; 18                                                                                Four-month-olds&#39; discrimination of optic flow patterns depicting different directions of observer motion</span></span>
+<span id="cb22-56"><a href="#cb22-56" tabindex="-1"></a><span class="co">#&gt; 19                                                                                          Spatio-temporal tuning of coherent motion evoked responses in 4–6 month old infants and adults</span></span>
+<span id="cb22-57"><a href="#cb22-57" tabindex="-1"></a><span class="co">#&gt; 20                                                                                                                                  Representing exact number visually using mental abacus</span></span>
+<span id="cb22-58"><a href="#cb22-58" tabindex="-1"></a><span class="co">#&gt; 21                                                                                                         Development of infants’ attention to faces during the first year (eye-tracking)</span></span>
+<span id="cb22-59"><a href="#cb22-59" tabindex="-1"></a><span class="co">#&gt; 22                                                                                                           Number as a cognitive technology: Evidence from Pirahã language and cognition</span></span>
+<span id="cb22-60"><a href="#cb22-60" tabindex="-1"></a><span class="co">#&gt; 23                                                                                                                        Measuring the development of social attention using free-viewing</span></span>
+<span id="cb22-61"><a href="#cb22-61" tabindex="-1"></a><span class="co">#&gt; 24                                                                                                                               Visual search and attention to faces during early infancy</span></span>
+<span id="cb22-62"><a href="#cb22-62" tabindex="-1"></a><span class="co">#&gt; 25                                                                                                           The development of predictive processes in children’s discourse understanding</span></span>
+<span id="cb22-63"><a href="#cb22-63" tabindex="-1"></a><span class="co">#&gt; 26                                                                                                                   Head camera clips: parent infant object play at 36 to 57 weeks of age</span></span>
+<span id="cb22-64"><a href="#cb22-64" tabindex="-1"></a><span class="co">#&gt; 27                                                                                                                                             Statistical learning by 8-month-old infants</span></span>
+<span id="cb22-65"><a href="#cb22-65" tabindex="-1"></a><span class="co">#&gt; 28                                                                                                                                              Children use syntax to learn verb meanings</span></span>
+<span id="cb22-66"><a href="#cb22-66" tabindex="-1"></a><span class="co">#&gt; 29                                                                                                                                            Cultural transmission of social essentialism</span></span>
+<span id="cb22-67"><a href="#cb22-67" tabindex="-1"></a><span class="co">#&gt; 30                                                                        Different Gestalt processing for different actions? Comparing object-directed reaching and looking time measures</span></span>
+<span id="cb22-68"><a href="#cb22-68" tabindex="-1"></a><span class="co">#&gt; 31                                                                                                                        Examples of rhythmical stereotypical behaviors at 4 and 7 months</span></span>
+<span id="cb22-69"><a href="#cb22-69" tabindex="-1"></a><span class="co">#&gt; 32                                                                                                         Cortical responses to optic flow and motion contrast across patterns and speeds</span></span>
+<span id="cb22-70"><a href="#cb22-70" tabindex="-1"></a><span class="co">#&gt; 33                                                                                                                                                                      Biological Motions</span></span>
+<span id="cb22-71"><a href="#cb22-71" tabindex="-1"></a><span class="co">#&gt;                                                      owners permission</span></span>
+<span id="cb22-72"><a href="#cb22-72" tabindex="-1"></a><span class="co">#&gt; 1  Adolph, Karen; Gilmore, Rick O.; Staff; Admin, Databrary          1</span></span>
+<span id="cb22-73"><a href="#cb22-73" tabindex="-1"></a><span class="co">#&gt; 2                                          Gilmore, Rick O.          1</span></span>
+<span id="cb22-74"><a href="#cb22-74" tabindex="-1"></a><span class="co">#&gt; 3                                             Adolph, Karen          1</span></span>
+<span id="cb22-75"><a href="#cb22-75" tabindex="-1"></a><span class="co">#&gt; 4                                             Adolph, Karen          1</span></span>
+<span id="cb22-76"><a href="#cb22-76" tabindex="-1"></a><span class="co">#&gt; 5                                             Adolph, Karen          1</span></span>
+<span id="cb22-77"><a href="#cb22-77" tabindex="-1"></a><span class="co">#&gt; 6                                  Tamis-LeMonda, Catherine          1</span></span>
+<span id="cb22-78"><a href="#cb22-78" tabindex="-1"></a><span class="co">#&gt; 7                                             Adolph, Karen          1</span></span>
+<span id="cb22-79"><a href="#cb22-79" tabindex="-1"></a><span class="co">#&gt; 8                                             Gordon, Peter          1</span></span>
+<span id="cb22-80"><a href="#cb22-80" tabindex="-1"></a><span class="co">#&gt; 9    Karasik, Lana; Tamis-LeMonda, Catherine; Adolph, Karen          1</span></span>
+<span id="cb22-81"><a href="#cb22-81" tabindex="-1"></a><span class="co">#&gt; 10                                        Messinger, Daniel          1</span></span>
+<span id="cb22-82"><a href="#cb22-82" tabindex="-1"></a><span class="co">#&gt; 11                             Adolph, Karen; Shapiro, Liza          1</span></span>
+<span id="cb22-83"><a href="#cb22-83" tabindex="-1"></a><span class="co">#&gt; 12                                         Gilmore, Rick O.          1</span></span>
+<span id="cb22-84"><a href="#cb22-84" tabindex="-1"></a><span class="co">#&gt; 13                                            Adolph, Karen          1</span></span>
+<span id="cb22-85"><a href="#cb22-85" tabindex="-1"></a><span class="co">#&gt; 14                                        Wilkinson, Krista          1</span></span>
+<span id="cb22-86"><a href="#cb22-86" tabindex="-1"></a><span class="co">#&gt; 15                                            Adolph, Karen          1</span></span>
+<span id="cb22-87"><a href="#cb22-87" tabindex="-1"></a><span class="co">#&gt; 16                                           Johnson, Scott          1</span></span>
+<span id="cb22-88"><a href="#cb22-88" tabindex="-1"></a><span class="co">#&gt; 17                            LoBue, Vanessa; Thrasher, Cat          1</span></span>
+<span id="cb22-89"><a href="#cb22-89" tabindex="-1"></a><span class="co">#&gt; 18                                         Gilmore, Rick O.          1</span></span>
+<span id="cb22-90"><a href="#cb22-90" tabindex="-1"></a><span class="co">#&gt; 19                                         Gilmore, Rick O.          1</span></span>
+<span id="cb22-91"><a href="#cb22-91" tabindex="-1"></a><span class="co">#&gt; 20                                        Frank, Michael C.          1</span></span>
+<span id="cb22-92"><a href="#cb22-92" tabindex="-1"></a><span class="co">#&gt; 21                                        Frank, Michael C.          1</span></span>
+<span id="cb22-93"><a href="#cb22-93" tabindex="-1"></a><span class="co">#&gt; 22                                        Frank, Michael C.          1</span></span>
+<span id="cb22-94"><a href="#cb22-94" tabindex="-1"></a><span class="co">#&gt; 23                                        Frank, Michael C.          1</span></span>
+<span id="cb22-95"><a href="#cb22-95" tabindex="-1"></a><span class="co">#&gt; 24                                        Frank, Michael C.          1</span></span>
+<span id="cb22-96"><a href="#cb22-96" tabindex="-1"></a><span class="co">#&gt; 25                                        Frank, Michael C.          1</span></span>
+<span id="cb22-97"><a href="#cb22-97" tabindex="-1"></a><span class="co">#&gt; 26                                          Smith, Linda B.          1</span></span>
+<span id="cb22-98"><a href="#cb22-98" tabindex="-1"></a><span class="co">#&gt; 27                                           Saffran, Jenny          1</span></span>
+<span id="cb22-99"><a href="#cb22-99" tabindex="-1"></a><span class="co">#&gt; 28                                         Naigles, Letitia          1</span></span>
+<span id="cb22-100"><a href="#cb22-100" tabindex="-1"></a><span class="co">#&gt; 29                                         Rhodes, Marjorie          1</span></span>
+<span id="cb22-101"><a href="#cb22-101" tabindex="-1"></a><span class="co">#&gt; 30                                           Vishton, Peter          1</span></span>
+<span id="cb22-102"><a href="#cb22-102" tabindex="-1"></a><span class="co">#&gt; 31                                       Fabricius, William          1</span></span>
+<span id="cb22-103"><a href="#cb22-103" tabindex="-1"></a><span class="co">#&gt; 32                                         Gilmore, Rick O.          1</span></span>
+<span id="cb22-104"><a href="#cb22-104" tabindex="-1"></a><span class="co">#&gt; 33                                   Bertenthal, Bennett I.          1</span></span>
+<span id="cb22-105"><a href="#cb22-105" tabindex="-1"></a><span class="co">#&gt;                                doi</span></span>
+<span id="cb22-106"><a href="#cb22-106" tabindex="-1"></a><span class="co">#&gt; 1  https://doi.org/10.17910/B7159Q</span></span>
+<span id="cb22-107"><a href="#cb22-107" tabindex="-1"></a><span class="co">#&gt; 2  https://doi.org/10.17910/B7WC7S</span></span>
+<span id="cb22-108"><a href="#cb22-108" tabindex="-1"></a><span class="co">#&gt; 3  https://doi.org/10.17910/B7RP4H</span></span>
+<span id="cb22-109"><a href="#cb22-109" tabindex="-1"></a><span class="co">#&gt; 4  https://doi.org/10.17910/B7MW2K</span></span>
+<span id="cb22-110"><a href="#cb22-110" tabindex="-1"></a><span class="co">#&gt; 5  https://doi.org/10.17910/B7H592</span></span>
+<span id="cb22-111"><a href="#cb22-111" tabindex="-1"></a><span class="co">#&gt; 6  https://doi.org/10.17910/B7CC74</span></span>
+<span id="cb22-112"><a href="#cb22-112" tabindex="-1"></a><span class="co">#&gt; 7  https://doi.org/10.17910/B77P4V</span></span>
+<span id="cb22-113"><a href="#cb22-113" tabindex="-1"></a><span class="co">#&gt; 8  https://doi.org/10.17910/B73W2X</span></span>
+<span id="cb22-114"><a href="#cb22-114" tabindex="-1"></a><span class="co">#&gt; 9   https://doi.org/10.17910/b7.11</span></span>
+<span id="cb22-115"><a href="#cb22-115" tabindex="-1"></a><span class="co">#&gt; 10 https://doi.org/10.17910/B7059D</span></span>
+<span id="cb22-116"><a href="#cb22-116" tabindex="-1"></a><span class="co">#&gt; 11 https://doi.org/10.17910/B7VC7G</span></span>
+<span id="cb22-117"><a href="#cb22-117" tabindex="-1"></a><span class="co">#&gt; 12 https://doi.org/10.17910/B7QP46</span></span>
+<span id="cb22-118"><a href="#cb22-118" tabindex="-1"></a><span class="co">#&gt; 13 https://doi.org/10.17910/B7KW28</span></span>
+<span id="cb22-119"><a href="#cb22-119" tabindex="-1"></a><span class="co">#&gt; 14 https://doi.org/10.17910/B7G59R</span></span>
+<span id="cb22-120"><a href="#cb22-120" tabindex="-1"></a><span class="co">#&gt; 15 https://doi.org/10.17910/B7BC7T</span></span>
+<span id="cb22-121"><a href="#cb22-121" tabindex="-1"></a><span class="co">#&gt; 16 https://doi.org/10.17910/B76P4J</span></span>
+<span id="cb22-122"><a href="#cb22-122" tabindex="-1"></a><span class="co">#&gt; 17 https://doi.org/10.17910/B7301K</span></span>
+<span id="cb22-123"><a href="#cb22-123" tabindex="-1"></a><span class="co">#&gt; 18 https://doi.org/10.17910/B7Z593</span></span>
+<span id="cb22-124"><a href="#cb22-124" tabindex="-1"></a><span class="co">#&gt; 19 https://doi.org/10.17910/B7TG6T</span></span>
+<span id="cb22-125"><a href="#cb22-125" tabindex="-1"></a><span class="co">#&gt; 20 https://doi.org/10.17910/B7PP4W</span></span>
+<span id="cb22-126"><a href="#cb22-126" tabindex="-1"></a><span class="co">#&gt; 21 https://doi.org/10.17910/B7K01X</span></span>
+<span id="cb22-127"><a href="#cb22-127" tabindex="-1"></a><span class="co">#&gt; 22 https://doi.org/10.17910/B7F59F</span></span>
+<span id="cb22-128"><a href="#cb22-128" tabindex="-1"></a><span class="co">#&gt; 23 https://doi.org/10.17910/B79G65</span></span>
+<span id="cb22-129"><a href="#cb22-129" tabindex="-1"></a><span class="co">#&gt; 24 https://doi.org/10.17910/B75P47</span></span>
+<span id="cb22-130"><a href="#cb22-130" tabindex="-1"></a><span class="co">#&gt; 25 https://doi.org/10.17910/B72018</span></span>
+<span id="cb22-131"><a href="#cb22-131" tabindex="-1"></a><span class="co">#&gt; 26 https://doi.org/10.17910/B7SG6H</span></span>
+<span id="cb22-132"><a href="#cb22-132" tabindex="-1"></a><span class="co">#&gt; 27 https://doi.org/10.17910/B7NP4K</span></span>
+<span id="cb22-133"><a href="#cb22-133" tabindex="-1"></a><span class="co">#&gt; 28 https://doi.org/10.17910/B7J01M</span></span>
+<span id="cb22-134"><a href="#cb22-134" tabindex="-1"></a><span class="co">#&gt; 29 https://doi.org/10.17910/B7D594</span></span>
+<span id="cb22-135"><a href="#cb22-135" tabindex="-1"></a><span class="co">#&gt; 30 https://doi.org/10.17910/B78G6V</span></span>
+<span id="cb22-136"><a href="#cb22-136" tabindex="-1"></a><span class="co">#&gt; 31 https://doi.org/10.17910/B74S3K</span></span>
+<span id="cb22-137"><a href="#cb22-137" tabindex="-1"></a><span class="co">#&gt; 32 https://doi.org/10.17910/B7101Z</span></span>
+<span id="cb22-138"><a href="#cb22-138" tabindex="-1"></a><span class="co">#&gt; 33 https://doi.org/10.17910/B7W884</span></span></code></pre></div>
+<p>The <code>permission</code> variable indicates whether a volume is
+visible by others by a user.</p>
+<p>So, if you are not logged-in to Databrary, only data that are visible
+to the public will be returned. Assuming you are <em>not</em> logged-in,
+the above commands will show volumes with <code>permission</code> equal
+to 1. The <code>permission</code> field derives from a set of constants
+the system uses.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>db_constants <span class="ot">&lt;-</span> <span class="fu">assign_constants</span>()</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>db_constants<span class="sc">$</span>permission</span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="co">#&gt; [1] &quot;NONE&quot;   &quot;PUBLIC&quot; &quot;SHARED&quot; &quot;READ&quot;   &quot;EDIT&quot;   &quot;ADMIN&quot;</span></span></code></pre></div>
+<p>The <code>permission</code> array is indexed beginning with 0. So the
+1th value is “PUBLIC”. So, the <code>1</code> means that the volumes
+shown above are all visible to the public, and to you.</p>
+<p>Volumes that you have not shared and are not visible to the public,
+will have <code>permission</code> equal to 5, or “ADMIN”. We can’t
+demonstrate this to you because we don’t have privileges on the same
+unshared volume, but you can try it on a volume you’ve created but not
+yet shared.</p>
+<p>The <code>list_volume()</code> command returns even more extensive
+information about volume 1. The <code>list_volume_funding()</code>
+command returns information about any funders listed for the project.
+Again, the default volume is 1.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">list_volume_funding</span>()</span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2 × 4</span></span>
+<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a><span class="co">#&gt;   vol_id funder_id funder_name                                             award</span></span>
+<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a><span class="co">#&gt;    &lt;dbl&gt;     &lt;int&gt; &lt;chr&gt;                                                   &lt;chr&gt;</span></span>
+<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a><span class="co">#&gt; 1      1 100000001 National Science Foundation (NSF)                       BCS-…</span></span>
+<span id="cb24-6"><a href="#cb24-6" tabindex="-1"></a><span class="co">#&gt; 2      1 100000071 National Institute of Child Health and Human Developme… U01-…</span></span></code></pre></div>
+<p>This can also be “vectorized.”</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">map</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>), list_volume_funding) <span class="sc">|&gt;</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">list_rbind</span>()</span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 25 × 4</span></span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a><span class="co">#&gt;    vol_id funder_id funder_name                                            award</span></span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a><span class="co">#&gt;     &lt;int&gt;     &lt;int&gt; &lt;chr&gt;                                                  &lt;chr&gt;</span></span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a><span class="co">#&gt;  1      1 100000001 National Science Foundation (NSF)                      BCS-…</span></span>
+<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a><span class="co">#&gt;  2      1 100000071 National Institute of Child Health and Human Developm… U01-…</span></span>
+<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a><span class="co">#&gt;  3      2 100000001 National Science Foundation (NSF)                      BCS-…</span></span>
+<span id="cb25-9"><a href="#cb25-9" tabindex="-1"></a><span class="co">#&gt;  4      3        NA &lt;NA&gt;                                                   &lt;NA&gt; </span></span>
+<span id="cb25-10"><a href="#cb25-10" tabindex="-1"></a><span class="co">#&gt;  5      4 100000071 National Institute of Child Health and Human Developm… R37-…</span></span>
+<span id="cb25-11"><a href="#cb25-11" tabindex="-1"></a><span class="co">#&gt;  6      5 100000071 National Institute of Child Health and Human Developm… R37-…</span></span>
+<span id="cb25-12"><a href="#cb25-12" tabindex="-1"></a><span class="co">#&gt;  7      6        NA &lt;NA&gt;                                                   &lt;NA&gt; </span></span>
+<span id="cb25-13"><a href="#cb25-13" tabindex="-1"></a><span class="co">#&gt;  8      7 100000071 National Institute of Child Health and Human Developm… R37-…</span></span>
+<span id="cb25-14"><a href="#cb25-14" tabindex="-1"></a><span class="co">#&gt;  9      8 100000001 National Science Foundation (NSF)                      0721…</span></span>
+<span id="cb25-15"><a href="#cb25-15" tabindex="-1"></a><span class="co">#&gt; 10      9 100000071 National Institute of Child Health and Human Developm… R37-…</span></span>
+<span id="cb25-16"><a href="#cb25-16" tabindex="-1"></a><span class="co">#&gt; # ℹ 15 more rows</span></span></code></pre></div>
+<p>The <code>list_volume_links()</code> command returns information
+about any external (web) links that have been added to a volume, such as
+to related publications or a GitHub repo.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">list_volume_links</span>()</span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2 × 3</span></span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a><span class="co">#&gt;   vol_id link_name                                       url                    </span></span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;                                           &lt;chr&gt;                  </span></span>
+<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a><span class="co">#&gt; 1      1 Video as data (Invited article in APS Observer) http://www.psychologic…</span></span>
+<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a><span class="co">#&gt; 2      1 2016-12-16 NIH PLAY workshop videocast          https://videocast.nih.…</span></span></code></pre></div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
