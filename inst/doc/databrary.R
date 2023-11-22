@@ -1,4 +1,4 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -28,23 +28,23 @@ databraryr::get_db_stats("datasets")
 ## ----login-w-env-var, eval=FALSE----------------------------------------------
 #  databraryr::login_db(email = Sys.getenv("DATABRARY_LOGIN"))
 
-## ---- eval=FALSE--------------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  databraryr::login_db(email = "<YOUR_EMAIL@PROVIDER.COM>", store = TRUE,
 #                       overwrite = TRUE)
 
-## ---- eval=FALSE--------------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  databraryr::login_db(email = "<YOUR_EMAIL@PROVIDER.COM>")
 
-## ---- eval=FALSE--------------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  databraryr::login_db(email = Sys.getenv("DATABRARY_LOGIN"))
 
 ## ----eval=FALSE---------------------------------------------------------------
 #  databraryr::logout_db()
 
-## ---- eval=FALSE--------------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  download_video()
 
-## ---- eval=FALSE--------------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  nums_vid <- download_video()
 #  system(paste0("open ", nums_vid))
 
