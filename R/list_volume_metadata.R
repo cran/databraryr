@@ -1,8 +1,16 @@
 #' List Volume Metadata.
 #'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' This function has been deprecated and may be removed in a future release.
+#' See `get_volume_by_id()` and other `list_volume_*` functions for related
+#' functionality.
+#'
 #' @param vol_id Selected volume number.
 #' @param vb A Boolean value. If TRUE provides verbose output.
 #' @returns A data frame with metadata about a volume.
+#'
 #' @examples
 #' \donttest{
 #' list_volume_metadata() # List info about volume 1.
@@ -24,7 +32,6 @@ list_volume_metadata <- function(vol_id = 1,
       paste0("https://doi.org/", doi)
     } else {
       paste("NA")
-      #stop("DOI must be character string")
     }
   }
   
