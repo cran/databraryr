@@ -4,12 +4,15 @@
 #' information about individual sessions. This command downloads that CSV file
 #' as a temporary file or with a name specified by the user.
 #'
-#' @param vol_id Target volume number.
-#' @param file_name Name for the output file. Default is 'test.csv'.
-#' @param target_dir Directory to save downloaded file. Default is tempdir().
-#' @param as_df A Boolean value. Default is FALSE.
-#' @param vb A Boolean value. Default is FALSE.
-#' @param rq An `httr2` request object.
+#' @param vol_id An integer. Target volume number. Default is 1.
+#' @param file_name A character string. Name for the output file. 
+#' Default is 'test.csv'.
+#' @param target_dir A character string. Directory to save downloaded file. 
+#' Default is `tempdir()`.
+#' @param as_df A logical value. Convert the data from a list to a data frame.
+#' Default is FALSE.
+#' @param vb A logical value. Provide verbose feedback. Default is FALSE.
+#' @param rq An `httr2` request object. Default is NULL.
 #'
 #' @returns A character string that is the name of the downloaded file or a data frame if `as_df` is TRUE.
 #'
@@ -19,6 +22,7 @@
 #' download_session_csv() # Downloads "session" CSV for volume 1
 #' }
 #' }
+#' 
 #' @export
 download_session_csv <- function(vol_id = 1,
                                  file_name = "test.csv",
@@ -54,7 +58,7 @@ download_session_csv <- function(vol_id = 1,
     }
     rq <- databraryr::make_default_request()
   }
-  this_rq <- rq |>
+  this_rq <- rq %>%
     httr2::req_url(sprintf(GET_SESSION_CSV, vol_id))
   
   resp <- tryCatch(
@@ -62,7 +66,6 @@ download_session_csv <- function(vol_id = 1,
     httr2_error = function(cnd)
       NULL
   )
-  
   
   full_fn <- file.path(target_dir, file_name)
   
@@ -73,7 +76,7 @@ download_session_csv <- function(vol_id = 1,
   
   if (is.null(rq))
     rq <- make_default_request()
-  this_rq <- rq |>
+  this_rq <- rq %>%
     httr2::req_url(sprintf(GET_SESSION_CSV, vol_id))
   
   resp <- tryCatch(
@@ -86,14 +89,20 @@ download_session_csv <- function(vol_id = 1,
     if (vb)
       message("Valid CSV downloaded.")
     resp_txt <- httr2::resp_body_string(resp)
-    df <- readr::read_csv(resp_txt, show_col_types = FALSE)
+    df <-
+      readr::read_csv(
+        resp_txt,
+        show_col_types = FALSE,
+        col_types = readr::cols(.default = readr::col_character())
+      ) %>%
+      # Replace dashes in column names with underscores
+      dplyr::rename_with(~gsub("-", "_", .x, fixed = TRUE))
     if (as_df == TRUE) {
       df
     } else {
       if (vb)
         message("Saving CSV.")
       readr::write_csv(df, full_fn)
-      #readr::write_csv(as.data.frame(r), full_fn)
       full_fn
     }
   } else {

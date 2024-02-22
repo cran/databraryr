@@ -1,20 +1,27 @@
 #' Download Asset From Databrary.
 #'
-#' @param asset_id Asset id for target file.
-#' @param session_id Slot/session number where target file is stored.
-#' @param file_name Name for downloaded file. Default is NULL.
-#' @param target_dir Directory to save the downloaded file.
+#' @description Databrary stores file types (assets) of many types. This
+#' function downloads an asset based on its system-unique integer identifer
+#' (asset_id) and system-unique session (slot) identifier (session_id).
+#'
+#' @param asset_id An integer. Asset id for target file. Default is 1.
+#' @param session_id An integer. Slot/session number where target file is 
+#' stored. Default is 9807.
+#' @param file_name A character string. Name for downloaded file. Default is NULL.
+#' @param target_dir A character string. Directory to save the downloaded file.
 #' Default is a temporary directory given by a call to `tempdir()`.
-#' @param vb A Boolean value. If TRUE provides verbose output.
-#' @param rq An `httr2` request object.
-#' 
-#' @returns Full file name to the asset.
-#' 
+#' @param vb A logical value. If TRUE provides verbose output. Default is FALSE.
+#' @param rq A list in the form of an `httr2` request object. Default is NULL.
+#'
+#' @returns Full file name to the asset or NULL.
+#'
 #' @examples
 #' \donttest{
+#' \dontrun{
 #' download_session_asset() # Download's 'numbers' file from volume 1.
 #' download_session_asset(asset_id = 11643, session_id = 9825, file_name = "rdk.mp4")
-#' #' # Downloads a display with a random dot kinematogram (RDK).
+#' # Downloads a display with a random dot kinematogram (RDK).
+#' }
 #' }
 #' @export
 download_session_asset <- function(asset_id = 1,
@@ -46,16 +53,16 @@ download_session_asset <- function(asset_id = 1,
   if (is.null(rq)) {
     if (vb) {
       message("NULL request object. Will generate default.")
-      message("\nNot logged in. Only public information will be returned.")  
+      message("Not logged in. Only public information will be returned.")
     }
     rq <- databraryr::make_default_request()
   }
-  this_rq <- rq |>
-    httr2::req_url(sprintf(DOWNLOAD_FILE, session_id, asset_id)) |>
+  this_rq <- rq %>%
+    httr2::req_url(sprintf(DOWNLOAD_FILE, session_id, asset_id)) %>%
     httr2::req_progress()
   
   if (vb)
-    message("Downloading video with asset_id ",
+    message("Downloading file with asset_id ",
             asset_id,
             " from session_id ",
             session_id)
@@ -69,9 +76,9 @@ download_session_asset <- function(asset_id = 1,
   # Gather asset format info
   format_mimetype <- NULL
   format_extension <- NULL
-  this_file_extension <- list_asset_formats(vb = vb) |>
-    dplyr::filter(httr2::resp_content_type(resp) == format_mimetype) |>
-    dplyr::select(format_extension) |>
+  this_file_extension <- list_asset_formats(vb = vb) %>%
+    dplyr::filter(httr2::resp_content_type(resp) == format_mimetype) %>%
+    dplyr::select(format_extension) %>%
     as.character()
   
   # Check file name or generate
@@ -88,11 +95,12 @@ download_session_asset <- function(asset_id = 1,
     file_name = tempfile(paste0(session_id, "_", asset_id, "_"),
                          fileext = paste0(".", this_file_extension))
   }
+  assertthat::is.string(file_name)
   
   if (file.exists(file_name)) {
     if (vb)
       message("File exists. Generating new unique name.\n")
-    file_name <- file.path(tempdir(),
+    file_name <- file.path(dirname(file_name),
                            paste0(
                              session_id,
                              "-",
@@ -114,15 +122,21 @@ download_session_asset <- function(asset_id = 1,
   
   write_file <- tryCatch(
     error = function(cnd) {
-      if (vb) message("Failure writing file ", file_name)
+      if (vb)
+        message("Failure writing file ", file_name)
       NULL
     },
     {
       file_con <- file(file_name, "wb")
       writeBin(resp$body, file_con)
-      close(file_con)      
+      close(file_con)
     }
   )
   
-  if(!is.null(write_file)) file_name
+  if (!is.null(write_file)) {
+    file_name
+  } else {
+    write_file
+  }
 }
+  
