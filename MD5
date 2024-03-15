@@ -1,7 +1,7 @@
-3a1752ecdc49d42495f4fa8a84c17187 *DESCRIPTION
+1b50d4e15b3be395fd439968e0634523 *DESCRIPTION
 9487fc7c20cd22251aa530275e705437 *LICENSE
 8793fbd88ae56853918d6d02168bbe3c *NAMESPACE
-741082a2de9d860408c679efe2dc6e63 *NEWS.md
+8c6b46a5f7096ef13e838d159efb36e2 *NEWS.md
 a774f3bafff6551e55222f0620317615 *R/CONSTANTS.R
 c69778db804e8da7aafa730fa6f1beea *R/GET_db_contents.R
 6e2b9007c11370c9d783b4ac0c4a9c1d *R/aaa.R
@@ -35,8 +35,8 @@ ae4f855cb4ae989b47ec5646ecc5622e *R/list_authorized_investigators.R
 3b7d7568473a191ce2438f86e8d1951c *R/list_institutional_sponsors.R
 2fb96b70bac0e02b9f0bf00e9b85142b *R/list_party.R
 89ba1fa1e695793e9904445677a3555f *R/list_party_affiliates.R
-d71f65716e0c4256d7b218e03b4f7fbd *R/list_party_sponsors.R
-ed4177ba570bff725f1b5fc2882714c8 *R/list_party_volumes.R
+6f920297cd19d14d4780b94ff64e0298 *R/list_party_sponsors.R
+ffa54b1c08d4a071608a2c71cc39172c *R/list_party_volumes.R
 bf70c89351e0e3a87214b528d5d376c3 *R/list_people.R
 b3fa05b51a6352865cf06063b592d53e *R/list_session_activity.R
 c332003a21f22a87327c8cd6d59f87ab *R/list_session_assets.R
@@ -70,12 +70,12 @@ b56ff2b193ecba52f9ec7f3b10cca008 *R/utils-pipe.R
 1402540cc52bbb5d63019e8d795b020c *inst/doc/accessing-data.R
 351756cd2e6a782be025079a8e2cf645 *inst/doc/accessing-data.Rmd
 6e344c75c4590874dd6fd3b573992779 *inst/doc/accessing-data.html
-5c2e0bd36aec163d3473a020779711e8 *inst/doc/authorized-users.R
-080a97d63e3b4ad873f764b2e563b781 *inst/doc/authorized-users.Rmd
-e9bf7383d61b0eacc9784d5b756b270e *inst/doc/authorized-users.html
+3bc10093d46e5574ae5d0b5ca3ec59fc *inst/doc/authorized-users.R
+8922f24e132644ae6f3f58b7a7e182f7 *inst/doc/authorized-users.Rmd
+df601348c593158b8bbb6f7ecb18d380 *inst/doc/authorized-users.html
 97b89b1b753bd07a3b9528fe632c61eb *inst/doc/databrary.R
 ed9781ea8069b8f462ad6b2e3360c41e *inst/doc/databrary.Rmd
-b57f7af28ab519ebc3e558399bf7fe6a *inst/doc/databrary.html
+2df717b38681654c36695bc3e30fc7a0 *inst/doc/databrary.html
 065469a940aa3b1741bc9e814bbd03fa *man/DATABRARY_API.Rd
 07e35b320ca5857b88317c26dd7ee10b *man/GET_db_contents.Rd
 57ce89bf2dfbbdc887620da410d1b846 *man/HHMMSSmmm_to_ms.Rd
@@ -213,5 +213,5 @@ e5fb6295c02a87b2953f2ed21dcf7017 *tests/testthat/test-search_for_tags.R
 0de0840286f86a60256e88f2898d5ca0 *tests/testthat/test-summarize_videos_in_volume.R
 1313a9cf462a675d6bf4d8c06365a64f *tests/testthat/test-utils.R
 351756cd2e6a782be025079a8e2cf645 *vignettes/accessing-data.Rmd
-080a97d63e3b4ad873f764b2e563b781 *vignettes/authorized-users.Rmd
+8922f24e132644ae6f3f58b7a7e182f7 *vignettes/authorized-users.Rmd
 ed9781ea8069b8f462ad6b2e3360c41e *vignettes/databrary.Rmd

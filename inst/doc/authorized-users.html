@@ -409,16 +409,16 @@ recommended one.</p>
 <p>To do this, use the <code>store</code> and <code>overwrite</code>
 parameters in <code>login_db()</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">login_db</span>(<span class="at">email =</span> <span class="st">&quot;&lt;YOUR_EMAIL@PROVIDER.COM&gt;&quot;</span>, <span class="at">store =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>                     <span class="at">overwrite =</span> <span class="cn">TRUE</span>, <span class="at">rq =</span> lrq)</span></code></pre></div>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>                     <span class="at">overwrite =</span> <span class="cn">TRUE</span>, <span class="at">rq =</span> drq)</span></code></pre></div>
 <p>This overwrites and securely stores your credentials, so that the
 next time you log in, you need only use this command:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">login_db</span>(<span class="at">email =</span> <span class="st">&quot;&lt;YOUR_EMAIL@PROVIDER.COM&gt;&quot;</span>, <span class="at">store =</span> <span class="cn">TRUE</span>, <span class="at">rq =</span> lrq)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">login_db</span>(<span class="at">email =</span> <span class="st">&quot;&lt;YOUR_EMAIL@PROVIDER.COM&gt;&quot;</span>, <span class="at">store =</span> <span class="cn">TRUE</span>, <span class="at">rq =</span> drq)</span></code></pre></div>
 <p>or if you’ve stored your email as an environment variable:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">login_db</span>(<span class="at">email =</span> <span class="fu">Sys.getenv</span>(<span class="st">&quot;DATABRARY_LOGIN&quot;</span>), <span class="at">store =</span> <span class="cn">TRUE</span>, <span class="at">rq =</span> lrq)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">login_db</span>(<span class="at">email =</span> <span class="fu">Sys.getenv</span>(<span class="st">&quot;DATABRARY_LOGIN&quot;</span>), <span class="at">store =</span> <span class="cn">TRUE</span>, <span class="at">rq =</span> drq)</span></code></pre></div>
 <div id="logging-out" class="section level3">
 <h3>Logging out</h3>
 <p>The package also has a log out command.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">logout_db</span>(<span class="at">rq =</span> lrq)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">logout_db</span>(<span class="at">rq =</span> drq)</span></code></pre></div>
 <p><strong>NOTE</strong>: Most <code>databraryr</code> functions have a
 verbose (<code>vb</code>) parameter. If you set this to
 <code>TRUE</code>, you will get more information about what’s going

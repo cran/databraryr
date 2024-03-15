@@ -18,14 +18,14 @@ library(databraryr)
 
 ## ----eval=FALSE---------------------------------------------------------------
 #  databraryr::login_db(email = "<YOUR_EMAIL@PROVIDER.COM>", store = TRUE,
-#                       overwrite = TRUE, rq = lrq)
+#                       overwrite = TRUE, rq = drq)
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  databraryr::login_db(email = "<YOUR_EMAIL@PROVIDER.COM>", store = TRUE, rq = lrq)
+#  databraryr::login_db(email = "<YOUR_EMAIL@PROVIDER.COM>", store = TRUE, rq = drq)
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  databraryr::login_db(email = Sys.getenv("DATABRARY_LOGIN"), store = TRUE, rq = lrq)
+#  databraryr::login_db(email = Sys.getenv("DATABRARY_LOGIN"), store = TRUE, rq = drq)
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  databraryr::logout_db(rq = lrq)
+#  databraryr::logout_db(rq = drq)
 
