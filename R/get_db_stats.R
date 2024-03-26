@@ -6,7 +6,7 @@
 #' @param type Type of Databrary report to run "institutions", "people", "data"
 #' @param vb A Boolean value. If TRUE provides verbose output.
 #' @param rq An `httr2` request object.
-#' 
+#'
 #' @returns A data frame with the requested data or NULL if there is no new information.
 #'
 #' @examples
@@ -17,7 +17,9 @@
 #' get_db_stats("places") # Information about the newest institutions.
 #' }
 #' @export
-get_db_stats <- function(type = "stats", vb = FALSE, rq = NULL) {
+get_db_stats <- function(type = "stats",
+                         vb = FALSE,
+                         rq = NULL) {
   # Check parameters
   assertthat::assert_that(length(type) == 1)
   assertthat::assert_that(is.character(type))
@@ -43,7 +45,7 @@ get_db_stats <- function(type = "stats", vb = FALSE, rq = NULL) {
   if (is.null(rq)) {
     if (vb) {
       message("NULL request object. Will generate default.")
-      message("\nNot logged in. Only public information will be returned.")  
+      message("Not logged in. Only public information will be returned.")
     }
     rq <- databraryr::make_default_request()
   }
@@ -56,13 +58,6 @@ get_db_stats <- function(type = "stats", vb = FALSE, rq = NULL) {
       NULL
   )
   
-  # d$id <- NULL
-  # d$affiliation <- NULL
-  # d$sortname <- NULL
-  # d$prename <- NULL
-  # d$party <- NULL
-  # d$institution <- NULL
-  
   if (is.null(resp) | httr2::resp_status(resp) != 200) {
     if (vb)
       message("No content returned.")
@@ -70,43 +65,6 @@ get_db_stats <- function(type = "stats", vb = FALSE, rq = NULL) {
   } else {
     r <- httr2::resp_body_json(resp)
     
-    id <- NULL
-    affiliation <- NULL
-    sortname <- NULL
-    prename <- NULL
-    party <- NULL
-    institution <- NULL
-    
-    if (type == "people") {
-      d <- tibble::as_tibble(r$activity$party)
-      if (!is.null(d)) {
-          dplyr::filter(
-            d,
-            !is.na(id),
-            !is.na(affiliation),
-            !is.na(sortname),
-            !is.na(prename)
-          )
-      } else {
-        NULL
-      }
-    }
-    if (type %in% c("institutions", "places")) {
-      d <- tibble::as_tibble(r$activity$party)
-      if ("institution" %in% names(d)) {
-        dplyr::filter(d, !is.na(id),!is.na(institution))
-      } else {
-        NULL
-      }
-    }
-    if (type %in% c("datasets", "volumes", "data")) {
-      d <- tibble::as_tibble(r$activity$volume)
-      if (!is.null(d)) {
-        dplyr::filter(d, !is.na(id))
-      } else {
-        NULL
-      }
-    }
     if (type %in% c("stats", "numbers")) {
       tibble::tibble(
         date = Sys.time(),
@@ -119,6 +77,44 @@ get_db_stats <- function(type = "stats", vb = FALSE, rq = NULL) {
         hours = r$stats$duration / (1000 * 60 * 60),
         TB = r$stats$bytes / (1e12)
       ) # seems incorrect
+    } else {
+      purrr::map(r$activity, process_db_activity_blob_item, type) |>
+        purrr::list_rbind()
     }
   }
+}
+
+#------------------------------------------------------------------------------
+process_db_activity_blob_item <- function(activity_blob, type) {
+  df <- activity_blob |>
+    purrr::flatten() |>
+    tibble::as_tibble()
+  
+  if (!is.null(df)) {
+    if (type %in% c("datasets", "volumes", "data")) {
+      if ("owners" %in% names(df)) {
+        df <- dplyr::filter(df,!is.na(df$id))
+      } else {
+        return(NULL)
+      }
+    } else if ("institution" %in% names(df)) {
+      if ("institution" %in% names(df)) {
+        if (type %in% c("institutions", "places")) {
+          df <- dplyr::filter(df,!is.na(df$id),!is.na(df$institution))
+        } else {
+          return(NULL)
+        }
+      }
+    } else if (type %in% c("people", "researchers", "investigators")) {
+      if ("affiliation" %in% names(df)) {
+        df <- dplyr::filter(
+          df,
+          !is.na(df$id),!is.na(df$affiliation),!is.na(df$sortname),!is.na(df$prename)
+        )
+      } else {
+        return(NULL)
+      }
+    }
+  }
+  df
 }

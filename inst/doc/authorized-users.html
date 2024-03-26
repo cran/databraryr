@@ -390,10 +390,10 @@ your Databrary login (email) as an environment variable:</p>
 <code>.Renviron</code> file in a new window.</li>
 <li>Edit the <code>.Renviron</code> file by adding a line with
 <code>DATABRARY_LOGIN=&quot;youremail@yourinstitution.edu&quot;</code>,
-substituting your actual Databrary log in email.</li>
+substituting your actual Databrary login email.</li>
 <li>Save the file, and restart R.</li>
 </ol>
-<p>Now, you can run <code>Sys.getenv(&quot;DATABRARY_LOGIN&quot;)</code> and it
+<p>Now, you can run <code>Sys.getenv(&quot;DATABRARY_LOGIN&quot;)</code>, and it
 will return your Databrary login.</p>
 <p>And going forward, you can use
 <code>Sys.getenv(&quot;DATABRARY_LOGIN&quot;)</code> wherever you would enter your
@@ -406,8 +406,8 @@ package. The <code>keyring</code> package uses the encrypted file that
 your computer’s operating system uses for storing other passwords. There
 are alternative ways of storing user credentials, but this is the
 recommended one.</p>
-<p>To do this, use the <code>store</code> and <code>overwrite</code>
-parameters in <code>login_db()</code>:</p>
+<p>To do this for the first time, use the <code>store</code> and
+<code>overwrite</code> parameters in <code>login_db()</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">login_db</span>(<span class="at">email =</span> <span class="st">&quot;&lt;YOUR_EMAIL@PROVIDER.COM&gt;&quot;</span>, <span class="at">store =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>                     <span class="at">overwrite =</span> <span class="cn">TRUE</span>, <span class="at">rq =</span> drq)</span></code></pre></div>
 <p>This overwrites and securely stores your credentials, so that the
@@ -421,8 +421,8 @@ next time you log in, you need only use this command:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">logout_db</span>(<span class="at">rq =</span> drq)</span></code></pre></div>
 <p><strong>NOTE</strong>: Most <code>databraryr</code> functions have a
 verbose (<code>vb</code>) parameter. If you set this to
-<code>TRUE</code>, you will get more information about what’s going
-on.</p>
+<code>TRUE</code>, you will get more information about what’s going on
+behind the scenes. I use this to debug workflows.</p>
 </div>
 </div>
 

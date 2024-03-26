@@ -80,3 +80,8 @@ databraryr::list_volume_funding()
 ## -----------------------------------------------------------------------------
 databraryr::list_volume_links()
 
+## -----------------------------------------------------------------------------
+vol1_assets |> 
+  dplyr::filter(format_extension == "csv") |>
+  databraryr::download_session_assets_fr_df()
+
