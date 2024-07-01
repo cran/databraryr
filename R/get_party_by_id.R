@@ -1,7 +1,10 @@
 #' Download Information About a Party on Databrary as JSON
 #'
 #' @param party_id An integer. The party number to retrieve information about.
-#' @param vb A Boolean value if TRUE returns verbose output.
+#' @param parents_children_access A logical value. If TRUE (the default), 
+#' returns _all_ of the data about the party. If FALSE, only a minimum amount
+#' of information about the party is returned.
+#' @param vb A logical value if TRUE returns verbose output.
 #' @param rq An `httr2`-style request object. If NULL, then a new request will
 #' be generated using `make_default_request()`.
 #'
@@ -16,11 +19,15 @@
 #' }
 #' @export
 get_party_by_id <- function(party_id = 6,
+                            parents_children_access = TRUE,
                             vb = FALSE,
                             rq = NULL) {
   # Check parameters
   assertthat::assert_that(is.numeric(party_id))
   assertthat::assert_that(party_id >= 1)
+  
+  assertthat::assert_that(length(parents_children_access) == 1)
+  assertthat::assert_that(is.logical(parents_children_access))
   
   assertthat::assert_that(length(vb) == 1)
   assertthat::assert_that(is.logical(vb))
@@ -36,8 +43,13 @@ get_party_by_id <- function(party_id = 6,
     rq <- databraryr::make_default_request()
   }
   
+  if (parents_children_access) {
+    endpoint <- GET_PARTY_BY_ID 
+  } else {
+    endpoint <- GET_PARTY_NO_PARENTS_CHILDREN
+  }
   prq <- rq %>%
-    httr2::req_url(sprintf(GET_PARTY_BY_ID, party_id))
+    httr2::req_url(sprintf(endpoint, party_id))
   resp <- tryCatch(
     httr2::req_perform(prq),
     httr2_error = function(cnd) {

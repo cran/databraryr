@@ -49,7 +49,7 @@ overflow: visible;
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -403,15 +403,8 @@ into your local workspace.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(databraryr)</span></code></pre></div>
 <p>Then, try this command to pull data about Databrary’s founders:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">list_people</span>()</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="co">#&gt; Downloading: 120 B     Downloading: 120 B     Downloading: 120 B     Downloading: 120 B     Downloading: 170 B     Downloading: 170 B     Downloading: 170 B     Downloading: 170 B     Downloading: 83 B     Downloading: 83 B     Downloading: 83 B     Downloading: 83 B</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#&gt;   id sortname prename                       affiliation</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co">#&gt; 1  5   Adolph   Karen               New York University</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#&gt; 2  6  Gilmore Rick O. The Pennsylvania State University</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt; 3  7  Millman   David               New York University</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#&gt;                                url               orcid</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt; 1 http://www.psych.nyu.edu/adolph/                &lt;NA&gt;</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt; 2     http://gilmore-lab.github.io 0000-0002-7676-3982</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt; 3                             &lt;NA&gt;                &lt;NA&gt;</span></span></code></pre></div>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="co">#&gt; Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 0 × 0</span></span></code></pre></div>
 <p>Note that this command returns a data frame (tibble) with columns
 that include the first name (<code>prename</code>), last name
 (<code>sortname</code>), affiliation, lab or personal website, and ORCID
@@ -422,41 +415,12 @@ the system called a ‘party id’. When we run
 information about all of the <em>people</em> whose party id’s are
 between 1 and 25. Let’s try it:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">list_people</span>(<span class="at">people_list =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt; Downloading: 75 B     Downloading: 75 B     Downloading: 75 B     Downloading: 75 B     Downloading: 72 B     Downloading: 72 B     Downloading: 72 B     Downloading: 72 B     Downloading: 72 B     Downloading: 72 B     Downloading: 72 B     Downloading: 72 B     Downloading: 120 B     Downloading: 120 B     Downloading: 120 B     Downloading: 120 B     Downloading: 170 B     Downloading: 170 B     Downloading: 170 B     Downloading: 170 B     Downloading: 83 B     Downloading: 83 B     Downloading: 83 B     Downloading: 83 B     Downloading: 94 B     Downloading: 94 B     Downloading: 94 B     Downloading: 94 B</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; People info: ■■■■■■■■■■■■■■                    44% |  ETA:  1s</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; Downloading: 72 B     Downloading: 72 B     Downloading: 72 B     Downloading: 72 B     Downloading: 130 B     Downloading: 130 B     Downloading: 130 B     Downloading: 130 B     Downloading: 81 B     Downloading: 81 B     Downloading: 81 B     Downloading: 81 B     Downloading: 57 B     Downloading: 57 B     Downloading: 57 B     Downloading: 57 B     Downloading: 42 B     Downloading: 42 B     Downloading: 42 B     Downloading: 42 B     Downloading: 44 B     Downloading: 44 B     Downloading: 44 B     Downloading: 44 B     Downloading: 100 B     Downloading: 100 B     Downloading: 100 B     Downloading: 100 B     Downloading: 3.7 kB     Downloading: 3.7 kB     Downloading: 3.7 kB     Downloading: 3.7 kB     Downloading: 3.7 kB     Downloading: 3.7 kB     Downloading: 3.7 kB     Downloading: 3.7 kB     Downloading: 3.7 kB     Downloading: 3.7 kB     Downloading: 3.7 kB     Downloading: 3.7 kB     Downloading: 66 B     Downloading: 66 B     Downloading: 66 B     Downloading: 66 B     Downloading: 3.7 kB     Downloading: 3.7 kB     Downloading: 3.7 kB     Downloading: 3.7 kB</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt;    id        sortname       prename               orcid</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; 1   1           Simon         Dylan 0000-0002-2793-1679</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; 2   3         Steiger          Lisa                &lt;NA&gt;</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; 3   4           Byrne        Andrea                &lt;NA&gt;</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; 4   5          Adolph         Karen                &lt;NA&gt;</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt; 5   6         Gilmore       Rick O. 0000-0002-7676-3982</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt; 6   7         Millman         David                &lt;NA&gt;</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt; 7  11   Tamis-LeMonda     Catherine                &lt;NA&gt;</span></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt; 8  13             Roy Lina Wictoren                &lt;NA&gt;</span></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt; 9  14        Franchak          John                &lt;NA&gt;</span></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; 10 16       Professor    Suzanne Q.                &lt;NA&gt;</span></span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt; 11 17 Jimenez-Robbins        Carmen                &lt;NA&gt;</span></span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">#&gt; 12 18             Coe           Jon                &lt;NA&gt;</span></span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt; 13 19             Foo         Vicky                &lt;NA&gt;</span></span>
-<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co">#&gt; 14 20          Gordon         Peter                &lt;NA&gt;</span></span>
-<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co">#&gt; 15 24            Chan        Gladys                &lt;NA&gt;</span></span>
-<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a><span class="co">#&gt;                              affiliation                              url</span></span>
-<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a><span class="co">#&gt; 1                                   &lt;NA&gt;                             &lt;NA&gt;</span></span>
-<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a><span class="co">#&gt; 2                              Databrary                             &lt;NA&gt;</span></span>
-<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a><span class="co">#&gt; 3                              Databrary                             &lt;NA&gt;</span></span>
-<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a><span class="co">#&gt; 4                    New York University http://www.psych.nyu.edu/adolph/</span></span>
-<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a><span class="co">#&gt; 5      The Pennsylvania State University     http://gilmore-lab.github.io</span></span>
-<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a><span class="co">#&gt; 6                    New York University                             &lt;NA&gt;</span></span>
-<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a><span class="co">#&gt; 7                    New York University                             &lt;NA&gt;</span></span>
-<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a><span class="co">#&gt; 8                                    NYU                             &lt;NA&gt;</span></span>
-<span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a><span class="co">#&gt; 9    University of California, Riverside            http://padlab.ucr.edu</span></span>
-<span id="cb3-31"><a href="#cb3-31" tabindex="-1"></a><span class="co">#&gt; 10                             Databrary                             &lt;NA&gt;</span></span>
-<span id="cb3-32"><a href="#cb3-32" tabindex="-1"></a><span class="co">#&gt; 11                                  &lt;NA&gt;                             &lt;NA&gt;</span></span>
-<span id="cb3-33"><a href="#cb3-33" tabindex="-1"></a><span class="co">#&gt; 12                                  &lt;NA&gt;                             &lt;NA&gt;</span></span>
-<span id="cb3-34"><a href="#cb3-34" tabindex="-1"></a><span class="co">#&gt; 13                                  &lt;NA&gt;                             &lt;NA&gt;</span></span>
-<span id="cb3-35"><a href="#cb3-35" tabindex="-1"></a><span class="co">#&gt; 14 Teachers College, Columbia University                             &lt;NA&gt;</span></span>
-<span id="cb3-36"><a href="#cb3-36" tabindex="-1"></a><span class="co">#&gt; 15                                   NYU                             &lt;NA&gt;</span></span></code></pre></div>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt; Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; People info: ■■■■■■■                           20% |  ETA: 12s</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; People info: ■■■■■■■■■■■■■■■■■■■■■■■■          76% |  ETA:  2s</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB     Downloading: 6.8 kB</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; # A tibble: 0 × 0</span></span></code></pre></div>
 <p>It’s a bit slow, but you should see information about people
 beginning with Dylan Simon, the developer who designed and built most of
 the Databrary system, and ending with Gladys Chan, a graphic designer
@@ -470,37 +434,34 @@ this:</p>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 9</span></span>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt;   date                investigators affiliates institutions datasets_total</span></span>
 <span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt;   &lt;dttm&gt;                      &lt;int&gt;      &lt;int&gt;        &lt;int&gt;          &lt;int&gt;</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt; 1 2024-04-18 08:29:19          1746        680          785           1682</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt; 1 2024-07-01 12:56:24          1771        651          795           1727</span></span>
 <span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; # ℹ 4 more variables: datasets_shared &lt;int&gt;, n_files &lt;int&gt;, hours &lt;dbl&gt;,</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; #   TB &lt;dbl&gt;</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">get_db_stats</span>(<span class="st">&quot;people&quot;</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt; # A tibble: 6 × 5</span></span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt;      id sortname        prename   affiliation                              time </span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt;   &lt;int&gt; &lt;chr&gt;           &lt;chr&gt;     &lt;chr&gt;                                    &lt;chr&gt;</span></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt; 1 12379 Looman          Wendy     University of Minnesota                  2024…</span></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; 2 12070 Jones           Stephanie Harvard University, Graduate School of … 2024…</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; 3 10313 Wang            Tien-Ni   National Taiwan University               2024…</span></span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; 4  5908 Doebel          Sabine    George Mason University                  2024…</span></span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt; 5  4778 Tummolini       Luca      National Research Council of Italy       2024…</span></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt; 6 12403 Fausto-Sterling Anne      Brown University                         2024…</span></span>
-<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">get_db_stats</span>(<span class="st">&quot;institutions&quot;</span>)</span>
-<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 5</span></span>
-<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co">#&gt;      id sortname           url                   institution time               </span></span>
-<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt;   &lt;int&gt; &lt;chr&gt;              &lt;chr&gt;                 &lt;lgl&gt;       &lt;chr&gt;              </span></span>
-<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="co">#&gt; 1 12546 Vilnius University https://www.vu.lt/en/ TRUE        2024-04-03T17:51:5…</span></span>
-<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">get_db_stats</span>(<span class="st">&quot;datasets&quot;</span>)</span>
-<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="co">#&gt; # A tibble: 9 × 8</span></span>
-<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="co">#&gt;      id name        body  creation owners       permission publicsharefull time </span></span>
-<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a><span class="co">#&gt;   &lt;int&gt; &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;    &lt;list&gt;            &lt;int&gt; &lt;lgl&gt;           &lt;chr&gt;</span></span>
-<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a><span class="co">#&gt; 1  1727 DBN - Repu… &quot;“Th… 2024-04… &lt;named list&gt;          1 FALSE           2024…</span></span>
-<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a><span class="co">#&gt; 2  1727 DBN - Repu… &quot;“Th… 2024-04… &lt;named list&gt;          1 FALSE           2024…</span></span>
-<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a><span class="co">#&gt; 3  1727 DBN - Repu… &quot;“Th… 2024-04… &lt;named list&gt;          1 FALSE           2024…</span></span>
-<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a><span class="co">#&gt; 4  1726 2024 Mindf… &quot;Imp… 2024-04… &lt;named list&gt;          1 FALSE           2024…</span></span>
-<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a><span class="co">#&gt; 5  1722 How does s… &quot;The… 2024-04… &lt;named list&gt;          1 TRUE            2024…</span></span>
-<span id="cb4-32"><a href="#cb4-32" tabindex="-1"></a><span class="co">#&gt; 6  1722 How does s… &quot;The… 2024-04… &lt;named list&gt;          1 TRUE            2024…</span></span>
-<span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a><span class="co">#&gt; 7  1721 Adjectives  &quot;Con… 2024-04… &lt;named list&gt;          1 FALSE           2024…</span></span>
-<span id="cb4-34"><a href="#cb4-34" tabindex="-1"></a><span class="co">#&gt; 8  1721 Adjectives  &quot;Con… 2024-04… &lt;named list&gt;          1 FALSE           2024…</span></span>
-<span id="cb4-35"><a href="#cb4-35" tabindex="-1"></a><span class="co">#&gt; 9  1721 Adjectives  &quot;Con… 2024-04… &lt;named list&gt;          1 FALSE           2024…</span></span></code></pre></div>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; #   TB &lt;dbl&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">get_db_stats</span>(<span class="st">&quot;people&quot;</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 5</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt;      id sortname prename          affiliation                              time </span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt;   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;            &lt;chr&gt;                                    &lt;chr&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#&gt; 1 12640 Zamani   Hamed            University of Massachusetts Amherst      2024…</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co">#&gt; 2 12597 Burr     Sabrina Michelle University of Sheffield                  2024…</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt; 3 19807 Kitamura Haruka           Australian College of Applied Professio… 2024…</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">get_db_stats</span>(<span class="st">&quot;institutions&quot;</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2 × 5</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">#&gt;      id sortname                                  url          institution time </span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co">#&gt;   &lt;int&gt; &lt;chr&gt;                                     &lt;chr&gt;        &lt;lgl&gt;       &lt;chr&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">#&gt; 1   139 University of Sheffield                   https://www… TRUE        2024…</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#&gt; 2 22583 Australian College of Applied Professions https://www… TRUE        2024…</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">get_db_stats</span>(<span class="st">&quot;datasets&quot;</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 8 × 8</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">#&gt;      id name        body  creation owners       permission publicsharefull time </span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt;   &lt;int&gt; &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;    &lt;list&gt;            &lt;int&gt; &lt;lgl&gt;           &lt;chr&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt; 1  1772 Metacognit… Buil… 2024-06… &lt;named list&gt;          1 FALSE           2024…</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt; 2  1771 Gendered E… Gend… 2024-06… &lt;named list&gt;          1 FALSE           2024…</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt; 3  1768 AI x Voice  new … 2024-06… &lt;named list&gt;          1 FALSE           2024…</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt; 4  1767 TempletonY… Stud… 2024-06… &lt;named list&gt;          1 FALSE           2024…</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt; 5  1767 TempletonY… Stud… 2024-06… &lt;named list&gt;          1 FALSE           2024…</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">#&gt; 6  1766 crawlwalk … craw… 2024-06… &lt;named list&gt;          1 FALSE           2024…</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt; 7  1765 On the oth… Vide… 2024-06… &lt;named list&gt;          1 FALSE           2024…</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt; 8  1764 Flexibilit… </span><span class="al">TBD</span><span class="co">   2024-06… &lt;named list&gt;          1 FALSE           2024…</span></span></code></pre></div>
 <p>Depending on when you run this command and how often, there may or
 may not be new items.</p>
 </div>

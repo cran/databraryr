@@ -8,11 +8,15 @@
 #' @param session_id An integer. Slot/session number where target file is 
 #' stored. Default is 9807.
 #' @param file_name A character string. Name for downloaded file. Default is NULL.
+#' 
 #' @param target_dir A character string. Directory to save the downloaded file.
 #' Default is a temporary directory given by a call to `tempdir()`.
 #' @param vb A logical value. If TRUE provides verbose output. Default is FALSE.
 #' @param rq A list in the form of an `httr2` request object. Default is NULL.
-#'
+#' @param timeout_secs An integer constant. The default value, defined in 
+#' CONSTANTS.R is REQUEST_TIMEOUT. This value determines the default timeout
+#' value for the httr2 request object. When downloading large files, it can be
+#' useful to set this value to a large number.
 #' @returns Full file name to the asset or NULL.
 #'
 #' @examples
@@ -27,8 +31,9 @@
 download_session_asset <- function(asset_id = 1,
                                    session_id = 9807,
                                    file_name = NULL,
-                                   target_dir = paste0("./", session_id),
-                                   # target_dir = tempdir(),
+                                   #target_dir = paste0("./", session_id),
+                                   target_dir = tempdir(),
+                                   timeout_secs = REQUEST_TIMEOUT,
                                    vb = FALSE,
                                    rq = NULL) {
   # Check parameters
@@ -36,13 +41,17 @@ download_session_asset <- function(asset_id = 1,
   assertthat::assert_that(is.numeric(asset_id))
   assertthat::assert_that(asset_id >= 1)
   
-  assertthat::assert_that(length(session_id) == 1)
   assertthat::assert_that(is.numeric(session_id))
+  assertthat::assert_that(length(session_id) == 1)
   assertthat::assert_that(session_id >= 1)
   
-  assertthat::assert_that(length(target_dir) == 1)
   assertthat::assert_that(is.character(target_dir))
+  assertthat::assert_that(length(target_dir) == 1)
   assertthat::assert_that(dir.exists(target_dir))
+  
+  assertthat::is.number(timeout_secs)
+  assertthat::assert_that(length(timeout_secs) == 1)
+  assertthat::assert_that(timeout_secs > 0)
   
   assertthat::assert_that(length(vb) == 1)
   assertthat::assert_that(is.logical(vb))
@@ -59,34 +68,32 @@ download_session_asset <- function(asset_id = 1,
     rq <- databraryr::make_default_request()
   }
   
-  # Up default timeout for possibly big files
-  rq <- 
-    httr2::req_timeout(rq, seconds = 600)
-  
   this_rq <- rq %>%
     httr2::req_url(sprintf(DOWNLOAD_FILE, session_id, asset_id)) %>%
     httr2::req_progress()
   
   if (vb)
-    message("Downloading file with asset_id ",
+    message("Attempting to download file with asset_id ",
             asset_id,
             " from session_id ",
-            session_id)
+            session_id, ".")
   
   resp <- tryCatch(
     httr2::req_perform(this_rq),
-    httr2_error = function(cnd)
+    httr2_error = function(cnd) {
+      if (vb)
+      message("Error downloading file with asset_id ",
+              asset_id,
+              " from session_id ",
+              session_id, ".")
       NULL
+    }
+
   )
   
   if (is.null(resp)) {
-    if (vb)
-      message("Request for session ",
-              session_id,
-              " asset ",
-              asset_id,
-              " returned NULL. Skipping.")
-    return(NULL)
+    if (vb) message("Exiting.")
+    return(resp)
   }
   
   # Gather asset format info

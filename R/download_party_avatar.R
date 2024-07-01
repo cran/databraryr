@@ -27,8 +27,11 @@ download_party_avatar <- function(party_id = 6,
                                   show_party_info = TRUE,
                                   vb = FALSE,
                                   rq = NULL) {
+  
   # Check parameters
   assertthat::is.number(party_id)
+  assertthat::assert_that(!is.character(party_id))
+  assertthat::assert_that(!is.logical(party_id))
   assertthat::assert_that(sum(party_id >= 1) == length(party_id))
   
   assertthat::assert_that(length(show_party_info) == 1)
@@ -44,13 +47,13 @@ download_party_avatar <- function(party_id = 6,
   if (is.null(rq)) {
     if (vb) {
       message("NULL request object. Will generate default.")
-      message("\nNot logged in. Only public information will be returned.")  
+      message("Not logged in. Only public information will be returned.")  
     }
     rq <- databraryr::make_default_request()
   }
   
   if (vb)
-    message("Retrieving avatars for parties: ",
+    message("Attempting to retrieve avatars for parties: ",
             min(party_id),
             ":",
             max(party_id))
@@ -90,6 +93,11 @@ get_single_avatar <- function(party_id = 6,
       NULL
     }
   )
+  
+  if (is.null(resp)) {
+    if (vb) message("Exiting.")
+    return(resp)
+  }
   
   # Download avatar
   party_avatar <- httr2::resp_body_raw(resp) %>%
