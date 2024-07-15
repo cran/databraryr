@@ -1,14 +1,20 @@
+#' @eval options::as_params()
+#' @name options_params
+#' 
+NULL
+
 #' Returns the Avatar(s) (images) for Authorized User(s).
 #'
 #' @param party_id A number or range of numbers. Party number or numbers to retrieve information about. Default is 6
 #' (Rick Gilmore).
 #' @param show_party_info A logical value. Show the person's name and affiliation in the output.
 #' Default is TRUE.
-#' @param vb A Boolean value. If TRUE returns verbose output. Default is FALSE.
 #' @param rq An `httr2` request object. If not provided, a new request is
 #' generated via `make_default_request()`.
 #'
 #' @returns An list with the avatar (image) file and a name_affil string.
+#' 
+#' @inheritParams options_params
 #'
 #' @examples
 #' \donttest{
@@ -25,7 +31,7 @@
 #' @export
 download_party_avatar <- function(party_id = 6,
                                   show_party_info = TRUE,
-                                  vb = FALSE,
+                                  vb = options::opt("vb"),
                                   rq = NULL) {
   
   # Check parameters
@@ -79,7 +85,7 @@ get_single_avatar <- function(party_id = 6,
       message("NULL request object. Will generate default.")
       message("Only public information will be returned.")
     }
-    rq <- make_default_request()
+    rq <- databraryr::make_default_request()
   }
   
   arq <- rq %>%
@@ -95,7 +101,7 @@ get_single_avatar <- function(party_id = 6,
   )
   
   if (is.null(resp)) {
-    if (vb) message("Exiting.")
+    message("Cannot access requested resource on Databrary. Exiting.")
     return(resp)
   }
   
@@ -104,9 +110,9 @@ get_single_avatar <- function(party_id = 6,
     magick::image_read()
   
   if (show_party_info) {
-    party_str = paste0("Databrary party ", party_id)
+    party_str = paste0("Data for Databrary party ", party_id, ":")
     
-    party_info <- get_party_by_id(party_id)
+    party_info <- databraryr::get_party_by_id(party_id)
     if (is.list(party_info)) {
       if ("affiliation" %in% names(party_info)) {
         if (vb)

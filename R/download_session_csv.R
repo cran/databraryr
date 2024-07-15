@@ -1,3 +1,8 @@
+#' @eval options::as_params()
+#' @name options_params
+#' 
+NULL
+
 #' Download Session Spreadsheet As CSV
 #'
 #' @description Databrary generates a CSV-formated spreadsheet that summarizes
@@ -11,10 +16,11 @@
 #' Default is `tempdir()`.
 #' @param as_df A logical value. Convert the data from a list to a data frame.
 #' Default is FALSE.
-#' @param vb A logical value. Provide verbose feedback. Default is FALSE.
 #' @param rq An `httr2` request object. Default is NULL.
 #'
 #' @returns A character string that is the name of the downloaded file or a data frame if `as_df` is TRUE.
+#'
+#' @inheritParams options_params
 #'
 #' @examples
 #' \donttest{
@@ -28,7 +34,7 @@ download_session_csv <- function(vol_id = 1,
                                  file_name = "test.csv",
                                  target_dir = tempdir(),
                                  as_df = FALSE,
-                                 vb = FALSE,
+                                 vb = options::opt("vb"),
                                  rq = NULL) {
   # Check parameters
   assertthat::assert_that(length(vol_id) == 1)
@@ -73,8 +79,7 @@ download_session_csv <- function(vol_id = 1,
   )
   
   if (is.null(resp)) {
-    if (vb)
-      message("Exiting.")
+    message("Cannot access requested resource on Databrary. Exiting.")
     return(resp)
   }
   

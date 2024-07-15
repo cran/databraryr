@@ -893,522 +893,523 @@ default one. We can see this happening if we set
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">list_volume_assets</span>(<span class="at">vb =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt; NULL request object. Will generate default.</span></span>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt; Not logged in. Only public information will be returned.</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt;     asset_id asset_format_id asset_duration</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt; 1       9826            -800         335883</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; 2       9830            -800        4277835</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; 3       9832            -800        3107147</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt; 4      22412               6             NA</span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt; 5       9828            -800        4425483</span></span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt; 6       9834            -800        4964011</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; 7       9836            -800        5043051</span></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt; 8       9839               6             NA</span></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; 9       9838            -800        3821387</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; 10     17737            -800       10976384</span></span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; 11     12039               6             NA</span></span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt; 12     17727            -800        2827904</span></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt; 13     22411               6             NA</span></span>
-<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co">#&gt; 14     17725            -800        1920512</span></span>
-<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="co">#&gt; 15     17723            -800        1594688</span></span>
-<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co">#&gt; 16     22407               6             NA</span></span>
-<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt; 17     17721            -800        3977558</span></span>
-<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="co">#&gt; 18     17719            -800        3514603</span></span>
-<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="co">#&gt; 19     22408               6             NA</span></span>
-<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="co">#&gt; 20     22410               6             NA</span></span>
-<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="co">#&gt; 21     19919            -800       14939008</span></span>
-<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a><span class="co">#&gt; 22     22406               6             NA</span></span>
-<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a><span class="co">#&gt; 23     25497               6             NA</span></span>
-<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a><span class="co">#&gt; 24     25496               6             NA</span></span>
-<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a><span class="co">#&gt; 25     25495               6             NA</span></span>
-<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a><span class="co">#&gt; 26     26448            -800        5477483</span></span>
-<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a><span class="co">#&gt; 27     27227               6             NA</span></span>
-<span id="cb4-32"><a href="#cb4-32" tabindex="-1"></a><span class="co">#&gt; 28     28028            -800        2725723</span></span>
-<span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a><span class="co">#&gt; 29     28026            -800        3708160</span></span>
-<span id="cb4-34"><a href="#cb4-34" tabindex="-1"></a><span class="co">#&gt; 30     26449               6             NA</span></span>
-<span id="cb4-35"><a href="#cb4-35" tabindex="-1"></a><span class="co">#&gt; 31     26452               6             NA</span></span>
-<span id="cb4-36"><a href="#cb4-36" tabindex="-1"></a><span class="co">#&gt; 32     26446               6             NA</span></span>
-<span id="cb4-37"><a href="#cb4-37" tabindex="-1"></a><span class="co">#&gt; 33      9200               5             NA</span></span>
-<span id="cb4-38"><a href="#cb4-38" tabindex="-1"></a><span class="co">#&gt; 34       315               6             NA</span></span>
-<span id="cb4-39"><a href="#cb4-39" tabindex="-1"></a><span class="co">#&gt; 35       314               6             NA</span></span>
-<span id="cb4-40"><a href="#cb4-40" tabindex="-1"></a><span class="co">#&gt; 36         1            -800          40000</span></span>
-<span id="cb4-41"><a href="#cb4-41" tabindex="-1"></a><span class="co">#&gt; 37    117035              16             NA</span></span>
-<span id="cb4-42"><a href="#cb4-42" tabindex="-1"></a><span class="co">#&gt; 38    153108               2             NA</span></span>
-<span id="cb4-43"><a href="#cb4-43" tabindex="-1"></a><span class="co">#&gt; 39    153109               2             NA</span></span>
-<span id="cb4-44"><a href="#cb4-44" tabindex="-1"></a><span class="co">#&gt; 40     28047               6             NA</span></span>
-<span id="cb4-45"><a href="#cb4-45" tabindex="-1"></a><span class="co">#&gt; 41     28048               6             NA</span></span>
-<span id="cb4-46"><a href="#cb4-46" tabindex="-1"></a><span class="co">#&gt; 42     28049               6             NA</span></span>
-<span id="cb4-47"><a href="#cb4-47" tabindex="-1"></a><span class="co">#&gt; 43     28062            -800        4835115</span></span>
-<span id="cb4-48"><a href="#cb4-48" tabindex="-1"></a><span class="co">#&gt; 44     28053            -800        2387051</span></span>
-<span id="cb4-49"><a href="#cb4-49" tabindex="-1"></a><span class="co">#&gt; 45     28055            -800        2983616</span></span>
-<span id="cb4-50"><a href="#cb4-50" tabindex="-1"></a><span class="co">#&gt; 46     28051            -800        2794880</span></span>
-<span id="cb4-51"><a href="#cb4-51" tabindex="-1"></a><span class="co">#&gt; 47     37128               6             NA</span></span>
-<span id="cb4-52"><a href="#cb4-52" tabindex="-1"></a><span class="co">#&gt; 48     42470               6             NA</span></span>
-<span id="cb4-53"><a href="#cb4-53" tabindex="-1"></a><span class="co">#&gt; 49     37138            -800        3402326</span></span>
-<span id="cb4-54"><a href="#cb4-54" tabindex="-1"></a><span class="co">#&gt; 50     36946               6             NA</span></span>
-<span id="cb4-55"><a href="#cb4-55" tabindex="-1"></a><span class="co">#&gt; 51     36945               6             NA</span></span>
-<span id="cb4-56"><a href="#cb4-56" tabindex="-1"></a><span class="co">#&gt; 52     36978               6             NA</span></span>
-<span id="cb4-57"><a href="#cb4-57" tabindex="-1"></a><span class="co">#&gt; 53     37130            -800        2450882</span></span>
-<span id="cb4-58"><a href="#cb4-58" tabindex="-1"></a><span class="co">#&gt; 54     37136            -800        3904128</span></span>
-<span id="cb4-59"><a href="#cb4-59" tabindex="-1"></a><span class="co">#&gt; 55     43940               6             NA</span></span>
-<span id="cb4-60"><a href="#cb4-60" tabindex="-1"></a><span class="co">#&gt; 56     38591            -800        2293056</span></span>
-<span id="cb4-61"><a href="#cb4-61" tabindex="-1"></a><span class="co">#&gt; 57     38593            -800        3676480</span></span>
-<span id="cb4-62"><a href="#cb4-62" tabindex="-1"></a><span class="co">#&gt; 58     38595            -800        2537494</span></span>
-<span id="cb4-63"><a href="#cb4-63" tabindex="-1"></a><span class="co">#&gt; 59     38629               6             NA</span></span>
-<span id="cb4-64"><a href="#cb4-64" tabindex="-1"></a><span class="co">#&gt; 60     38627               6             NA</span></span>
-<span id="cb4-65"><a href="#cb4-65" tabindex="-1"></a><span class="co">#&gt; 61     38626               6             NA</span></span>
-<span id="cb4-66"><a href="#cb4-66" tabindex="-1"></a><span class="co">#&gt; 62     38628               6             NA</span></span>
-<span id="cb4-67"><a href="#cb4-67" tabindex="-1"></a><span class="co">#&gt; 63     38643            -800        2760992</span></span>
-<span id="cb4-68"><a href="#cb4-68" tabindex="-1"></a><span class="co">#&gt; 64     42755               6             NA</span></span>
-<span id="cb4-69"><a href="#cb4-69" tabindex="-1"></a><span class="co">#&gt; 65     44544               6             NA</span></span>
-<span id="cb4-70"><a href="#cb4-70" tabindex="-1"></a><span class="co">#&gt; 66     45413               6             NA</span></span>
-<span id="cb4-71"><a href="#cb4-71" tabindex="-1"></a><span class="co">#&gt; 67     44774            -800        9728726</span></span>
-<span id="cb4-72"><a href="#cb4-72" tabindex="-1"></a><span class="co">#&gt; 68     42740               6             NA</span></span>
-<span id="cb4-73"><a href="#cb4-73" tabindex="-1"></a><span class="co">#&gt; 69     43077               6             NA</span></span>
-<span id="cb4-74"><a href="#cb4-74" tabindex="-1"></a><span class="co">#&gt; 70     46300            -800       13129280</span></span>
-<span id="cb4-75"><a href="#cb4-75" tabindex="-1"></a><span class="co">#&gt; 71     46104               6             NA</span></span>
-<span id="cb4-76"><a href="#cb4-76" tabindex="-1"></a><span class="co">#&gt; 72     60544            -800        2468587</span></span>
-<span id="cb4-77"><a href="#cb4-77" tabindex="-1"></a><span class="co">#&gt; 73     60546            -800        2002624</span></span>
-<span id="cb4-78"><a href="#cb4-78" tabindex="-1"></a><span class="co">#&gt; 74     60550            -800        3372779</span></span>
-<span id="cb4-79"><a href="#cb4-79" tabindex="-1"></a><span class="co">#&gt; 75     60542            -800        2058198</span></span>
-<span id="cb4-80"><a href="#cb4-80" tabindex="-1"></a><span class="co">#&gt; 76     60627               6             NA</span></span>
-<span id="cb4-81"><a href="#cb4-81" tabindex="-1"></a><span class="co">#&gt; 77     60628               6             NA</span></span>
-<span id="cb4-82"><a href="#cb4-82" tabindex="-1"></a><span class="co">#&gt; 78     60629               6             NA</span></span>
-<span id="cb4-83"><a href="#cb4-83" tabindex="-1"></a><span class="co">#&gt; 79     60630               6             NA</span></span>
-<span id="cb4-84"><a href="#cb4-84" tabindex="-1"></a><span class="co">#&gt; 80     61224            -800        1908544</span></span>
-<span id="cb4-85"><a href="#cb4-85" tabindex="-1"></a><span class="co">#&gt; 81     61222            -800        1939563</span></span>
-<span id="cb4-86"><a href="#cb4-86" tabindex="-1"></a><span class="co">#&gt; 82     65936               6             NA</span></span>
-<span id="cb4-87"><a href="#cb4-87" tabindex="-1"></a><span class="co">#&gt; 83     66015            -800       24567644</span></span>
-<span id="cb4-88"><a href="#cb4-88" tabindex="-1"></a><span class="co">#&gt; 84     68584            -800        2096523</span></span>
-<span id="cb4-89"><a href="#cb4-89" tabindex="-1"></a><span class="co">#&gt; 85     68598            -800        2857388</span></span>
-<span id="cb4-90"><a href="#cb4-90" tabindex="-1"></a><span class="co">#&gt; 86     68596            -800        2499595</span></span>
-<span id="cb4-91"><a href="#cb4-91" tabindex="-1"></a><span class="co">#&gt; 87     68600            -800        2857722</span></span>
-<span id="cb4-92"><a href="#cb4-92" tabindex="-1"></a><span class="co">#&gt; 88     73302            -800        2853384</span></span>
-<span id="cb4-93"><a href="#cb4-93" tabindex="-1"></a><span class="co">#&gt; 89     73306            -800        2859724</span></span>
-<span id="cb4-94"><a href="#cb4-94" tabindex="-1"></a><span class="co">#&gt; 90     73304            -800         798699</span></span>
-<span id="cb4-95"><a href="#cb4-95" tabindex="-1"></a><span class="co">#&gt; 91     73308            -800        2856387</span></span>
-<span id="cb4-96"><a href="#cb4-96" tabindex="-1"></a><span class="co">#&gt; 92     73310            -800        1435851</span></span>
-<span id="cb4-97"><a href="#cb4-97" tabindex="-1"></a><span class="co">#&gt; 93     73316            -800        2855887</span></span>
-<span id="cb4-98"><a href="#cb4-98" tabindex="-1"></a><span class="co">#&gt; 94     76809               6             NA</span></span>
-<span id="cb4-99"><a href="#cb4-99" tabindex="-1"></a><span class="co">#&gt; 95     76807               6             NA</span></span>
-<span id="cb4-100"><a href="#cb4-100" tabindex="-1"></a><span class="co">#&gt; 96     76808               6             NA</span></span>
-<span id="cb4-101"><a href="#cb4-101" tabindex="-1"></a><span class="co">#&gt; 97     77819            -800         743179</span></span>
-<span id="cb4-102"><a href="#cb4-102" tabindex="-1"></a><span class="co">#&gt; 98     77817            -800        2037970</span></span>
-<span id="cb4-103"><a href="#cb4-103" tabindex="-1"></a><span class="co">#&gt; 99     77811            -800         121547</span></span>
-<span id="cb4-104"><a href="#cb4-104" tabindex="-1"></a><span class="co">#&gt; 100    77809            -800        2853384</span></span>
-<span id="cb4-105"><a href="#cb4-105" tabindex="-1"></a><span class="co">#&gt; 101    77813            -800         704538</span></span>
-<span id="cb4-106"><a href="#cb4-106" tabindex="-1"></a><span class="co">#&gt; 102    77815            -800        2855220</span></span>
-<span id="cb4-107"><a href="#cb4-107" tabindex="-1"></a><span class="co">#&gt; 103    80954            -800        1367450</span></span>
-<span id="cb4-108"><a href="#cb4-108" tabindex="-1"></a><span class="co">#&gt; 104    79738            -800        4950334</span></span>
-<span id="cb4-109"><a href="#cb4-109" tabindex="-1"></a><span class="co">#&gt; 105    80898            -800        1366949</span></span>
-<span id="cb4-110"><a href="#cb4-110" tabindex="-1"></a><span class="co">#&gt; 106    80958            -800        1101739</span></span>
-<span id="cb4-111"><a href="#cb4-111" tabindex="-1"></a><span class="co">#&gt; 107    80964            -800        1251691</span></span>
-<span id="cb4-112"><a href="#cb4-112" tabindex="-1"></a><span class="co">#&gt; 108    80952            -800        1366382</span></span>
-<span id="cb4-113"><a href="#cb4-113" tabindex="-1"></a><span class="co">#&gt; 109    80956            -800        1367934</span></span>
-<span id="cb4-114"><a href="#cb4-114" tabindex="-1"></a><span class="co">#&gt; 110    80960            -800        1374390</span></span>
-<span id="cb4-115"><a href="#cb4-115" tabindex="-1"></a><span class="co">#&gt; 111    80894            -800        1366382</span></span>
-<span id="cb4-116"><a href="#cb4-116" tabindex="-1"></a><span class="co">#&gt; 112    80993               6             NA</span></span>
-<span id="cb4-117"><a href="#cb4-117" tabindex="-1"></a><span class="co">#&gt; 113    81039            -600       15823072</span></span>
-<span id="cb4-118"><a href="#cb4-118" tabindex="-1"></a><span class="co">#&gt; 114    80896            -800        1368451</span></span>
-<span id="cb4-119"><a href="#cb4-119" tabindex="-1"></a><span class="co">#&gt; 115    80962            -800        1375775</span></span>
-<span id="cb4-120"><a href="#cb4-120" tabindex="-1"></a><span class="co">#&gt; 116    80950            -800        1346475</span></span>
-<span id="cb4-121"><a href="#cb4-121" tabindex="-1"></a><span class="co">#&gt; 117    84000            -800       14589934</span></span>
-<span id="cb4-122"><a href="#cb4-122" tabindex="-1"></a><span class="co">#&gt; 118    95780               6             NA</span></span>
-<span id="cb4-123"><a href="#cb4-123" tabindex="-1"></a><span class="co">#&gt; 119   115753            -800         159595</span></span>
-<span id="cb4-124"><a href="#cb4-124" tabindex="-1"></a><span class="co">#&gt; 120   115739            -800        2180212</span></span>
-<span id="cb4-125"><a href="#cb4-125" tabindex="-1"></a><span class="co">#&gt; 121   115749            -800         504427</span></span>
-<span id="cb4-126"><a href="#cb4-126" tabindex="-1"></a><span class="co">#&gt; 122   115737            -600       14398328</span></span>
-<span id="cb4-127"><a href="#cb4-127" tabindex="-1"></a><span class="co">#&gt; 123   115747            -800        2181547</span></span>
-<span id="cb4-128"><a href="#cb4-128" tabindex="-1"></a><span class="co">#&gt; 124   115741            -800        2180546</span></span>
-<span id="cb4-129"><a href="#cb4-129" tabindex="-1"></a><span class="co">#&gt; 125   115751            -800        2179711</span></span>
-<span id="cb4-130"><a href="#cb4-130" tabindex="-1"></a><span class="co">#&gt; 126   115745            -800        2180712</span></span>
-<span id="cb4-131"><a href="#cb4-131" tabindex="-1"></a><span class="co">#&gt; 127   115695               6             NA</span></span>
-<span id="cb4-132"><a href="#cb4-132" tabindex="-1"></a><span class="co">#&gt; 128   115743            -800         602027</span></span>
-<span id="cb4-133"><a href="#cb4-133" tabindex="-1"></a><span class="co">#&gt;                                                                        asset_name</span></span>
-<span id="cb4-134"><a href="#cb4-134" tabindex="-1"></a><span class="co">#&gt; 1                                                                    Introduction</span></span>
-<span id="cb4-135"><a href="#cb4-135" tabindex="-1"></a><span class="co">#&gt; 2                                                              Databrary 1.0 plan</span></span>
-<span id="cb4-136"><a href="#cb4-136" tabindex="-1"></a><span class="co">#&gt; 3                                                                         Datavyu</span></span>
-<span id="cb4-137"><a href="#cb4-137" tabindex="-1"></a><span class="co">#&gt; 4                                                                          Slides</span></span>
-<span id="cb4-138"><a href="#cb4-138" tabindex="-1"></a><span class="co">#&gt; 5                                                                  Databrary demo</span></span>
-<span id="cb4-139"><a href="#cb4-139" tabindex="-1"></a><span class="co">#&gt; 6                                                      Overview and Policy Update</span></span>
-<span id="cb4-140"><a href="#cb4-140" tabindex="-1"></a><span class="co">#&gt; 7                                                               Private Beta demo</span></span>
-<span id="cb4-141"><a href="#cb4-141" tabindex="-1"></a><span class="co">#&gt; 8                                                                    04-07-Slides</span></span>
-<span id="cb4-142"><a href="#cb4-142" tabindex="-1"></a><span class="co">#&gt; 9                                            Positioning Databrary for the future</span></span>
-<span id="cb4-143"><a href="#cb4-143" tabindex="-1"></a><span class="co">#&gt; 10                                                                  Board Meeting</span></span>
-<span id="cb4-144"><a href="#cb4-144" tabindex="-1"></a><span class="co">#&gt; 11                                                                         slides</span></span>
-<span id="cb4-145"><a href="#cb4-145" tabindex="-1"></a><span class="co">#&gt; 12                                                                 Databrary demo</span></span>
-<span id="cb4-146"><a href="#cb4-146" tabindex="-1"></a><span class="co">#&gt; 13                                                SLIDES: Open video data sharing</span></span>
-<span id="cb4-147"><a href="#cb4-147" tabindex="-1"></a><span class="co">#&gt; 14                                                        Open video data sharing</span></span>
-<span id="cb4-148"><a href="#cb4-148" tabindex="-1"></a><span class="co">#&gt; 15                                                               Datavyu tutorial</span></span>
-<span id="cb4-149"><a href="#cb4-149" tabindex="-1"></a><span class="co">#&gt; 16                                         SLIDES: Best practices in video coding</span></span>
-<span id="cb4-150"><a href="#cb4-150" tabindex="-1"></a><span class="co">#&gt; 17                                                               Lunch discussion</span></span>
-<span id="cb4-151"><a href="#cb4-151" tabindex="-1"></a><span class="co">#&gt; 18                                                 Best practices in video coding</span></span>
-<span id="cb4-152"><a href="#cb4-152" tabindex="-1"></a><span class="co">#&gt; 19                                                                 Welcome slides</span></span>
-<span id="cb4-153"><a href="#cb4-153" tabindex="-1"></a><span class="co">#&gt; 20                                                       SLIDES: Lunch discussion</span></span>
-<span id="cb4-154"><a href="#cb4-154" tabindex="-1"></a><span class="co">#&gt; 21                                                                          video</span></span>
-<span id="cb4-155"><a href="#cb4-155" tabindex="-1"></a><span class="co">#&gt; 22                                                                         slides</span></span>
-<span id="cb4-156"><a href="#cb4-156" tabindex="-1"></a><span class="co">#&gt; 23                                   Slides: Video reuse, management, and sharing</span></span>
-<span id="cb4-157"><a href="#cb4-157" tabindex="-1"></a><span class="co">#&gt; 24  Slides: Best practices in behavioral video coding and introduction to Datavyu</span></span>
-<span id="cb4-158"><a href="#cb4-158" tabindex="-1"></a><span class="co">#&gt; 25        Slides: Policies and best practices for sharing and managing video data</span></span>
-<span id="cb4-159"><a href="#cb4-159" tabindex="-1"></a><span class="co">#&gt; 26                    Policies &amp; best practices for sharing &amp; managing video data</span></span>
-<span id="cb4-160"><a href="#cb4-160" tabindex="-1"></a><span class="co">#&gt; 27                                                                         Agenda</span></span>
-<span id="cb4-161"><a href="#cb4-161" tabindex="-1"></a><span class="co">#&gt; 28                         Introduction to Datavyu: Video coding &amp; best practices</span></span>
-<span id="cb4-162"><a href="#cb4-162" tabindex="-1"></a><span class="co">#&gt; 29                                                      Introduction to Databrary</span></span>
-<span id="cb4-163"><a href="#cb4-163" tabindex="-1"></a><span class="co">#&gt; 30            SLIDES: Policies &amp; best practices for sharing &amp; managing video data</span></span>
-<span id="cb4-164"><a href="#cb4-164" tabindex="-1"></a><span class="co">#&gt; 31                 SLIDES: Introduction to Datavyu: Video coding &amp; best practices</span></span>
-<span id="cb4-165"><a href="#cb4-165" tabindex="-1"></a><span class="co">#&gt; 32                                              SLIDES: Introduction to Databrary</span></span>
-<span id="cb4-166"><a href="#cb4-166" tabindex="-1"></a><span class="co">#&gt; 33                                                                           logo</span></span>
-<span id="cb4-167"><a href="#cb4-167" tabindex="-1"></a><span class="co">#&gt; 34                                                         NSF Proposal Narrative</span></span>
-<span id="cb4-168"><a href="#cb4-168" tabindex="-1"></a><span class="co">#&gt; 35                                                         NIH Proposal Narrative</span></span>
-<span id="cb4-169"><a href="#cb4-169" tabindex="-1"></a><span class="co">#&gt; 36                                                          counting (demo video)</span></span>
-<span id="cb4-170"><a href="#cb4-170" tabindex="-1"></a><span class="co">#&gt; 37                                                   counting (demo Datavyu file)</span></span>
-<span id="cb4-171"><a href="#cb4-171" tabindex="-1"></a><span class="co">#&gt; 38                                           databrary-institutions-investigators</span></span>
-<span id="cb4-172"><a href="#cb4-172" tabindex="-1"></a><span class="co">#&gt; 39                                                      volumes-citations-monthly</span></span>
-<span id="cb4-173"><a href="#cb4-173" tabindex="-1"></a><span class="co">#&gt; 40                                              SLIDES: Introduction to Databrary</span></span>
-<span id="cb4-174"><a href="#cb4-174" tabindex="-1"></a><span class="co">#&gt; 41            SLIDES: Policies &amp; best practices for sharing &amp; managing video data</span></span>
-<span id="cb4-175"><a href="#cb4-175" tabindex="-1"></a><span class="co">#&gt; 42                 SLIDES: Introduction to Datavyu: Video coding &amp; best practices</span></span>
-<span id="cb4-176"><a href="#cb4-176" tabindex="-1"></a><span class="co">#&gt; 43                         Introduction to Datavyu: Video coding &amp; best practices</span></span>
-<span id="cb4-177"><a href="#cb4-177" tabindex="-1"></a><span class="co">#&gt; 44           Policies &amp; best practices for sharing &amp; managing video data (Part 1)</span></span>
-<span id="cb4-178"><a href="#cb4-178" tabindex="-1"></a><span class="co">#&gt; 45           Policies &amp; best practices for sharing &amp; managing video data (Part 2)</span></span>
-<span id="cb4-179"><a href="#cb4-179" tabindex="-1"></a><span class="co">#&gt; 46                                                      Introduction to Databrary</span></span>
-<span id="cb4-180"><a href="#cb4-180" tabindex="-1"></a><span class="co">#&gt; 47                                              SLIDES: Introduction to Databrary</span></span>
-<span id="cb4-181"><a href="#cb4-181" tabindex="-1"></a><span class="co">#&gt; 48                                              Workshop attendees survey results</span></span>
-<span id="cb4-182"><a href="#cb4-182" tabindex="-1"></a><span class="co">#&gt; 49                                                      Introduction to Databrary</span></span>
-<span id="cb4-183"><a href="#cb4-183" tabindex="-1"></a><span class="co">#&gt; 50                                  SLIDES: Managing Data to Accelerate Discovery</span></span>
-<span id="cb4-184"><a href="#cb4-184" tabindex="-1"></a><span class="co">#&gt; 51                                SLIDES: Policies for Sharing Identifiable Video</span></span>
-<span id="cb4-185"><a href="#cb4-185" tabindex="-1"></a><span class="co">#&gt; 52                              SLIDES: Datavyu &amp; Best Practices for Coding Video</span></span>
-<span id="cb4-186"><a href="#cb4-186" tabindex="-1"></a><span class="co">#&gt; 53                                        Policies for Sharing Identifiable Video</span></span>
-<span id="cb4-187"><a href="#cb4-187" tabindex="-1"></a><span class="co">#&gt; 54                                          Managing Data to Accelerate Discovery</span></span>
-<span id="cb4-188"><a href="#cb4-188" tabindex="-1"></a><span class="co">#&gt; 55                                                                 Survey results</span></span>
-<span id="cb4-189"><a href="#cb4-189" tabindex="-1"></a><span class="co">#&gt; 56                                        Policies for Sharing Identifiable Video</span></span>
-<span id="cb4-190"><a href="#cb4-190" tabindex="-1"></a><span class="co">#&gt; 57                                                   Managing Data with Databrary</span></span>
-<span id="cb4-191"><a href="#cb4-191" tabindex="-1"></a><span class="co">#&gt; 58                                      Datavyu &amp; Best Practices for Coding Video</span></span>
-<span id="cb4-192"><a href="#cb4-192" tabindex="-1"></a><span class="co">#&gt; 59                              SLIDES: Datavyu &amp; Best Practices for Coding Video</span></span>
-<span id="cb4-193"><a href="#cb4-193" tabindex="-1"></a><span class="co">#&gt; 60                                SLIDES: Policies for Sharing Identifiable Video</span></span>
-<span id="cb4-194"><a href="#cb4-194" tabindex="-1"></a><span class="co">#&gt; 61                                              SLIDES: Introduction to Databrary</span></span>
-<span id="cb4-195"><a href="#cb4-195" tabindex="-1"></a><span class="co">#&gt; 62                                           SLIDES: Managing Data with Databrary</span></span>
-<span id="cb4-196"><a href="#cb4-196" tabindex="-1"></a><span class="co">#&gt; 63                                                      Introduction to Databrary</span></span>
-<span id="cb4-197"><a href="#cb4-197" tabindex="-1"></a><span class="co">#&gt; 64                                           SLIDES: Managing Data with Databrary</span></span>
-<span id="cb4-198"><a href="#cb4-198" tabindex="-1"></a><span class="co">#&gt; 65                                              SLIDES: Introduction to Databrary</span></span>
-<span id="cb4-199"><a href="#cb4-199" tabindex="-1"></a><span class="co">#&gt; 66                              SLIDES: Datavyu &amp; Best Practices for Coding Video</span></span>
-<span id="cb4-200"><a href="#cb4-200" tabindex="-1"></a><span class="co">#&gt; 67                                                       Databrary Pre-conference</span></span>
-<span id="cb4-201"><a href="#cb4-201" tabindex="-1"></a><span class="co">#&gt; 68                                        SLIDES: Policies for Sharing Video Data</span></span>
-<span id="cb4-202"><a href="#cb4-202" tabindex="-1"></a><span class="co">#&gt; 69                                                            ICIS Survey Results</span></span>
-<span id="cb4-203"><a href="#cb4-203" tabindex="-1"></a><span class="co">#&gt; 70                                 VIDEO: Databrary Board Meeting - June 13, 2016</span></span>
-<span id="cb4-204"><a href="#cb4-204" tabindex="-1"></a><span class="co">#&gt; 71                                SLIDES: Databrary Board Meeting - June 13, 2016</span></span>
-<span id="cb4-205"><a href="#cb4-205" tabindex="-1"></a><span class="co">#&gt; 72                                                Policies for sharing video data</span></span>
-<span id="cb4-206"><a href="#cb4-206" tabindex="-1"></a><span class="co">#&gt; 73                                                   Managing data with Databrary</span></span>
-<span id="cb4-207"><a href="#cb4-207" tabindex="-1"></a><span class="co">#&gt; 74                                      Datavyu &amp; best Practices for coding video</span></span>
-<span id="cb4-208"><a href="#cb4-208" tabindex="-1"></a><span class="co">#&gt; 75                                                      Introduction to Databrary</span></span>
-<span id="cb4-209"><a href="#cb4-209" tabindex="-1"></a><span class="co">#&gt; 76                                              SLIDES: Introduction to Databrary</span></span>
-<span id="cb4-210"><a href="#cb4-210" tabindex="-1"></a><span class="co">#&gt; 77                                                   SLIDES: Policies for Sharing</span></span>
-<span id="cb4-211"><a href="#cb4-211" tabindex="-1"></a><span class="co">#&gt; 78                                           SLIDES: Managing data with Databrary</span></span>
-<span id="cb4-212"><a href="#cb4-212" tabindex="-1"></a><span class="co">#&gt; 79                              SLIDES: Datavyu &amp; best practices for coding video</span></span>
-<span id="cb4-213"><a href="#cb4-213" tabindex="-1"></a><span class="co">#&gt; 80                                                      Policies for sharing data</span></span>
-<span id="cb4-214"><a href="#cb4-214" tabindex="-1"></a><span class="co">#&gt; 81                                                      Introduction to Databrary</span></span>
-<span id="cb4-215"><a href="#cb4-215" tabindex="-1"></a><span class="co">#&gt; 82                                                PLAY workshop slides 2016-12-16</span></span>
-<span id="cb4-216"><a href="#cb4-216" tabindex="-1"></a><span class="co">#&gt; 83                                             PLAY workshop videocast 2016-12-16</span></span>
-<span id="cb4-217"><a href="#cb4-217" tabindex="-1"></a><span class="co">#&gt; 84                                                                            4/4</span></span>
-<span id="cb4-218"><a href="#cb4-218" tabindex="-1"></a><span class="co">#&gt; 85                                                                            2/4</span></span>
-<span id="cb4-219"><a href="#cb4-219" tabindex="-1"></a><span class="co">#&gt; 86                                                                            1/4</span></span>
-<span id="cb4-220"><a href="#cb4-220" tabindex="-1"></a><span class="co">#&gt; 87                                                                            3/4</span></span>
-<span id="cb4-221"><a href="#cb4-221" tabindex="-1"></a><span class="co">#&gt; 88                                                                          00002</span></span>
-<span id="cb4-222"><a href="#cb4-222" tabindex="-1"></a><span class="co">#&gt; 89                                                                          00003</span></span>
-<span id="cb4-223"><a href="#cb4-223" tabindex="-1"></a><span class="co">#&gt; 90                                                                          00004</span></span>
-<span id="cb4-224"><a href="#cb4-224" tabindex="-1"></a><span class="co">#&gt; 91                                                                          00005</span></span>
-<span id="cb4-225"><a href="#cb4-225" tabindex="-1"></a><span class="co">#&gt; 92                                                                          00006</span></span>
-<span id="cb4-226"><a href="#cb4-226" tabindex="-1"></a><span class="co">#&gt; 93                                     SRCD_2017_The_Science_of_Play_and_Learning</span></span>
-<span id="cb4-227"><a href="#cb4-227" tabindex="-1"></a><span class="co">#&gt; 94                                                      3-Datavyu-2017-04-30-aera</span></span>
-<span id="cb4-228"><a href="#cb4-228" tabindex="-1"></a><span class="co">#&gt; 95                                                        1-intro-2017-04-30-aera</span></span>
-<span id="cb4-229"><a href="#cb4-229" tabindex="-1"></a><span class="co">#&gt; 96                                                 2-policiesMgmt-2017-04-30-aera</span></span>
-<span id="cb4-230"><a href="#cb4-230" tabindex="-1"></a><span class="co">#&gt; 97                                                                          00016</span></span>
-<span id="cb4-231"><a href="#cb4-231" tabindex="-1"></a><span class="co">#&gt; 98                                                                         000152</span></span>
-<span id="cb4-232"><a href="#cb4-232" tabindex="-1"></a><span class="co">#&gt; 99                                                                          00014</span></span>
-<span id="cb4-233"><a href="#cb4-233" tabindex="-1"></a><span class="co">#&gt; 100                                                                         00012</span></span>
-<span id="cb4-234"><a href="#cb4-234" tabindex="-1"></a><span class="co">#&gt; 101                                                                        000151</span></span>
-<span id="cb4-235"><a href="#cb4-235" tabindex="-1"></a><span class="co">#&gt; 102                                                                         00013</span></span>
-<span id="cb4-236"><a href="#cb4-236" tabindex="-1"></a><span class="co">#&gt; 103                                                                         00024</span></span>
-<span id="cb4-237"><a href="#cb4-237" tabindex="-1"></a><span class="co">#&gt; 104                                  Advisory Board Meeting-2017-06-09 Part-2.mp4</span></span>
-<span id="cb4-238"><a href="#cb4-238" tabindex="-1"></a><span class="co">#&gt; 105                                                                         00021</span></span>
-<span id="cb4-239"><a href="#cb4-239" tabindex="-1"></a><span class="co">#&gt; 106                                                                         00026</span></span>
-<span id="cb4-240"><a href="#cb4-240" tabindex="-1"></a><span class="co">#&gt; 107                                                                         00029</span></span>
-<span id="cb4-241"><a href="#cb4-241" tabindex="-1"></a><span class="co">#&gt; 108                                                                         00023</span></span>
-<span id="cb4-242"><a href="#cb4-242" tabindex="-1"></a><span class="co">#&gt; 109                                                                         00025</span></span>
-<span id="cb4-243"><a href="#cb4-243" tabindex="-1"></a><span class="co">#&gt; 110                                                                         00027</span></span>
-<span id="cb4-244"><a href="#cb4-244" tabindex="-1"></a><span class="co">#&gt; 111                                                                         00019</span></span>
-<span id="cb4-245"><a href="#cb4-245" tabindex="-1"></a><span class="co">#&gt; 112                                Advisory Board Meeting Presentation_2017-06-09</span></span>
-<span id="cb4-246"><a href="#cb4-246" tabindex="-1"></a><span class="co">#&gt; 113         Heiman_Steinhardt Databrary_060917_GCASL CQ_PMO_Zoom4_Nus_bk# 1036791</span></span>
-<span id="cb4-247"><a href="#cb4-247" tabindex="-1"></a><span class="co">#&gt; 114                                                                         00020</span></span>
-<span id="cb4-248"><a href="#cb4-248" tabindex="-1"></a><span class="co">#&gt; 115                                                                         00028</span></span>
-<span id="cb4-249"><a href="#cb4-249" tabindex="-1"></a><span class="co">#&gt; 116                                                                         00022</span></span>
-<span id="cb4-250"><a href="#cb4-250" tabindex="-1"></a><span class="co">#&gt; 117                                             DatabraryAdvisoryBoardMeeting2017</span></span>
-<span id="cb4-251"><a href="#cb4-251" tabindex="-1"></a><span class="co">#&gt; 118                                    CDS_Databrary_Datavyu_2017-10-13_Final.key</span></span>
-<span id="cb4-252"><a href="#cb4-252" tabindex="-1"></a><span class="co">#&gt; 119                                             Advisory Board Meeting_2018_Part6</span></span>
-<span id="cb4-253"><a href="#cb4-253" tabindex="-1"></a><span class="co">#&gt; 120                                             Advisory Board Meeting_2018_Part7</span></span>
-<span id="cb4-254"><a href="#cb4-254" tabindex="-1"></a><span class="co">#&gt; 121                                             Advisory Board Meeting_2018_Part8</span></span>
-<span id="cb4-255"><a href="#cb4-255" tabindex="-1"></a><span class="co">#&gt; 122                                           Databrary Advisory Board_2018-03-26</span></span>
-<span id="cb4-256"><a href="#cb4-256" tabindex="-1"></a><span class="co">#&gt; 123                                             Advisory Board Meeting_2018_Part2</span></span>
-<span id="cb4-257"><a href="#cb4-257" tabindex="-1"></a><span class="co">#&gt; 124                                             Advisory Board Meeting_2018_Part5</span></span>
-<span id="cb4-258"><a href="#cb4-258" tabindex="-1"></a><span class="co">#&gt; 125                                             Advisory Board Meeting_2018_Part1</span></span>
-<span id="cb4-259"><a href="#cb4-259" tabindex="-1"></a><span class="co">#&gt; 126                                             Advisory Board Meeting_2018_Part4</span></span>
-<span id="cb4-260"><a href="#cb4-260" tabindex="-1"></a><span class="co">#&gt; 127                            Databrary_Advisory_Board_Meeting_slides-2018-03-26</span></span>
-<span id="cb4-261"><a href="#cb4-261" tabindex="-1"></a><span class="co">#&gt; 128                                             Advisory Board Meeting_2018_Part3</span></span>
-<span id="cb4-262"><a href="#cb4-262" tabindex="-1"></a><span class="co">#&gt;     asset_permission asset_size session_id session_date session_release</span></span>
-<span id="cb4-263"><a href="#cb4-263" tabindex="-1"></a><span class="co">#&gt; 1                  1   88610655       6256   2013-10-28               3</span></span>
-<span id="cb4-264"><a href="#cb4-264" tabindex="-1"></a><span class="co">#&gt; 2                  1  899912341       6256   2013-10-28               3</span></span>
-<span id="cb4-265"><a href="#cb4-265" tabindex="-1"></a><span class="co">#&gt; 3                  1  764340542       6256   2013-10-28               3</span></span>
-<span id="cb4-266"><a href="#cb4-266" tabindex="-1"></a><span class="co">#&gt; 4                  1    4573426       6256   2013-10-28               3</span></span>
-<span id="cb4-267"><a href="#cb4-267" tabindex="-1"></a><span class="co">#&gt; 5                  1  917124852       6256   2013-10-28               3</span></span>
-<span id="cb4-268"><a href="#cb4-268" tabindex="-1"></a><span class="co">#&gt; 6                  1 1301079971       6257   2014-04-07               3</span></span>
-<span id="cb4-269"><a href="#cb4-269" tabindex="-1"></a><span class="co">#&gt; 7                  1 1419151887       6257   2014-04-07               3</span></span>
-<span id="cb4-270"><a href="#cb4-270" tabindex="-1"></a><span class="co">#&gt; 8                  1    3013342       6257   2014-04-07               3</span></span>
-<span id="cb4-271"><a href="#cb4-271" tabindex="-1"></a><span class="co">#&gt; 9                  1  882417129       6257   2014-04-07               3</span></span>
-<span id="cb4-272"><a href="#cb4-272" tabindex="-1"></a><span class="co">#&gt; 10                 1 5316455384       6540   2014-10-17               3</span></span>
-<span id="cb4-273"><a href="#cb4-273" tabindex="-1"></a><span class="co">#&gt; 11                 1   10192940       6540   2014-10-17               3</span></span>
-<span id="cb4-274"><a href="#cb4-274" tabindex="-1"></a><span class="co">#&gt; 12                 1 1079191541       7821   2015-03-18               3</span></span>
-<span id="cb4-275"><a href="#cb4-275" tabindex="-1"></a><span class="co">#&gt; 13                 1    4158160       7821   2015-03-18               3</span></span>
-<span id="cb4-276"><a href="#cb4-276" tabindex="-1"></a><span class="co">#&gt; 14                 1  710384623       7821   2015-03-18               3</span></span>
-<span id="cb4-277"><a href="#cb4-277" tabindex="-1"></a><span class="co">#&gt; 15                 1  574598972       7821   2015-03-18               3</span></span>
-<span id="cb4-278"><a href="#cb4-278" tabindex="-1"></a><span class="co">#&gt; 16                 1    2924252       7821   2015-03-18               3</span></span>
-<span id="cb4-279"><a href="#cb4-279" tabindex="-1"></a><span class="co">#&gt; 17                 1 1602298195       7821   2015-03-18               3</span></span>
-<span id="cb4-280"><a href="#cb4-280" tabindex="-1"></a><span class="co">#&gt; 18                 1 1384301751       7821   2015-03-18               3</span></span>
-<span id="cb4-281"><a href="#cb4-281" tabindex="-1"></a><span class="co">#&gt; 19                 1     304566       7821   2015-03-18               3</span></span>
-<span id="cb4-282"><a href="#cb4-282" tabindex="-1"></a><span class="co">#&gt; 20                 1    6899381       7821   2015-03-18               3</span></span>
-<span id="cb4-283"><a href="#cb4-283" tabindex="-1"></a><span class="co">#&gt; 21                 1 5561649547       8460   2015-05-11               3</span></span>
-<span id="cb4-284"><a href="#cb4-284" tabindex="-1"></a><span class="co">#&gt; 22                 1   24014506       8460   2015-05-11               3</span></span>
-<span id="cb4-285"><a href="#cb4-285" tabindex="-1"></a><span class="co">#&gt; 23                 1   19543511       9224   2015-09-18               3</span></span>
-<span id="cb4-286"><a href="#cb4-286" tabindex="-1"></a><span class="co">#&gt; 24                 1   11216184       9224   2015-09-18               3</span></span>
-<span id="cb4-287"><a href="#cb4-287" tabindex="-1"></a><span class="co">#&gt; 25                 1    6947725       9224   2015-09-18               3</span></span>
-<span id="cb4-288"><a href="#cb4-288" tabindex="-1"></a><span class="co">#&gt; 26                 1 2059896165       9578   2015-10-08               3</span></span>
-<span id="cb4-289"><a href="#cb4-289" tabindex="-1"></a><span class="co">#&gt; 27                 1      55248       9578   2015-10-08               3</span></span>
-<span id="cb4-290"><a href="#cb4-290" tabindex="-1"></a><span class="co">#&gt; 28                 1  717531830       9578   2015-10-08               3</span></span>
-<span id="cb4-291"><a href="#cb4-291" tabindex="-1"></a><span class="co">#&gt; 29                 1  969574682       9578   2015-10-08               3</span></span>
-<span id="cb4-292"><a href="#cb4-292" tabindex="-1"></a><span class="co">#&gt; 30                 1   18074689       9578   2015-10-08               3</span></span>
-<span id="cb4-293"><a href="#cb4-293" tabindex="-1"></a><span class="co">#&gt; 31                 1   16562761       9578   2015-10-08               3</span></span>
-<span id="cb4-294"><a href="#cb4-294" tabindex="-1"></a><span class="co">#&gt; 32                 1    8502489       9578   2015-10-08               3</span></span>
-<span id="cb4-295"><a href="#cb4-295" tabindex="-1"></a><span class="co">#&gt; 33                 1     104419       9807         &lt;NA&gt;              NA</span></span>
-<span id="cb4-296"><a href="#cb4-296" tabindex="-1"></a><span class="co">#&gt; 34                 1    4120930       9807         &lt;NA&gt;              NA</span></span>
-<span id="cb4-297"><a href="#cb4-297" tabindex="-1"></a><span class="co">#&gt; 35                 1    3826718       9807         &lt;NA&gt;              NA</span></span>
-<span id="cb4-298"><a href="#cb4-298" tabindex="-1"></a><span class="co">#&gt; 36                 1     394499       9807         &lt;NA&gt;              NA</span></span>
-<span id="cb4-299"><a href="#cb4-299" tabindex="-1"></a><span class="co">#&gt; 37                 1       1030       9807         &lt;NA&gt;              NA</span></span>
-<span id="cb4-300"><a href="#cb4-300" tabindex="-1"></a><span class="co">#&gt; 38                 1       1826       9807         &lt;NA&gt;              NA</span></span>
-<span id="cb4-301"><a href="#cb4-301" tabindex="-1"></a><span class="co">#&gt; 39                 1        417       9807         &lt;NA&gt;              NA</span></span>
-<span id="cb4-302"><a href="#cb4-302" tabindex="-1"></a><span class="co">#&gt; 40                 1    9500786      10068   2015-11-20               3</span></span>
-<span id="cb4-303"><a href="#cb4-303" tabindex="-1"></a><span class="co">#&gt; 41                 1   18069955      10068   2015-11-20               3</span></span>
-<span id="cb4-304"><a href="#cb4-304" tabindex="-1"></a><span class="co">#&gt; 42                 1   17821836      10068   2015-11-20               3</span></span>
-<span id="cb4-305"><a href="#cb4-305" tabindex="-1"></a><span class="co">#&gt; 43                 1 1550955220      10068   2015-11-20               3</span></span>
-<span id="cb4-306"><a href="#cb4-306" tabindex="-1"></a><span class="co">#&gt; 44                 1  763350644      10068   2015-11-20               3</span></span>
-<span id="cb4-307"><a href="#cb4-307" tabindex="-1"></a><span class="co">#&gt; 45                 1 1044753106      10068   2015-11-20               3</span></span>
-<span id="cb4-308"><a href="#cb4-308" tabindex="-1"></a><span class="co">#&gt; 46                 1  886710056      10068   2015-11-20               3</span></span>
-<span id="cb4-309"><a href="#cb4-309" tabindex="-1"></a><span class="co">#&gt; 47                 1   22240020      10991   2016-03-25               3</span></span>
-<span id="cb4-310"><a href="#cb4-310" tabindex="-1"></a><span class="co">#&gt; 48                 1     402918      10991   2016-03-25               3</span></span>
-<span id="cb4-311"><a href="#cb4-311" tabindex="-1"></a><span class="co">#&gt; 49                 1 1190956598      10991   2016-03-25               3</span></span>
-<span id="cb4-312"><a href="#cb4-312" tabindex="-1"></a><span class="co">#&gt; 50                 1   13901204      10991   2016-03-25               3</span></span>
-<span id="cb4-313"><a href="#cb4-313" tabindex="-1"></a><span class="co">#&gt; 51                 1    2225737      10991   2016-03-25               3</span></span>
-<span id="cb4-314"><a href="#cb4-314" tabindex="-1"></a><span class="co">#&gt; 52                 1   16143550      10991   2016-03-25               3</span></span>
-<span id="cb4-315"><a href="#cb4-315" tabindex="-1"></a><span class="co">#&gt; 53                 1  824306229      10991   2016-03-25               3</span></span>
-<span id="cb4-316"><a href="#cb4-316" tabindex="-1"></a><span class="co">#&gt; 54                 1 1412799175      10991   2016-03-25               3</span></span>
-<span id="cb4-317"><a href="#cb4-317" tabindex="-1"></a><span class="co">#&gt; 55                 1     191095      11362   2016-04-15               3</span></span>
-<span id="cb4-318"><a href="#cb4-318" tabindex="-1"></a><span class="co">#&gt; 56                 1  622855933      11362   2016-04-15               3</span></span>
-<span id="cb4-319"><a href="#cb4-319" tabindex="-1"></a><span class="co">#&gt; 57                 1 1035603796      11362   2016-04-15               3</span></span>
-<span id="cb4-320"><a href="#cb4-320" tabindex="-1"></a><span class="co">#&gt; 58                 1  857979902      11362   2016-04-15               3</span></span>
-<span id="cb4-321"><a href="#cb4-321" tabindex="-1"></a><span class="co">#&gt; 59                 1   11171502      11362   2016-04-15               3</span></span>
-<span id="cb4-322"><a href="#cb4-322" tabindex="-1"></a><span class="co">#&gt; 60                 1    4265477      11362   2016-04-15               3</span></span>
-<span id="cb4-323"><a href="#cb4-323" tabindex="-1"></a><span class="co">#&gt; 61                 1   17971722      11362   2016-04-15               3</span></span>
-<span id="cb4-324"><a href="#cb4-324" tabindex="-1"></a><span class="co">#&gt; 62                 1   10040436      11362   2016-04-15               3</span></span>
-<span id="cb4-325"><a href="#cb4-325" tabindex="-1"></a><span class="co">#&gt; 63                 1  706313005      11362   2016-04-15               3</span></span>
-<span id="cb4-326"><a href="#cb4-326" tabindex="-1"></a><span class="co">#&gt; 64                 1    7741745      11660   2016-05-25               3</span></span>
-<span id="cb4-327"><a href="#cb4-327" tabindex="-1"></a><span class="co">#&gt; 65                 1   10732100      11660   2016-05-25               3</span></span>
-<span id="cb4-328"><a href="#cb4-328" tabindex="-1"></a><span class="co">#&gt; 66                 1   15475455      11660   2016-05-25               3</span></span>
-<span id="cb4-329"><a href="#cb4-329" tabindex="-1"></a><span class="co">#&gt; 67                 1 5207302273      11660   2016-05-25               3</span></span>
-<span id="cb4-330"><a href="#cb4-330" tabindex="-1"></a><span class="co">#&gt; 68                 1    4238406      11660   2016-05-25               3</span></span>
-<span id="cb4-331"><a href="#cb4-331" tabindex="-1"></a><span class="co">#&gt; 69                 1    1772791      11660   2016-05-25               3</span></span>
-<span id="cb4-332"><a href="#cb4-332" tabindex="-1"></a><span class="co">#&gt; 70                 1 4651981876      11886   2016-06-13               3</span></span>
-<span id="cb4-333"><a href="#cb4-333" tabindex="-1"></a><span class="co">#&gt; 71                 1   19602134      11886   2016-06-13               3</span></span>
-<span id="cb4-334"><a href="#cb4-334" tabindex="-1"></a><span class="co">#&gt; 72                 1  795931994      14297   2016-10-14               3</span></span>
-<span id="cb4-335"><a href="#cb4-335" tabindex="-1"></a><span class="co">#&gt; 73                 1  627556299      14297   2016-10-14               3</span></span>
-<span id="cb4-336"><a href="#cb4-336" tabindex="-1"></a><span class="co">#&gt; 74                 1 1033985826      14297   2016-10-14               3</span></span>
-<span id="cb4-337"><a href="#cb4-337" tabindex="-1"></a><span class="co">#&gt; 75                 1  607629550      14297   2016-10-14               3</span></span>
-<span id="cb4-338"><a href="#cb4-338" tabindex="-1"></a><span class="co">#&gt; 76                 1   10732100      14297   2016-10-14               3</span></span>
-<span id="cb4-339"><a href="#cb4-339" tabindex="-1"></a><span class="co">#&gt; 77                 1    4238406      14297   2016-10-14               3</span></span>
-<span id="cb4-340"><a href="#cb4-340" tabindex="-1"></a><span class="co">#&gt; 78                 1    7741745      14297   2016-10-14               3</span></span>
-<span id="cb4-341"><a href="#cb4-341" tabindex="-1"></a><span class="co">#&gt; 79                 1   15475455      14297   2016-10-14               3</span></span>
-<span id="cb4-342"><a href="#cb4-342" tabindex="-1"></a><span class="co">#&gt; 80                 1  687136253      14551   2016-10-21               3</span></span>
-<span id="cb4-343"><a href="#cb4-343" tabindex="-1"></a><span class="co">#&gt; 81                 1  671824312      14551   2016-10-21               3</span></span>
-<span id="cb4-344"><a href="#cb4-344" tabindex="-1"></a><span class="co">#&gt; 82                 1  278432416      15663   2016-12-16               3</span></span>
-<span id="cb4-345"><a href="#cb4-345" tabindex="-1"></a><span class="co">#&gt; 83                 1 1332848036      15663   2016-12-16               3</span></span>
-<span id="cb4-346"><a href="#cb4-346" tabindex="-1"></a><span class="co">#&gt; 84                 1  984178185      16104   2017-02-03               3</span></span>
-<span id="cb4-347"><a href="#cb4-347" tabindex="-1"></a><span class="co">#&gt; 85                 1 1322485833      16104   2017-02-03               3</span></span>
-<span id="cb4-348"><a href="#cb4-348" tabindex="-1"></a><span class="co">#&gt; 86                 1 1251324058      16104   2017-02-03               3</span></span>
-<span id="cb4-349"><a href="#cb4-349" tabindex="-1"></a><span class="co">#&gt; 87                 1 1310253381      16104   2017-02-03               3</span></span>
-<span id="cb4-350"><a href="#cb4-350" tabindex="-1"></a><span class="co">#&gt; 88                 1 1141378800      16891   2017-04-05               3</span></span>
-<span id="cb4-351"><a href="#cb4-351" tabindex="-1"></a><span class="co">#&gt; 89                 1 1109757036      16891   2017-04-05               3</span></span>
-<span id="cb4-352"><a href="#cb4-352" tabindex="-1"></a><span class="co">#&gt; 90                 1  308336133      16891   2017-04-05               3</span></span>
-<span id="cb4-353"><a href="#cb4-353" tabindex="-1"></a><span class="co">#&gt; 91                 1 1077537629      16891   2017-04-05               3</span></span>
-<span id="cb4-354"><a href="#cb4-354" tabindex="-1"></a><span class="co">#&gt; 92                 1  555319245      16891   2017-04-05               3</span></span>
-<span id="cb4-355"><a href="#cb4-355" tabindex="-1"></a><span class="co">#&gt; 93                 1 1185980540      16894   2017-04-05               3</span></span>
-<span id="cb4-356"><a href="#cb4-356" tabindex="-1"></a><span class="co">#&gt; 94                 1   11296910      17187   2017-04-30               3</span></span>
-<span id="cb4-357"><a href="#cb4-357" tabindex="-1"></a><span class="co">#&gt; 95                 1    9899927      17187   2017-04-30               3</span></span>
-<span id="cb4-358"><a href="#cb4-358" tabindex="-1"></a><span class="co">#&gt; 96                 1    8188127      17187   2017-04-30               3</span></span>
-<span id="cb4-359"><a href="#cb4-359" tabindex="-1"></a><span class="co">#&gt; 97                 1  252821639      17417   2017-05-15               3</span></span>
-<span id="cb4-360"><a href="#cb4-360" tabindex="-1"></a><span class="co">#&gt; 98                 1  695084769      17417   2017-05-15               3</span></span>
-<span id="cb4-361"><a href="#cb4-361" tabindex="-1"></a><span class="co">#&gt; 99                 1   39116816      17417   2017-05-15               3</span></span>
-<span id="cb4-362"><a href="#cb4-362" tabindex="-1"></a><span class="co">#&gt; 100                1  977096783      17417   2017-05-15               3</span></span>
-<span id="cb4-363"><a href="#cb4-363" tabindex="-1"></a><span class="co">#&gt; 101                1  243847194      17417   2017-05-15               3</span></span>
-<span id="cb4-364"><a href="#cb4-364" tabindex="-1"></a><span class="co">#&gt; 102                1  943655212      17417   2017-05-15               3</span></span>
-<span id="cb4-365"><a href="#cb4-365" tabindex="-1"></a><span class="co">#&gt; 103                1 1040993535      17886   2017-06-09               3</span></span>
-<span id="cb4-366"><a href="#cb4-366" tabindex="-1"></a><span class="co">#&gt; 104                1   86403462      17886   2017-06-09               3</span></span>
-<span id="cb4-367"><a href="#cb4-367" tabindex="-1"></a><span class="co">#&gt; 105                1 1191221405      17886   2017-06-09               3</span></span>
-<span id="cb4-368"><a href="#cb4-368" tabindex="-1"></a><span class="co">#&gt; 106                1  946159516      17886   2017-06-09               3</span></span>
-<span id="cb4-369"><a href="#cb4-369" tabindex="-1"></a><span class="co">#&gt; 107                1 1029314077      17886   2017-06-09               3</span></span>
-<span id="cb4-370"><a href="#cb4-370" tabindex="-1"></a><span class="co">#&gt; 108                1 1113502210      17886   2017-06-09               3</span></span>
-<span id="cb4-371"><a href="#cb4-371" tabindex="-1"></a><span class="co">#&gt; 109                1 1111936525      17886   2017-06-09               3</span></span>
-<span id="cb4-372"><a href="#cb4-372" tabindex="-1"></a><span class="co">#&gt; 110                1 1074824135      17886   2017-06-09               3</span></span>
-<span id="cb4-373"><a href="#cb4-373" tabindex="-1"></a><span class="co">#&gt; 111                1 1185269159      17886   2017-06-09               3</span></span>
-<span id="cb4-374"><a href="#cb4-374" tabindex="-1"></a><span class="co">#&gt; 112                1   81457940      17886   2017-06-09               3</span></span>
-<span id="cb4-375"><a href="#cb4-375" tabindex="-1"></a><span class="co">#&gt; 113                1  292650423      17886   2017-06-09               3</span></span>
-<span id="cb4-376"><a href="#cb4-376" tabindex="-1"></a><span class="co">#&gt; 114                1 1244239760      17886   2017-06-09               3</span></span>
-<span id="cb4-377"><a href="#cb4-377" tabindex="-1"></a><span class="co">#&gt; 115                1 1093669899      17886   2017-06-09               3</span></span>
-<span id="cb4-378"><a href="#cb4-378" tabindex="-1"></a><span class="co">#&gt; 116                1 1237461468      17886   2017-06-09               3</span></span>
-<span id="cb4-379"><a href="#cb4-379" tabindex="-1"></a><span class="co">#&gt; 117                1 4611531493      17886   2017-06-09               3</span></span>
-<span id="cb4-380"><a href="#cb4-380" tabindex="-1"></a><span class="co">#&gt; 118                1   24630245      21077   2017-10-13               3</span></span>
-<span id="cb4-381"><a href="#cb4-381" tabindex="-1"></a><span class="co">#&gt; 119                1  184972983      25952   2018-03-26               3</span></span>
-<span id="cb4-382"><a href="#cb4-382" tabindex="-1"></a><span class="co">#&gt; 120                1 1985795461      25952   2018-03-26               3</span></span>
-<span id="cb4-383"><a href="#cb4-383" tabindex="-1"></a><span class="co">#&gt; 121                1  554267042      25952   2018-03-26               3</span></span>
-<span id="cb4-384"><a href="#cb4-384" tabindex="-1"></a><span class="co">#&gt; 122                1  226542146      25952   2018-03-26               3</span></span>
-<span id="cb4-385"><a href="#cb4-385" tabindex="-1"></a><span class="co">#&gt; 123                1 1976644381      25952   2018-03-26               3</span></span>
-<span id="cb4-386"><a href="#cb4-386" tabindex="-1"></a><span class="co">#&gt; 124                1 2084960359      25952   2018-03-26               3</span></span>
-<span id="cb4-387"><a href="#cb4-387" tabindex="-1"></a><span class="co">#&gt; 125                1 1886564537      25952   2018-03-26               3</span></span>
-<span id="cb4-388"><a href="#cb4-388" tabindex="-1"></a><span class="co">#&gt; 126                1 2321264233      25952   2018-03-26               3</span></span>
-<span id="cb4-389"><a href="#cb4-389" tabindex="-1"></a><span class="co">#&gt; 127                1   53661203      25952   2018-03-26               3</span></span>
-<span id="cb4-390"><a href="#cb4-390" tabindex="-1"></a><span class="co">#&gt; 128                1  581869073      25952   2018-03-26               3</span></span>
-<span id="cb4-391"><a href="#cb4-391" tabindex="-1"></a><span class="co">#&gt;             format_mimetype format_extension                      format_name</span></span>
-<span id="cb4-392"><a href="#cb4-392" tabindex="-1"></a><span class="co">#&gt; 1                 video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-393"><a href="#cb4-393" tabindex="-1"></a><span class="co">#&gt; 2                 video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-394"><a href="#cb4-394" tabindex="-1"></a><span class="co">#&gt; 3                 video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-395"><a href="#cb4-395" tabindex="-1"></a><span class="co">#&gt; 4           application/pdf              pdf                Portable document</span></span>
-<span id="cb4-396"><a href="#cb4-396" tabindex="-1"></a><span class="co">#&gt; 5                 video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-397"><a href="#cb4-397" tabindex="-1"></a><span class="co">#&gt; 6                 video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-398"><a href="#cb4-398" tabindex="-1"></a><span class="co">#&gt; 7                 video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-399"><a href="#cb4-399" tabindex="-1"></a><span class="co">#&gt; 8           application/pdf              pdf                Portable document</span></span>
-<span id="cb4-400"><a href="#cb4-400" tabindex="-1"></a><span class="co">#&gt; 9                 video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-401"><a href="#cb4-401" tabindex="-1"></a><span class="co">#&gt; 10                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-402"><a href="#cb4-402" tabindex="-1"></a><span class="co">#&gt; 11          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-403"><a href="#cb4-403" tabindex="-1"></a><span class="co">#&gt; 12                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-404"><a href="#cb4-404" tabindex="-1"></a><span class="co">#&gt; 13          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-405"><a href="#cb4-405" tabindex="-1"></a><span class="co">#&gt; 14                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-406"><a href="#cb4-406" tabindex="-1"></a><span class="co">#&gt; 15                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-407"><a href="#cb4-407" tabindex="-1"></a><span class="co">#&gt; 16          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-408"><a href="#cb4-408" tabindex="-1"></a><span class="co">#&gt; 17                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-409"><a href="#cb4-409" tabindex="-1"></a><span class="co">#&gt; 18                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-410"><a href="#cb4-410" tabindex="-1"></a><span class="co">#&gt; 19          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-411"><a href="#cb4-411" tabindex="-1"></a><span class="co">#&gt; 20          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-412"><a href="#cb4-412" tabindex="-1"></a><span class="co">#&gt; 21                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-413"><a href="#cb4-413" tabindex="-1"></a><span class="co">#&gt; 22          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-414"><a href="#cb4-414" tabindex="-1"></a><span class="co">#&gt; 23          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-415"><a href="#cb4-415" tabindex="-1"></a><span class="co">#&gt; 24          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-416"><a href="#cb4-416" tabindex="-1"></a><span class="co">#&gt; 25          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-417"><a href="#cb4-417" tabindex="-1"></a><span class="co">#&gt; 26                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-418"><a href="#cb4-418" tabindex="-1"></a><span class="co">#&gt; 27          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-419"><a href="#cb4-419" tabindex="-1"></a><span class="co">#&gt; 28                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-420"><a href="#cb4-420" tabindex="-1"></a><span class="co">#&gt; 29                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-421"><a href="#cb4-421" tabindex="-1"></a><span class="co">#&gt; 30          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-422"><a href="#cb4-422" tabindex="-1"></a><span class="co">#&gt; 31          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-423"><a href="#cb4-423" tabindex="-1"></a><span class="co">#&gt; 32          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-424"><a href="#cb4-424" tabindex="-1"></a><span class="co">#&gt; 33                image/png              png        Portable network graphics</span></span>
-<span id="cb4-425"><a href="#cb4-425" tabindex="-1"></a><span class="co">#&gt; 34          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-426"><a href="#cb4-426" tabindex="-1"></a><span class="co">#&gt; 35          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-427"><a href="#cb4-427" tabindex="-1"></a><span class="co">#&gt; 36                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-428"><a href="#cb4-428" tabindex="-1"></a><span class="co">#&gt; 37  application/vnd.datavyu              opf                          Datavyu</span></span>
-<span id="cb4-429"><a href="#cb4-429" tabindex="-1"></a><span class="co">#&gt; 38                 text/csv              csv           Comma-separated values</span></span>
-<span id="cb4-430"><a href="#cb4-430" tabindex="-1"></a><span class="co">#&gt; 39                 text/csv              csv           Comma-separated values</span></span>
-<span id="cb4-431"><a href="#cb4-431" tabindex="-1"></a><span class="co">#&gt; 40          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-432"><a href="#cb4-432" tabindex="-1"></a><span class="co">#&gt; 41          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-433"><a href="#cb4-433" tabindex="-1"></a><span class="co">#&gt; 42          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-434"><a href="#cb4-434" tabindex="-1"></a><span class="co">#&gt; 43                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-435"><a href="#cb4-435" tabindex="-1"></a><span class="co">#&gt; 44                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-436"><a href="#cb4-436" tabindex="-1"></a><span class="co">#&gt; 45                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-437"><a href="#cb4-437" tabindex="-1"></a><span class="co">#&gt; 46                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-438"><a href="#cb4-438" tabindex="-1"></a><span class="co">#&gt; 47          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-439"><a href="#cb4-439" tabindex="-1"></a><span class="co">#&gt; 48          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-440"><a href="#cb4-440" tabindex="-1"></a><span class="co">#&gt; 49                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-441"><a href="#cb4-441" tabindex="-1"></a><span class="co">#&gt; 50          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-442"><a href="#cb4-442" tabindex="-1"></a><span class="co">#&gt; 51          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-443"><a href="#cb4-443" tabindex="-1"></a><span class="co">#&gt; 52          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-444"><a href="#cb4-444" tabindex="-1"></a><span class="co">#&gt; 53                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-445"><a href="#cb4-445" tabindex="-1"></a><span class="co">#&gt; 54                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-446"><a href="#cb4-446" tabindex="-1"></a><span class="co">#&gt; 55          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-447"><a href="#cb4-447" tabindex="-1"></a><span class="co">#&gt; 56                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-448"><a href="#cb4-448" tabindex="-1"></a><span class="co">#&gt; 57                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-449"><a href="#cb4-449" tabindex="-1"></a><span class="co">#&gt; 58                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-450"><a href="#cb4-450" tabindex="-1"></a><span class="co">#&gt; 59          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-451"><a href="#cb4-451" tabindex="-1"></a><span class="co">#&gt; 60          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-452"><a href="#cb4-452" tabindex="-1"></a><span class="co">#&gt; 61          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-453"><a href="#cb4-453" tabindex="-1"></a><span class="co">#&gt; 62          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-454"><a href="#cb4-454" tabindex="-1"></a><span class="co">#&gt; 63                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-455"><a href="#cb4-455" tabindex="-1"></a><span class="co">#&gt; 64          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-456"><a href="#cb4-456" tabindex="-1"></a><span class="co">#&gt; 65          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-457"><a href="#cb4-457" tabindex="-1"></a><span class="co">#&gt; 66          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-458"><a href="#cb4-458" tabindex="-1"></a><span class="co">#&gt; 67                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-459"><a href="#cb4-459" tabindex="-1"></a><span class="co">#&gt; 68          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-460"><a href="#cb4-460" tabindex="-1"></a><span class="co">#&gt; 69          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-461"><a href="#cb4-461" tabindex="-1"></a><span class="co">#&gt; 70                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-462"><a href="#cb4-462" tabindex="-1"></a><span class="co">#&gt; 71          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-463"><a href="#cb4-463" tabindex="-1"></a><span class="co">#&gt; 72                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-464"><a href="#cb4-464" tabindex="-1"></a><span class="co">#&gt; 73                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-465"><a href="#cb4-465" tabindex="-1"></a><span class="co">#&gt; 74                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-466"><a href="#cb4-466" tabindex="-1"></a><span class="co">#&gt; 75                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-467"><a href="#cb4-467" tabindex="-1"></a><span class="co">#&gt; 76          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-468"><a href="#cb4-468" tabindex="-1"></a><span class="co">#&gt; 77          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-469"><a href="#cb4-469" tabindex="-1"></a><span class="co">#&gt; 78          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-470"><a href="#cb4-470" tabindex="-1"></a><span class="co">#&gt; 79          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-471"><a href="#cb4-471" tabindex="-1"></a><span class="co">#&gt; 80                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-472"><a href="#cb4-472" tabindex="-1"></a><span class="co">#&gt; 81                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-473"><a href="#cb4-473" tabindex="-1"></a><span class="co">#&gt; 82          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-474"><a href="#cb4-474" tabindex="-1"></a><span class="co">#&gt; 83                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-475"><a href="#cb4-475" tabindex="-1"></a><span class="co">#&gt; 84                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-476"><a href="#cb4-476" tabindex="-1"></a><span class="co">#&gt; 85                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-477"><a href="#cb4-477" tabindex="-1"></a><span class="co">#&gt; 86                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-478"><a href="#cb4-478" tabindex="-1"></a><span class="co">#&gt; 87                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-479"><a href="#cb4-479" tabindex="-1"></a><span class="co">#&gt; 88                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-480"><a href="#cb4-480" tabindex="-1"></a><span class="co">#&gt; 89                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-481"><a href="#cb4-481" tabindex="-1"></a><span class="co">#&gt; 90                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-482"><a href="#cb4-482" tabindex="-1"></a><span class="co">#&gt; 91                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-483"><a href="#cb4-483" tabindex="-1"></a><span class="co">#&gt; 92                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-484"><a href="#cb4-484" tabindex="-1"></a><span class="co">#&gt; 93                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-485"><a href="#cb4-485" tabindex="-1"></a><span class="co">#&gt; 94          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-486"><a href="#cb4-486" tabindex="-1"></a><span class="co">#&gt; 95          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-487"><a href="#cb4-487" tabindex="-1"></a><span class="co">#&gt; 96          application/pdf              pdf                Portable document</span></span>
-<span id="cb4-488"><a href="#cb4-488" tabindex="-1"></a><span class="co">#&gt; 97                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-489"><a href="#cb4-489" tabindex="-1"></a><span class="co">#&gt; 98                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-490"><a href="#cb4-490" tabindex="-1"></a><span class="co">#&gt; 99                video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-491"><a href="#cb4-491" tabindex="-1"></a><span class="co">#&gt; 100               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-492"><a href="#cb4-492" tabindex="-1"></a><span class="co">#&gt; 101               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-493"><a href="#cb4-493" tabindex="-1"></a><span class="co">#&gt; 102               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-494"><a href="#cb4-494" tabindex="-1"></a><span class="co">#&gt; 103               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-495"><a href="#cb4-495" tabindex="-1"></a><span class="co">#&gt; 104               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-496"><a href="#cb4-496" tabindex="-1"></a><span class="co">#&gt; 105               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-497"><a href="#cb4-497" tabindex="-1"></a><span class="co">#&gt; 106               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-498"><a href="#cb4-498" tabindex="-1"></a><span class="co">#&gt; 107               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-499"><a href="#cb4-499" tabindex="-1"></a><span class="co">#&gt; 108               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-500"><a href="#cb4-500" tabindex="-1"></a><span class="co">#&gt; 109               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-501"><a href="#cb4-501" tabindex="-1"></a><span class="co">#&gt; 110               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-502"><a href="#cb4-502" tabindex="-1"></a><span class="co">#&gt; 111               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-503"><a href="#cb4-503" tabindex="-1"></a><span class="co">#&gt; 112         application/pdf              pdf                Portable document</span></span>
-<span id="cb4-504"><a href="#cb4-504" tabindex="-1"></a><span class="co">#&gt; 113              audio/mpeg              mp3 MPEG-1 or MPEG-2 audio layer III</span></span>
-<span id="cb4-505"><a href="#cb4-505" tabindex="-1"></a><span class="co">#&gt; 114               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-506"><a href="#cb4-506" tabindex="-1"></a><span class="co">#&gt; 115               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-507"><a href="#cb4-507" tabindex="-1"></a><span class="co">#&gt; 116               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-508"><a href="#cb4-508" tabindex="-1"></a><span class="co">#&gt; 117               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-509"><a href="#cb4-509" tabindex="-1"></a><span class="co">#&gt; 118         application/pdf              pdf                Portable document</span></span>
-<span id="cb4-510"><a href="#cb4-510" tabindex="-1"></a><span class="co">#&gt; 119               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-511"><a href="#cb4-511" tabindex="-1"></a><span class="co">#&gt; 120               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-512"><a href="#cb4-512" tabindex="-1"></a><span class="co">#&gt; 121               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-513"><a href="#cb4-513" tabindex="-1"></a><span class="co">#&gt; 122              audio/mpeg              mp3 MPEG-1 or MPEG-2 audio layer III</span></span>
-<span id="cb4-514"><a href="#cb4-514" tabindex="-1"></a><span class="co">#&gt; 123               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-515"><a href="#cb4-515" tabindex="-1"></a><span class="co">#&gt; 124               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-516"><a href="#cb4-516" tabindex="-1"></a><span class="co">#&gt; 125               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-517"><a href="#cb4-517" tabindex="-1"></a><span class="co">#&gt; 126               video/mp4              mp4                     MPEG-4 video</span></span>
-<span id="cb4-518"><a href="#cb4-518" tabindex="-1"></a><span class="co">#&gt; 127         application/pdf              pdf                Portable document</span></span>
-<span id="cb4-519"><a href="#cb4-519" tabindex="-1"></a><span class="co">#&gt; 128               video/mp4              mp4                     MPEG-4 video</span></span></code></pre></div>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt; Retrieving data for volume id 1.</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt;     asset_id asset_format_id asset_duration</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; 1       9826            -800         335883</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; 2       9830            -800        4277835</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt; 3       9832            -800        3107147</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt; 4      22412               6             NA</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt; 5       9828            -800        4425483</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; 6       9834            -800        4964011</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt; 7       9836            -800        5043051</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; 8       9839               6             NA</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; 9       9838            -800        3821387</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; 10     17737            -800       10976384</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt; 11     12039               6             NA</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt; 12     17727            -800        2827904</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co">#&gt; 13     22411               6             NA</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="co">#&gt; 14     17725            -800        1920512</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co">#&gt; 15     17723            -800        1594688</span></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt; 16     22407               6             NA</span></span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="co">#&gt; 17     17721            -800        3977558</span></span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="co">#&gt; 18     17719            -800        3514603</span></span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="co">#&gt; 19     22408               6             NA</span></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="co">#&gt; 20     22410               6             NA</span></span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a><span class="co">#&gt; 21     19919            -800       14939008</span></span>
+<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a><span class="co">#&gt; 22     22406               6             NA</span></span>
+<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a><span class="co">#&gt; 23     25497               6             NA</span></span>
+<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a><span class="co">#&gt; 24     25496               6             NA</span></span>
+<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a><span class="co">#&gt; 25     25495               6             NA</span></span>
+<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a><span class="co">#&gt; 26     26448            -800        5477483</span></span>
+<span id="cb4-32"><a href="#cb4-32" tabindex="-1"></a><span class="co">#&gt; 27     27227               6             NA</span></span>
+<span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a><span class="co">#&gt; 28     28028            -800        2725723</span></span>
+<span id="cb4-34"><a href="#cb4-34" tabindex="-1"></a><span class="co">#&gt; 29     28026            -800        3708160</span></span>
+<span id="cb4-35"><a href="#cb4-35" tabindex="-1"></a><span class="co">#&gt; 30     26449               6             NA</span></span>
+<span id="cb4-36"><a href="#cb4-36" tabindex="-1"></a><span class="co">#&gt; 31     26452               6             NA</span></span>
+<span id="cb4-37"><a href="#cb4-37" tabindex="-1"></a><span class="co">#&gt; 32     26446               6             NA</span></span>
+<span id="cb4-38"><a href="#cb4-38" tabindex="-1"></a><span class="co">#&gt; 33      9200               5             NA</span></span>
+<span id="cb4-39"><a href="#cb4-39" tabindex="-1"></a><span class="co">#&gt; 34       315               6             NA</span></span>
+<span id="cb4-40"><a href="#cb4-40" tabindex="-1"></a><span class="co">#&gt; 35       314               6             NA</span></span>
+<span id="cb4-41"><a href="#cb4-41" tabindex="-1"></a><span class="co">#&gt; 36         1            -800          40000</span></span>
+<span id="cb4-42"><a href="#cb4-42" tabindex="-1"></a><span class="co">#&gt; 37    117035              16             NA</span></span>
+<span id="cb4-43"><a href="#cb4-43" tabindex="-1"></a><span class="co">#&gt; 38    153108               2             NA</span></span>
+<span id="cb4-44"><a href="#cb4-44" tabindex="-1"></a><span class="co">#&gt; 39    153109               2             NA</span></span>
+<span id="cb4-45"><a href="#cb4-45" tabindex="-1"></a><span class="co">#&gt; 40     28047               6             NA</span></span>
+<span id="cb4-46"><a href="#cb4-46" tabindex="-1"></a><span class="co">#&gt; 41     28048               6             NA</span></span>
+<span id="cb4-47"><a href="#cb4-47" tabindex="-1"></a><span class="co">#&gt; 42     28049               6             NA</span></span>
+<span id="cb4-48"><a href="#cb4-48" tabindex="-1"></a><span class="co">#&gt; 43     28062            -800        4835115</span></span>
+<span id="cb4-49"><a href="#cb4-49" tabindex="-1"></a><span class="co">#&gt; 44     28053            -800        2387051</span></span>
+<span id="cb4-50"><a href="#cb4-50" tabindex="-1"></a><span class="co">#&gt; 45     28055            -800        2983616</span></span>
+<span id="cb4-51"><a href="#cb4-51" tabindex="-1"></a><span class="co">#&gt; 46     28051            -800        2794880</span></span>
+<span id="cb4-52"><a href="#cb4-52" tabindex="-1"></a><span class="co">#&gt; 47     37128               6             NA</span></span>
+<span id="cb4-53"><a href="#cb4-53" tabindex="-1"></a><span class="co">#&gt; 48     42470               6             NA</span></span>
+<span id="cb4-54"><a href="#cb4-54" tabindex="-1"></a><span class="co">#&gt; 49     37138            -800        3402326</span></span>
+<span id="cb4-55"><a href="#cb4-55" tabindex="-1"></a><span class="co">#&gt; 50     36946               6             NA</span></span>
+<span id="cb4-56"><a href="#cb4-56" tabindex="-1"></a><span class="co">#&gt; 51     36945               6             NA</span></span>
+<span id="cb4-57"><a href="#cb4-57" tabindex="-1"></a><span class="co">#&gt; 52     36978               6             NA</span></span>
+<span id="cb4-58"><a href="#cb4-58" tabindex="-1"></a><span class="co">#&gt; 53     37130            -800        2450882</span></span>
+<span id="cb4-59"><a href="#cb4-59" tabindex="-1"></a><span class="co">#&gt; 54     37136            -800        3904128</span></span>
+<span id="cb4-60"><a href="#cb4-60" tabindex="-1"></a><span class="co">#&gt; 55     43940               6             NA</span></span>
+<span id="cb4-61"><a href="#cb4-61" tabindex="-1"></a><span class="co">#&gt; 56     38591            -800        2293056</span></span>
+<span id="cb4-62"><a href="#cb4-62" tabindex="-1"></a><span class="co">#&gt; 57     38593            -800        3676480</span></span>
+<span id="cb4-63"><a href="#cb4-63" tabindex="-1"></a><span class="co">#&gt; 58     38595            -800        2537494</span></span>
+<span id="cb4-64"><a href="#cb4-64" tabindex="-1"></a><span class="co">#&gt; 59     38629               6             NA</span></span>
+<span id="cb4-65"><a href="#cb4-65" tabindex="-1"></a><span class="co">#&gt; 60     38627               6             NA</span></span>
+<span id="cb4-66"><a href="#cb4-66" tabindex="-1"></a><span class="co">#&gt; 61     38626               6             NA</span></span>
+<span id="cb4-67"><a href="#cb4-67" tabindex="-1"></a><span class="co">#&gt; 62     38628               6             NA</span></span>
+<span id="cb4-68"><a href="#cb4-68" tabindex="-1"></a><span class="co">#&gt; 63     38643            -800        2760992</span></span>
+<span id="cb4-69"><a href="#cb4-69" tabindex="-1"></a><span class="co">#&gt; 64     42755               6             NA</span></span>
+<span id="cb4-70"><a href="#cb4-70" tabindex="-1"></a><span class="co">#&gt; 65     44544               6             NA</span></span>
+<span id="cb4-71"><a href="#cb4-71" tabindex="-1"></a><span class="co">#&gt; 66     45413               6             NA</span></span>
+<span id="cb4-72"><a href="#cb4-72" tabindex="-1"></a><span class="co">#&gt; 67     44774            -800        9728726</span></span>
+<span id="cb4-73"><a href="#cb4-73" tabindex="-1"></a><span class="co">#&gt; 68     42740               6             NA</span></span>
+<span id="cb4-74"><a href="#cb4-74" tabindex="-1"></a><span class="co">#&gt; 69     43077               6             NA</span></span>
+<span id="cb4-75"><a href="#cb4-75" tabindex="-1"></a><span class="co">#&gt; 70     46300            -800       13129280</span></span>
+<span id="cb4-76"><a href="#cb4-76" tabindex="-1"></a><span class="co">#&gt; 71     46104               6             NA</span></span>
+<span id="cb4-77"><a href="#cb4-77" tabindex="-1"></a><span class="co">#&gt; 72     60544            -800        2468587</span></span>
+<span id="cb4-78"><a href="#cb4-78" tabindex="-1"></a><span class="co">#&gt; 73     60546            -800        2002624</span></span>
+<span id="cb4-79"><a href="#cb4-79" tabindex="-1"></a><span class="co">#&gt; 74     60550            -800        3372779</span></span>
+<span id="cb4-80"><a href="#cb4-80" tabindex="-1"></a><span class="co">#&gt; 75     60542            -800        2058198</span></span>
+<span id="cb4-81"><a href="#cb4-81" tabindex="-1"></a><span class="co">#&gt; 76     60627               6             NA</span></span>
+<span id="cb4-82"><a href="#cb4-82" tabindex="-1"></a><span class="co">#&gt; 77     60628               6             NA</span></span>
+<span id="cb4-83"><a href="#cb4-83" tabindex="-1"></a><span class="co">#&gt; 78     60629               6             NA</span></span>
+<span id="cb4-84"><a href="#cb4-84" tabindex="-1"></a><span class="co">#&gt; 79     60630               6             NA</span></span>
+<span id="cb4-85"><a href="#cb4-85" tabindex="-1"></a><span class="co">#&gt; 80     61224            -800        1908544</span></span>
+<span id="cb4-86"><a href="#cb4-86" tabindex="-1"></a><span class="co">#&gt; 81     61222            -800        1939563</span></span>
+<span id="cb4-87"><a href="#cb4-87" tabindex="-1"></a><span class="co">#&gt; 82     65936               6             NA</span></span>
+<span id="cb4-88"><a href="#cb4-88" tabindex="-1"></a><span class="co">#&gt; 83     66015            -800       24567644</span></span>
+<span id="cb4-89"><a href="#cb4-89" tabindex="-1"></a><span class="co">#&gt; 84     68584            -800        2096523</span></span>
+<span id="cb4-90"><a href="#cb4-90" tabindex="-1"></a><span class="co">#&gt; 85     68598            -800        2857388</span></span>
+<span id="cb4-91"><a href="#cb4-91" tabindex="-1"></a><span class="co">#&gt; 86     68596            -800        2499595</span></span>
+<span id="cb4-92"><a href="#cb4-92" tabindex="-1"></a><span class="co">#&gt; 87     68600            -800        2857722</span></span>
+<span id="cb4-93"><a href="#cb4-93" tabindex="-1"></a><span class="co">#&gt; 88     73302            -800        2853384</span></span>
+<span id="cb4-94"><a href="#cb4-94" tabindex="-1"></a><span class="co">#&gt; 89     73306            -800        2859724</span></span>
+<span id="cb4-95"><a href="#cb4-95" tabindex="-1"></a><span class="co">#&gt; 90     73304            -800         798699</span></span>
+<span id="cb4-96"><a href="#cb4-96" tabindex="-1"></a><span class="co">#&gt; 91     73308            -800        2856387</span></span>
+<span id="cb4-97"><a href="#cb4-97" tabindex="-1"></a><span class="co">#&gt; 92     73310            -800        1435851</span></span>
+<span id="cb4-98"><a href="#cb4-98" tabindex="-1"></a><span class="co">#&gt; 93     73316            -800        2855887</span></span>
+<span id="cb4-99"><a href="#cb4-99" tabindex="-1"></a><span class="co">#&gt; 94     76809               6             NA</span></span>
+<span id="cb4-100"><a href="#cb4-100" tabindex="-1"></a><span class="co">#&gt; 95     76807               6             NA</span></span>
+<span id="cb4-101"><a href="#cb4-101" tabindex="-1"></a><span class="co">#&gt; 96     76808               6             NA</span></span>
+<span id="cb4-102"><a href="#cb4-102" tabindex="-1"></a><span class="co">#&gt; 97     77819            -800         743179</span></span>
+<span id="cb4-103"><a href="#cb4-103" tabindex="-1"></a><span class="co">#&gt; 98     77817            -800        2037970</span></span>
+<span id="cb4-104"><a href="#cb4-104" tabindex="-1"></a><span class="co">#&gt; 99     77811            -800         121547</span></span>
+<span id="cb4-105"><a href="#cb4-105" tabindex="-1"></a><span class="co">#&gt; 100    77809            -800        2853384</span></span>
+<span id="cb4-106"><a href="#cb4-106" tabindex="-1"></a><span class="co">#&gt; 101    77813            -800         704538</span></span>
+<span id="cb4-107"><a href="#cb4-107" tabindex="-1"></a><span class="co">#&gt; 102    77815            -800        2855220</span></span>
+<span id="cb4-108"><a href="#cb4-108" tabindex="-1"></a><span class="co">#&gt; 103    80954            -800        1367450</span></span>
+<span id="cb4-109"><a href="#cb4-109" tabindex="-1"></a><span class="co">#&gt; 104    79738            -800        4950334</span></span>
+<span id="cb4-110"><a href="#cb4-110" tabindex="-1"></a><span class="co">#&gt; 105    80898            -800        1366949</span></span>
+<span id="cb4-111"><a href="#cb4-111" tabindex="-1"></a><span class="co">#&gt; 106    80958            -800        1101739</span></span>
+<span id="cb4-112"><a href="#cb4-112" tabindex="-1"></a><span class="co">#&gt; 107    80964            -800        1251691</span></span>
+<span id="cb4-113"><a href="#cb4-113" tabindex="-1"></a><span class="co">#&gt; 108    80952            -800        1366382</span></span>
+<span id="cb4-114"><a href="#cb4-114" tabindex="-1"></a><span class="co">#&gt; 109    80956            -800        1367934</span></span>
+<span id="cb4-115"><a href="#cb4-115" tabindex="-1"></a><span class="co">#&gt; 110    80960            -800        1374390</span></span>
+<span id="cb4-116"><a href="#cb4-116" tabindex="-1"></a><span class="co">#&gt; 111    80894            -800        1366382</span></span>
+<span id="cb4-117"><a href="#cb4-117" tabindex="-1"></a><span class="co">#&gt; 112    80993               6             NA</span></span>
+<span id="cb4-118"><a href="#cb4-118" tabindex="-1"></a><span class="co">#&gt; 113    81039            -600       15823072</span></span>
+<span id="cb4-119"><a href="#cb4-119" tabindex="-1"></a><span class="co">#&gt; 114    80896            -800        1368451</span></span>
+<span id="cb4-120"><a href="#cb4-120" tabindex="-1"></a><span class="co">#&gt; 115    80962            -800        1375775</span></span>
+<span id="cb4-121"><a href="#cb4-121" tabindex="-1"></a><span class="co">#&gt; 116    80950            -800        1346475</span></span>
+<span id="cb4-122"><a href="#cb4-122" tabindex="-1"></a><span class="co">#&gt; 117    84000            -800       14589934</span></span>
+<span id="cb4-123"><a href="#cb4-123" tabindex="-1"></a><span class="co">#&gt; 118    95780               6             NA</span></span>
+<span id="cb4-124"><a href="#cb4-124" tabindex="-1"></a><span class="co">#&gt; 119   115753            -800         159595</span></span>
+<span id="cb4-125"><a href="#cb4-125" tabindex="-1"></a><span class="co">#&gt; 120   115739            -800        2180212</span></span>
+<span id="cb4-126"><a href="#cb4-126" tabindex="-1"></a><span class="co">#&gt; 121   115749            -800         504427</span></span>
+<span id="cb4-127"><a href="#cb4-127" tabindex="-1"></a><span class="co">#&gt; 122   115737            -600       14398328</span></span>
+<span id="cb4-128"><a href="#cb4-128" tabindex="-1"></a><span class="co">#&gt; 123   115747            -800        2181547</span></span>
+<span id="cb4-129"><a href="#cb4-129" tabindex="-1"></a><span class="co">#&gt; 124   115741            -800        2180546</span></span>
+<span id="cb4-130"><a href="#cb4-130" tabindex="-1"></a><span class="co">#&gt; 125   115751            -800        2179711</span></span>
+<span id="cb4-131"><a href="#cb4-131" tabindex="-1"></a><span class="co">#&gt; 126   115745            -800        2180712</span></span>
+<span id="cb4-132"><a href="#cb4-132" tabindex="-1"></a><span class="co">#&gt; 127   115695               6             NA</span></span>
+<span id="cb4-133"><a href="#cb4-133" tabindex="-1"></a><span class="co">#&gt; 128   115743            -800         602027</span></span>
+<span id="cb4-134"><a href="#cb4-134" tabindex="-1"></a><span class="co">#&gt;                                                                        asset_name</span></span>
+<span id="cb4-135"><a href="#cb4-135" tabindex="-1"></a><span class="co">#&gt; 1                                                                    Introduction</span></span>
+<span id="cb4-136"><a href="#cb4-136" tabindex="-1"></a><span class="co">#&gt; 2                                                              Databrary 1.0 plan</span></span>
+<span id="cb4-137"><a href="#cb4-137" tabindex="-1"></a><span class="co">#&gt; 3                                                                         Datavyu</span></span>
+<span id="cb4-138"><a href="#cb4-138" tabindex="-1"></a><span class="co">#&gt; 4                                                                          Slides</span></span>
+<span id="cb4-139"><a href="#cb4-139" tabindex="-1"></a><span class="co">#&gt; 5                                                                  Databrary demo</span></span>
+<span id="cb4-140"><a href="#cb4-140" tabindex="-1"></a><span class="co">#&gt; 6                                                      Overview and Policy Update</span></span>
+<span id="cb4-141"><a href="#cb4-141" tabindex="-1"></a><span class="co">#&gt; 7                                                               Private Beta demo</span></span>
+<span id="cb4-142"><a href="#cb4-142" tabindex="-1"></a><span class="co">#&gt; 8                                                                    04-07-Slides</span></span>
+<span id="cb4-143"><a href="#cb4-143" tabindex="-1"></a><span class="co">#&gt; 9                                            Positioning Databrary for the future</span></span>
+<span id="cb4-144"><a href="#cb4-144" tabindex="-1"></a><span class="co">#&gt; 10                                                                  Board Meeting</span></span>
+<span id="cb4-145"><a href="#cb4-145" tabindex="-1"></a><span class="co">#&gt; 11                                                                         slides</span></span>
+<span id="cb4-146"><a href="#cb4-146" tabindex="-1"></a><span class="co">#&gt; 12                                                                 Databrary demo</span></span>
+<span id="cb4-147"><a href="#cb4-147" tabindex="-1"></a><span class="co">#&gt; 13                                                SLIDES: Open video data sharing</span></span>
+<span id="cb4-148"><a href="#cb4-148" tabindex="-1"></a><span class="co">#&gt; 14                                                        Open video data sharing</span></span>
+<span id="cb4-149"><a href="#cb4-149" tabindex="-1"></a><span class="co">#&gt; 15                                                               Datavyu tutorial</span></span>
+<span id="cb4-150"><a href="#cb4-150" tabindex="-1"></a><span class="co">#&gt; 16                                         SLIDES: Best practices in video coding</span></span>
+<span id="cb4-151"><a href="#cb4-151" tabindex="-1"></a><span class="co">#&gt; 17                                                               Lunch discussion</span></span>
+<span id="cb4-152"><a href="#cb4-152" tabindex="-1"></a><span class="co">#&gt; 18                                                 Best practices in video coding</span></span>
+<span id="cb4-153"><a href="#cb4-153" tabindex="-1"></a><span class="co">#&gt; 19                                                                 Welcome slides</span></span>
+<span id="cb4-154"><a href="#cb4-154" tabindex="-1"></a><span class="co">#&gt; 20                                                       SLIDES: Lunch discussion</span></span>
+<span id="cb4-155"><a href="#cb4-155" tabindex="-1"></a><span class="co">#&gt; 21                                                                          video</span></span>
+<span id="cb4-156"><a href="#cb4-156" tabindex="-1"></a><span class="co">#&gt; 22                                                                         slides</span></span>
+<span id="cb4-157"><a href="#cb4-157" tabindex="-1"></a><span class="co">#&gt; 23                                   Slides: Video reuse, management, and sharing</span></span>
+<span id="cb4-158"><a href="#cb4-158" tabindex="-1"></a><span class="co">#&gt; 24  Slides: Best practices in behavioral video coding and introduction to Datavyu</span></span>
+<span id="cb4-159"><a href="#cb4-159" tabindex="-1"></a><span class="co">#&gt; 25        Slides: Policies and best practices for sharing and managing video data</span></span>
+<span id="cb4-160"><a href="#cb4-160" tabindex="-1"></a><span class="co">#&gt; 26                    Policies &amp; best practices for sharing &amp; managing video data</span></span>
+<span id="cb4-161"><a href="#cb4-161" tabindex="-1"></a><span class="co">#&gt; 27                                                                         Agenda</span></span>
+<span id="cb4-162"><a href="#cb4-162" tabindex="-1"></a><span class="co">#&gt; 28                         Introduction to Datavyu: Video coding &amp; best practices</span></span>
+<span id="cb4-163"><a href="#cb4-163" tabindex="-1"></a><span class="co">#&gt; 29                                                      Introduction to Databrary</span></span>
+<span id="cb4-164"><a href="#cb4-164" tabindex="-1"></a><span class="co">#&gt; 30            SLIDES: Policies &amp; best practices for sharing &amp; managing video data</span></span>
+<span id="cb4-165"><a href="#cb4-165" tabindex="-1"></a><span class="co">#&gt; 31                 SLIDES: Introduction to Datavyu: Video coding &amp; best practices</span></span>
+<span id="cb4-166"><a href="#cb4-166" tabindex="-1"></a><span class="co">#&gt; 32                                              SLIDES: Introduction to Databrary</span></span>
+<span id="cb4-167"><a href="#cb4-167" tabindex="-1"></a><span class="co">#&gt; 33                                                                           logo</span></span>
+<span id="cb4-168"><a href="#cb4-168" tabindex="-1"></a><span class="co">#&gt; 34                                                         NSF Proposal Narrative</span></span>
+<span id="cb4-169"><a href="#cb4-169" tabindex="-1"></a><span class="co">#&gt; 35                                                         NIH Proposal Narrative</span></span>
+<span id="cb4-170"><a href="#cb4-170" tabindex="-1"></a><span class="co">#&gt; 36                                                          counting (demo video)</span></span>
+<span id="cb4-171"><a href="#cb4-171" tabindex="-1"></a><span class="co">#&gt; 37                                                   counting (demo Datavyu file)</span></span>
+<span id="cb4-172"><a href="#cb4-172" tabindex="-1"></a><span class="co">#&gt; 38                                           databrary-institutions-investigators</span></span>
+<span id="cb4-173"><a href="#cb4-173" tabindex="-1"></a><span class="co">#&gt; 39                                                      volumes-citations-monthly</span></span>
+<span id="cb4-174"><a href="#cb4-174" tabindex="-1"></a><span class="co">#&gt; 40                                              SLIDES: Introduction to Databrary</span></span>
+<span id="cb4-175"><a href="#cb4-175" tabindex="-1"></a><span class="co">#&gt; 41            SLIDES: Policies &amp; best practices for sharing &amp; managing video data</span></span>
+<span id="cb4-176"><a href="#cb4-176" tabindex="-1"></a><span class="co">#&gt; 42                 SLIDES: Introduction to Datavyu: Video coding &amp; best practices</span></span>
+<span id="cb4-177"><a href="#cb4-177" tabindex="-1"></a><span class="co">#&gt; 43                         Introduction to Datavyu: Video coding &amp; best practices</span></span>
+<span id="cb4-178"><a href="#cb4-178" tabindex="-1"></a><span class="co">#&gt; 44           Policies &amp; best practices for sharing &amp; managing video data (Part 1)</span></span>
+<span id="cb4-179"><a href="#cb4-179" tabindex="-1"></a><span class="co">#&gt; 45           Policies &amp; best practices for sharing &amp; managing video data (Part 2)</span></span>
+<span id="cb4-180"><a href="#cb4-180" tabindex="-1"></a><span class="co">#&gt; 46                                                      Introduction to Databrary</span></span>
+<span id="cb4-181"><a href="#cb4-181" tabindex="-1"></a><span class="co">#&gt; 47                                              SLIDES: Introduction to Databrary</span></span>
+<span id="cb4-182"><a href="#cb4-182" tabindex="-1"></a><span class="co">#&gt; 48                                              Workshop attendees survey results</span></span>
+<span id="cb4-183"><a href="#cb4-183" tabindex="-1"></a><span class="co">#&gt; 49                                                      Introduction to Databrary</span></span>
+<span id="cb4-184"><a href="#cb4-184" tabindex="-1"></a><span class="co">#&gt; 50                                  SLIDES: Managing Data to Accelerate Discovery</span></span>
+<span id="cb4-185"><a href="#cb4-185" tabindex="-1"></a><span class="co">#&gt; 51                                SLIDES: Policies for Sharing Identifiable Video</span></span>
+<span id="cb4-186"><a href="#cb4-186" tabindex="-1"></a><span class="co">#&gt; 52                              SLIDES: Datavyu &amp; Best Practices for Coding Video</span></span>
+<span id="cb4-187"><a href="#cb4-187" tabindex="-1"></a><span class="co">#&gt; 53                                        Policies for Sharing Identifiable Video</span></span>
+<span id="cb4-188"><a href="#cb4-188" tabindex="-1"></a><span class="co">#&gt; 54                                          Managing Data to Accelerate Discovery</span></span>
+<span id="cb4-189"><a href="#cb4-189" tabindex="-1"></a><span class="co">#&gt; 55                                                                 Survey results</span></span>
+<span id="cb4-190"><a href="#cb4-190" tabindex="-1"></a><span class="co">#&gt; 56                                        Policies for Sharing Identifiable Video</span></span>
+<span id="cb4-191"><a href="#cb4-191" tabindex="-1"></a><span class="co">#&gt; 57                                                   Managing Data with Databrary</span></span>
+<span id="cb4-192"><a href="#cb4-192" tabindex="-1"></a><span class="co">#&gt; 58                                      Datavyu &amp; Best Practices for Coding Video</span></span>
+<span id="cb4-193"><a href="#cb4-193" tabindex="-1"></a><span class="co">#&gt; 59                              SLIDES: Datavyu &amp; Best Practices for Coding Video</span></span>
+<span id="cb4-194"><a href="#cb4-194" tabindex="-1"></a><span class="co">#&gt; 60                                SLIDES: Policies for Sharing Identifiable Video</span></span>
+<span id="cb4-195"><a href="#cb4-195" tabindex="-1"></a><span class="co">#&gt; 61                                              SLIDES: Introduction to Databrary</span></span>
+<span id="cb4-196"><a href="#cb4-196" tabindex="-1"></a><span class="co">#&gt; 62                                           SLIDES: Managing Data with Databrary</span></span>
+<span id="cb4-197"><a href="#cb4-197" tabindex="-1"></a><span class="co">#&gt; 63                                                      Introduction to Databrary</span></span>
+<span id="cb4-198"><a href="#cb4-198" tabindex="-1"></a><span class="co">#&gt; 64                                           SLIDES: Managing Data with Databrary</span></span>
+<span id="cb4-199"><a href="#cb4-199" tabindex="-1"></a><span class="co">#&gt; 65                                              SLIDES: Introduction to Databrary</span></span>
+<span id="cb4-200"><a href="#cb4-200" tabindex="-1"></a><span class="co">#&gt; 66                              SLIDES: Datavyu &amp; Best Practices for Coding Video</span></span>
+<span id="cb4-201"><a href="#cb4-201" tabindex="-1"></a><span class="co">#&gt; 67                                                       Databrary Pre-conference</span></span>
+<span id="cb4-202"><a href="#cb4-202" tabindex="-1"></a><span class="co">#&gt; 68                                        SLIDES: Policies for Sharing Video Data</span></span>
+<span id="cb4-203"><a href="#cb4-203" tabindex="-1"></a><span class="co">#&gt; 69                                                            ICIS Survey Results</span></span>
+<span id="cb4-204"><a href="#cb4-204" tabindex="-1"></a><span class="co">#&gt; 70                                 VIDEO: Databrary Board Meeting - June 13, 2016</span></span>
+<span id="cb4-205"><a href="#cb4-205" tabindex="-1"></a><span class="co">#&gt; 71                                SLIDES: Databrary Board Meeting - June 13, 2016</span></span>
+<span id="cb4-206"><a href="#cb4-206" tabindex="-1"></a><span class="co">#&gt; 72                                                Policies for sharing video data</span></span>
+<span id="cb4-207"><a href="#cb4-207" tabindex="-1"></a><span class="co">#&gt; 73                                                   Managing data with Databrary</span></span>
+<span id="cb4-208"><a href="#cb4-208" tabindex="-1"></a><span class="co">#&gt; 74                                      Datavyu &amp; best Practices for coding video</span></span>
+<span id="cb4-209"><a href="#cb4-209" tabindex="-1"></a><span class="co">#&gt; 75                                                      Introduction to Databrary</span></span>
+<span id="cb4-210"><a href="#cb4-210" tabindex="-1"></a><span class="co">#&gt; 76                                              SLIDES: Introduction to Databrary</span></span>
+<span id="cb4-211"><a href="#cb4-211" tabindex="-1"></a><span class="co">#&gt; 77                                                   SLIDES: Policies for Sharing</span></span>
+<span id="cb4-212"><a href="#cb4-212" tabindex="-1"></a><span class="co">#&gt; 78                                           SLIDES: Managing data with Databrary</span></span>
+<span id="cb4-213"><a href="#cb4-213" tabindex="-1"></a><span class="co">#&gt; 79                              SLIDES: Datavyu &amp; best practices for coding video</span></span>
+<span id="cb4-214"><a href="#cb4-214" tabindex="-1"></a><span class="co">#&gt; 80                                                      Policies for sharing data</span></span>
+<span id="cb4-215"><a href="#cb4-215" tabindex="-1"></a><span class="co">#&gt; 81                                                      Introduction to Databrary</span></span>
+<span id="cb4-216"><a href="#cb4-216" tabindex="-1"></a><span class="co">#&gt; 82                                                PLAY workshop slides 2016-12-16</span></span>
+<span id="cb4-217"><a href="#cb4-217" tabindex="-1"></a><span class="co">#&gt; 83                                             PLAY workshop videocast 2016-12-16</span></span>
+<span id="cb4-218"><a href="#cb4-218" tabindex="-1"></a><span class="co">#&gt; 84                                                                            4/4</span></span>
+<span id="cb4-219"><a href="#cb4-219" tabindex="-1"></a><span class="co">#&gt; 85                                                                            2/4</span></span>
+<span id="cb4-220"><a href="#cb4-220" tabindex="-1"></a><span class="co">#&gt; 86                                                                            1/4</span></span>
+<span id="cb4-221"><a href="#cb4-221" tabindex="-1"></a><span class="co">#&gt; 87                                                                            3/4</span></span>
+<span id="cb4-222"><a href="#cb4-222" tabindex="-1"></a><span class="co">#&gt; 88                                                                          00002</span></span>
+<span id="cb4-223"><a href="#cb4-223" tabindex="-1"></a><span class="co">#&gt; 89                                                                          00003</span></span>
+<span id="cb4-224"><a href="#cb4-224" tabindex="-1"></a><span class="co">#&gt; 90                                                                          00004</span></span>
+<span id="cb4-225"><a href="#cb4-225" tabindex="-1"></a><span class="co">#&gt; 91                                                                          00005</span></span>
+<span id="cb4-226"><a href="#cb4-226" tabindex="-1"></a><span class="co">#&gt; 92                                                                          00006</span></span>
+<span id="cb4-227"><a href="#cb4-227" tabindex="-1"></a><span class="co">#&gt; 93                                     SRCD_2017_The_Science_of_Play_and_Learning</span></span>
+<span id="cb4-228"><a href="#cb4-228" tabindex="-1"></a><span class="co">#&gt; 94                                                      3-Datavyu-2017-04-30-aera</span></span>
+<span id="cb4-229"><a href="#cb4-229" tabindex="-1"></a><span class="co">#&gt; 95                                                        1-intro-2017-04-30-aera</span></span>
+<span id="cb4-230"><a href="#cb4-230" tabindex="-1"></a><span class="co">#&gt; 96                                                 2-policiesMgmt-2017-04-30-aera</span></span>
+<span id="cb4-231"><a href="#cb4-231" tabindex="-1"></a><span class="co">#&gt; 97                                                                          00016</span></span>
+<span id="cb4-232"><a href="#cb4-232" tabindex="-1"></a><span class="co">#&gt; 98                                                                         000152</span></span>
+<span id="cb4-233"><a href="#cb4-233" tabindex="-1"></a><span class="co">#&gt; 99                                                                          00014</span></span>
+<span id="cb4-234"><a href="#cb4-234" tabindex="-1"></a><span class="co">#&gt; 100                                                                         00012</span></span>
+<span id="cb4-235"><a href="#cb4-235" tabindex="-1"></a><span class="co">#&gt; 101                                                                        000151</span></span>
+<span id="cb4-236"><a href="#cb4-236" tabindex="-1"></a><span class="co">#&gt; 102                                                                         00013</span></span>
+<span id="cb4-237"><a href="#cb4-237" tabindex="-1"></a><span class="co">#&gt; 103                                                                         00024</span></span>
+<span id="cb4-238"><a href="#cb4-238" tabindex="-1"></a><span class="co">#&gt; 104                                  Advisory Board Meeting-2017-06-09 Part-2.mp4</span></span>
+<span id="cb4-239"><a href="#cb4-239" tabindex="-1"></a><span class="co">#&gt; 105                                                                         00021</span></span>
+<span id="cb4-240"><a href="#cb4-240" tabindex="-1"></a><span class="co">#&gt; 106                                                                         00026</span></span>
+<span id="cb4-241"><a href="#cb4-241" tabindex="-1"></a><span class="co">#&gt; 107                                                                         00029</span></span>
+<span id="cb4-242"><a href="#cb4-242" tabindex="-1"></a><span class="co">#&gt; 108                                                                         00023</span></span>
+<span id="cb4-243"><a href="#cb4-243" tabindex="-1"></a><span class="co">#&gt; 109                                                                         00025</span></span>
+<span id="cb4-244"><a href="#cb4-244" tabindex="-1"></a><span class="co">#&gt; 110                                                                         00027</span></span>
+<span id="cb4-245"><a href="#cb4-245" tabindex="-1"></a><span class="co">#&gt; 111                                                                         00019</span></span>
+<span id="cb4-246"><a href="#cb4-246" tabindex="-1"></a><span class="co">#&gt; 112                                Advisory Board Meeting Presentation_2017-06-09</span></span>
+<span id="cb4-247"><a href="#cb4-247" tabindex="-1"></a><span class="co">#&gt; 113         Heiman_Steinhardt Databrary_060917_GCASL CQ_PMO_Zoom4_Nus_bk# 1036791</span></span>
+<span id="cb4-248"><a href="#cb4-248" tabindex="-1"></a><span class="co">#&gt; 114                                                                         00020</span></span>
+<span id="cb4-249"><a href="#cb4-249" tabindex="-1"></a><span class="co">#&gt; 115                                                                         00028</span></span>
+<span id="cb4-250"><a href="#cb4-250" tabindex="-1"></a><span class="co">#&gt; 116                                                                         00022</span></span>
+<span id="cb4-251"><a href="#cb4-251" tabindex="-1"></a><span class="co">#&gt; 117                                             DatabraryAdvisoryBoardMeeting2017</span></span>
+<span id="cb4-252"><a href="#cb4-252" tabindex="-1"></a><span class="co">#&gt; 118                                    CDS_Databrary_Datavyu_2017-10-13_Final.key</span></span>
+<span id="cb4-253"><a href="#cb4-253" tabindex="-1"></a><span class="co">#&gt; 119                                             Advisory Board Meeting_2018_Part6</span></span>
+<span id="cb4-254"><a href="#cb4-254" tabindex="-1"></a><span class="co">#&gt; 120                                             Advisory Board Meeting_2018_Part7</span></span>
+<span id="cb4-255"><a href="#cb4-255" tabindex="-1"></a><span class="co">#&gt; 121                                             Advisory Board Meeting_2018_Part8</span></span>
+<span id="cb4-256"><a href="#cb4-256" tabindex="-1"></a><span class="co">#&gt; 122                                           Databrary Advisory Board_2018-03-26</span></span>
+<span id="cb4-257"><a href="#cb4-257" tabindex="-1"></a><span class="co">#&gt; 123                                             Advisory Board Meeting_2018_Part2</span></span>
+<span id="cb4-258"><a href="#cb4-258" tabindex="-1"></a><span class="co">#&gt; 124                                             Advisory Board Meeting_2018_Part5</span></span>
+<span id="cb4-259"><a href="#cb4-259" tabindex="-1"></a><span class="co">#&gt; 125                                             Advisory Board Meeting_2018_Part1</span></span>
+<span id="cb4-260"><a href="#cb4-260" tabindex="-1"></a><span class="co">#&gt; 126                                             Advisory Board Meeting_2018_Part4</span></span>
+<span id="cb4-261"><a href="#cb4-261" tabindex="-1"></a><span class="co">#&gt; 127                            Databrary_Advisory_Board_Meeting_slides-2018-03-26</span></span>
+<span id="cb4-262"><a href="#cb4-262" tabindex="-1"></a><span class="co">#&gt; 128                                             Advisory Board Meeting_2018_Part3</span></span>
+<span id="cb4-263"><a href="#cb4-263" tabindex="-1"></a><span class="co">#&gt;     asset_permission asset_size session_id session_date session_release</span></span>
+<span id="cb4-264"><a href="#cb4-264" tabindex="-1"></a><span class="co">#&gt; 1                  1   88610655       6256   2013-10-28               3</span></span>
+<span id="cb4-265"><a href="#cb4-265" tabindex="-1"></a><span class="co">#&gt; 2                  1  899912341       6256   2013-10-28               3</span></span>
+<span id="cb4-266"><a href="#cb4-266" tabindex="-1"></a><span class="co">#&gt; 3                  1  764340542       6256   2013-10-28               3</span></span>
+<span id="cb4-267"><a href="#cb4-267" tabindex="-1"></a><span class="co">#&gt; 4                  1    4573426       6256   2013-10-28               3</span></span>
+<span id="cb4-268"><a href="#cb4-268" tabindex="-1"></a><span class="co">#&gt; 5                  1  917124852       6256   2013-10-28               3</span></span>
+<span id="cb4-269"><a href="#cb4-269" tabindex="-1"></a><span class="co">#&gt; 6                  1 1301079971       6257   2014-04-07               3</span></span>
+<span id="cb4-270"><a href="#cb4-270" tabindex="-1"></a><span class="co">#&gt; 7                  1 1419151887       6257   2014-04-07               3</span></span>
+<span id="cb4-271"><a href="#cb4-271" tabindex="-1"></a><span class="co">#&gt; 8                  1    3013342       6257   2014-04-07               3</span></span>
+<span id="cb4-272"><a href="#cb4-272" tabindex="-1"></a><span class="co">#&gt; 9                  1  882417129       6257   2014-04-07               3</span></span>
+<span id="cb4-273"><a href="#cb4-273" tabindex="-1"></a><span class="co">#&gt; 10                 1 5316455384       6540   2014-10-17               3</span></span>
+<span id="cb4-274"><a href="#cb4-274" tabindex="-1"></a><span class="co">#&gt; 11                 1   10192940       6540   2014-10-17               3</span></span>
+<span id="cb4-275"><a href="#cb4-275" tabindex="-1"></a><span class="co">#&gt; 12                 1 1079191541       7821   2015-03-18               3</span></span>
+<span id="cb4-276"><a href="#cb4-276" tabindex="-1"></a><span class="co">#&gt; 13                 1    4158160       7821   2015-03-18               3</span></span>
+<span id="cb4-277"><a href="#cb4-277" tabindex="-1"></a><span class="co">#&gt; 14                 1  710384623       7821   2015-03-18               3</span></span>
+<span id="cb4-278"><a href="#cb4-278" tabindex="-1"></a><span class="co">#&gt; 15                 1  574598972       7821   2015-03-18               3</span></span>
+<span id="cb4-279"><a href="#cb4-279" tabindex="-1"></a><span class="co">#&gt; 16                 1    2924252       7821   2015-03-18               3</span></span>
+<span id="cb4-280"><a href="#cb4-280" tabindex="-1"></a><span class="co">#&gt; 17                 1 1602298195       7821   2015-03-18               3</span></span>
+<span id="cb4-281"><a href="#cb4-281" tabindex="-1"></a><span class="co">#&gt; 18                 1 1384301751       7821   2015-03-18               3</span></span>
+<span id="cb4-282"><a href="#cb4-282" tabindex="-1"></a><span class="co">#&gt; 19                 1     304566       7821   2015-03-18               3</span></span>
+<span id="cb4-283"><a href="#cb4-283" tabindex="-1"></a><span class="co">#&gt; 20                 1    6899381       7821   2015-03-18               3</span></span>
+<span id="cb4-284"><a href="#cb4-284" tabindex="-1"></a><span class="co">#&gt; 21                 1 5561649547       8460   2015-05-11               3</span></span>
+<span id="cb4-285"><a href="#cb4-285" tabindex="-1"></a><span class="co">#&gt; 22                 1   24014506       8460   2015-05-11               3</span></span>
+<span id="cb4-286"><a href="#cb4-286" tabindex="-1"></a><span class="co">#&gt; 23                 1   19543511       9224   2015-09-18               3</span></span>
+<span id="cb4-287"><a href="#cb4-287" tabindex="-1"></a><span class="co">#&gt; 24                 1   11216184       9224   2015-09-18               3</span></span>
+<span id="cb4-288"><a href="#cb4-288" tabindex="-1"></a><span class="co">#&gt; 25                 1    6947725       9224   2015-09-18               3</span></span>
+<span id="cb4-289"><a href="#cb4-289" tabindex="-1"></a><span class="co">#&gt; 26                 1 2059896165       9578   2015-10-08               3</span></span>
+<span id="cb4-290"><a href="#cb4-290" tabindex="-1"></a><span class="co">#&gt; 27                 1      55248       9578   2015-10-08               3</span></span>
+<span id="cb4-291"><a href="#cb4-291" tabindex="-1"></a><span class="co">#&gt; 28                 1  717531830       9578   2015-10-08               3</span></span>
+<span id="cb4-292"><a href="#cb4-292" tabindex="-1"></a><span class="co">#&gt; 29                 1  969574682       9578   2015-10-08               3</span></span>
+<span id="cb4-293"><a href="#cb4-293" tabindex="-1"></a><span class="co">#&gt; 30                 1   18074689       9578   2015-10-08               3</span></span>
+<span id="cb4-294"><a href="#cb4-294" tabindex="-1"></a><span class="co">#&gt; 31                 1   16562761       9578   2015-10-08               3</span></span>
+<span id="cb4-295"><a href="#cb4-295" tabindex="-1"></a><span class="co">#&gt; 32                 1    8502489       9578   2015-10-08               3</span></span>
+<span id="cb4-296"><a href="#cb4-296" tabindex="-1"></a><span class="co">#&gt; 33                 1     104419       9807         &lt;NA&gt;              NA</span></span>
+<span id="cb4-297"><a href="#cb4-297" tabindex="-1"></a><span class="co">#&gt; 34                 1    4120930       9807         &lt;NA&gt;              NA</span></span>
+<span id="cb4-298"><a href="#cb4-298" tabindex="-1"></a><span class="co">#&gt; 35                 1    3826718       9807         &lt;NA&gt;              NA</span></span>
+<span id="cb4-299"><a href="#cb4-299" tabindex="-1"></a><span class="co">#&gt; 36                 1     394499       9807         &lt;NA&gt;              NA</span></span>
+<span id="cb4-300"><a href="#cb4-300" tabindex="-1"></a><span class="co">#&gt; 37                 1       1030       9807         &lt;NA&gt;              NA</span></span>
+<span id="cb4-301"><a href="#cb4-301" tabindex="-1"></a><span class="co">#&gt; 38                 1       1826       9807         &lt;NA&gt;              NA</span></span>
+<span id="cb4-302"><a href="#cb4-302" tabindex="-1"></a><span class="co">#&gt; 39                 1        417       9807         &lt;NA&gt;              NA</span></span>
+<span id="cb4-303"><a href="#cb4-303" tabindex="-1"></a><span class="co">#&gt; 40                 1    9500786      10068   2015-11-20               3</span></span>
+<span id="cb4-304"><a href="#cb4-304" tabindex="-1"></a><span class="co">#&gt; 41                 1   18069955      10068   2015-11-20               3</span></span>
+<span id="cb4-305"><a href="#cb4-305" tabindex="-1"></a><span class="co">#&gt; 42                 1   17821836      10068   2015-11-20               3</span></span>
+<span id="cb4-306"><a href="#cb4-306" tabindex="-1"></a><span class="co">#&gt; 43                 1 1550955220      10068   2015-11-20               3</span></span>
+<span id="cb4-307"><a href="#cb4-307" tabindex="-1"></a><span class="co">#&gt; 44                 1  763350644      10068   2015-11-20               3</span></span>
+<span id="cb4-308"><a href="#cb4-308" tabindex="-1"></a><span class="co">#&gt; 45                 1 1044753106      10068   2015-11-20               3</span></span>
+<span id="cb4-309"><a href="#cb4-309" tabindex="-1"></a><span class="co">#&gt; 46                 1  886710056      10068   2015-11-20               3</span></span>
+<span id="cb4-310"><a href="#cb4-310" tabindex="-1"></a><span class="co">#&gt; 47                 1   22240020      10991   2016-03-25               3</span></span>
+<span id="cb4-311"><a href="#cb4-311" tabindex="-1"></a><span class="co">#&gt; 48                 1     402918      10991   2016-03-25               3</span></span>
+<span id="cb4-312"><a href="#cb4-312" tabindex="-1"></a><span class="co">#&gt; 49                 1 1190956598      10991   2016-03-25               3</span></span>
+<span id="cb4-313"><a href="#cb4-313" tabindex="-1"></a><span class="co">#&gt; 50                 1   13901204      10991   2016-03-25               3</span></span>
+<span id="cb4-314"><a href="#cb4-314" tabindex="-1"></a><span class="co">#&gt; 51                 1    2225737      10991   2016-03-25               3</span></span>
+<span id="cb4-315"><a href="#cb4-315" tabindex="-1"></a><span class="co">#&gt; 52                 1   16143550      10991   2016-03-25               3</span></span>
+<span id="cb4-316"><a href="#cb4-316" tabindex="-1"></a><span class="co">#&gt; 53                 1  824306229      10991   2016-03-25               3</span></span>
+<span id="cb4-317"><a href="#cb4-317" tabindex="-1"></a><span class="co">#&gt; 54                 1 1412799175      10991   2016-03-25               3</span></span>
+<span id="cb4-318"><a href="#cb4-318" tabindex="-1"></a><span class="co">#&gt; 55                 1     191095      11362   2016-04-15               3</span></span>
+<span id="cb4-319"><a href="#cb4-319" tabindex="-1"></a><span class="co">#&gt; 56                 1  622855933      11362   2016-04-15               3</span></span>
+<span id="cb4-320"><a href="#cb4-320" tabindex="-1"></a><span class="co">#&gt; 57                 1 1035603796      11362   2016-04-15               3</span></span>
+<span id="cb4-321"><a href="#cb4-321" tabindex="-1"></a><span class="co">#&gt; 58                 1  857979902      11362   2016-04-15               3</span></span>
+<span id="cb4-322"><a href="#cb4-322" tabindex="-1"></a><span class="co">#&gt; 59                 1   11171502      11362   2016-04-15               3</span></span>
+<span id="cb4-323"><a href="#cb4-323" tabindex="-1"></a><span class="co">#&gt; 60                 1    4265477      11362   2016-04-15               3</span></span>
+<span id="cb4-324"><a href="#cb4-324" tabindex="-1"></a><span class="co">#&gt; 61                 1   17971722      11362   2016-04-15               3</span></span>
+<span id="cb4-325"><a href="#cb4-325" tabindex="-1"></a><span class="co">#&gt; 62                 1   10040436      11362   2016-04-15               3</span></span>
+<span id="cb4-326"><a href="#cb4-326" tabindex="-1"></a><span class="co">#&gt; 63                 1  706313005      11362   2016-04-15               3</span></span>
+<span id="cb4-327"><a href="#cb4-327" tabindex="-1"></a><span class="co">#&gt; 64                 1    7741745      11660   2016-05-25               3</span></span>
+<span id="cb4-328"><a href="#cb4-328" tabindex="-1"></a><span class="co">#&gt; 65                 1   10732100      11660   2016-05-25               3</span></span>
+<span id="cb4-329"><a href="#cb4-329" tabindex="-1"></a><span class="co">#&gt; 66                 1   15475455      11660   2016-05-25               3</span></span>
+<span id="cb4-330"><a href="#cb4-330" tabindex="-1"></a><span class="co">#&gt; 67                 1 5207302273      11660   2016-05-25               3</span></span>
+<span id="cb4-331"><a href="#cb4-331" tabindex="-1"></a><span class="co">#&gt; 68                 1    4238406      11660   2016-05-25               3</span></span>
+<span id="cb4-332"><a href="#cb4-332" tabindex="-1"></a><span class="co">#&gt; 69                 1    1772791      11660   2016-05-25               3</span></span>
+<span id="cb4-333"><a href="#cb4-333" tabindex="-1"></a><span class="co">#&gt; 70                 1 4651981876      11886   2016-06-13               3</span></span>
+<span id="cb4-334"><a href="#cb4-334" tabindex="-1"></a><span class="co">#&gt; 71                 1   19602134      11886   2016-06-13               3</span></span>
+<span id="cb4-335"><a href="#cb4-335" tabindex="-1"></a><span class="co">#&gt; 72                 1  795931994      14297   2016-10-14               3</span></span>
+<span id="cb4-336"><a href="#cb4-336" tabindex="-1"></a><span class="co">#&gt; 73                 1  627556299      14297   2016-10-14               3</span></span>
+<span id="cb4-337"><a href="#cb4-337" tabindex="-1"></a><span class="co">#&gt; 74                 1 1033985826      14297   2016-10-14               3</span></span>
+<span id="cb4-338"><a href="#cb4-338" tabindex="-1"></a><span class="co">#&gt; 75                 1  607629550      14297   2016-10-14               3</span></span>
+<span id="cb4-339"><a href="#cb4-339" tabindex="-1"></a><span class="co">#&gt; 76                 1   10732100      14297   2016-10-14               3</span></span>
+<span id="cb4-340"><a href="#cb4-340" tabindex="-1"></a><span class="co">#&gt; 77                 1    4238406      14297   2016-10-14               3</span></span>
+<span id="cb4-341"><a href="#cb4-341" tabindex="-1"></a><span class="co">#&gt; 78                 1    7741745      14297   2016-10-14               3</span></span>
+<span id="cb4-342"><a href="#cb4-342" tabindex="-1"></a><span class="co">#&gt; 79                 1   15475455      14297   2016-10-14               3</span></span>
+<span id="cb4-343"><a href="#cb4-343" tabindex="-1"></a><span class="co">#&gt; 80                 1  687136253      14551   2016-10-21               3</span></span>
+<span id="cb4-344"><a href="#cb4-344" tabindex="-1"></a><span class="co">#&gt; 81                 1  671824312      14551   2016-10-21               3</span></span>
+<span id="cb4-345"><a href="#cb4-345" tabindex="-1"></a><span class="co">#&gt; 82                 1  278432416      15663   2016-12-16               3</span></span>
+<span id="cb4-346"><a href="#cb4-346" tabindex="-1"></a><span class="co">#&gt; 83                 1 1332848036      15663   2016-12-16               3</span></span>
+<span id="cb4-347"><a href="#cb4-347" tabindex="-1"></a><span class="co">#&gt; 84                 1  984178185      16104   2017-02-03               3</span></span>
+<span id="cb4-348"><a href="#cb4-348" tabindex="-1"></a><span class="co">#&gt; 85                 1 1322485833      16104   2017-02-03               3</span></span>
+<span id="cb4-349"><a href="#cb4-349" tabindex="-1"></a><span class="co">#&gt; 86                 1 1251324058      16104   2017-02-03               3</span></span>
+<span id="cb4-350"><a href="#cb4-350" tabindex="-1"></a><span class="co">#&gt; 87                 1 1310253381      16104   2017-02-03               3</span></span>
+<span id="cb4-351"><a href="#cb4-351" tabindex="-1"></a><span class="co">#&gt; 88                 1 1141378800      16891   2017-04-05               3</span></span>
+<span id="cb4-352"><a href="#cb4-352" tabindex="-1"></a><span class="co">#&gt; 89                 1 1109757036      16891   2017-04-05               3</span></span>
+<span id="cb4-353"><a href="#cb4-353" tabindex="-1"></a><span class="co">#&gt; 90                 1  308336133      16891   2017-04-05               3</span></span>
+<span id="cb4-354"><a href="#cb4-354" tabindex="-1"></a><span class="co">#&gt; 91                 1 1077537629      16891   2017-04-05               3</span></span>
+<span id="cb4-355"><a href="#cb4-355" tabindex="-1"></a><span class="co">#&gt; 92                 1  555319245      16891   2017-04-05               3</span></span>
+<span id="cb4-356"><a href="#cb4-356" tabindex="-1"></a><span class="co">#&gt; 93                 1 1185980540      16894   2017-04-05               3</span></span>
+<span id="cb4-357"><a href="#cb4-357" tabindex="-1"></a><span class="co">#&gt; 94                 1   11296910      17187   2017-04-30               3</span></span>
+<span id="cb4-358"><a href="#cb4-358" tabindex="-1"></a><span class="co">#&gt; 95                 1    9899927      17187   2017-04-30               3</span></span>
+<span id="cb4-359"><a href="#cb4-359" tabindex="-1"></a><span class="co">#&gt; 96                 1    8188127      17187   2017-04-30               3</span></span>
+<span id="cb4-360"><a href="#cb4-360" tabindex="-1"></a><span class="co">#&gt; 97                 1  252821639      17417   2017-05-15               3</span></span>
+<span id="cb4-361"><a href="#cb4-361" tabindex="-1"></a><span class="co">#&gt; 98                 1  695084769      17417   2017-05-15               3</span></span>
+<span id="cb4-362"><a href="#cb4-362" tabindex="-1"></a><span class="co">#&gt; 99                 1   39116816      17417   2017-05-15               3</span></span>
+<span id="cb4-363"><a href="#cb4-363" tabindex="-1"></a><span class="co">#&gt; 100                1  977096783      17417   2017-05-15               3</span></span>
+<span id="cb4-364"><a href="#cb4-364" tabindex="-1"></a><span class="co">#&gt; 101                1  243847194      17417   2017-05-15               3</span></span>
+<span id="cb4-365"><a href="#cb4-365" tabindex="-1"></a><span class="co">#&gt; 102                1  943655212      17417   2017-05-15               3</span></span>
+<span id="cb4-366"><a href="#cb4-366" tabindex="-1"></a><span class="co">#&gt; 103                1 1040993535      17886   2017-06-09               3</span></span>
+<span id="cb4-367"><a href="#cb4-367" tabindex="-1"></a><span class="co">#&gt; 104                1   86403462      17886   2017-06-09               3</span></span>
+<span id="cb4-368"><a href="#cb4-368" tabindex="-1"></a><span class="co">#&gt; 105                1 1191221405      17886   2017-06-09               3</span></span>
+<span id="cb4-369"><a href="#cb4-369" tabindex="-1"></a><span class="co">#&gt; 106                1  946159516      17886   2017-06-09               3</span></span>
+<span id="cb4-370"><a href="#cb4-370" tabindex="-1"></a><span class="co">#&gt; 107                1 1029314077      17886   2017-06-09               3</span></span>
+<span id="cb4-371"><a href="#cb4-371" tabindex="-1"></a><span class="co">#&gt; 108                1 1113502210      17886   2017-06-09               3</span></span>
+<span id="cb4-372"><a href="#cb4-372" tabindex="-1"></a><span class="co">#&gt; 109                1 1111936525      17886   2017-06-09               3</span></span>
+<span id="cb4-373"><a href="#cb4-373" tabindex="-1"></a><span class="co">#&gt; 110                1 1074824135      17886   2017-06-09               3</span></span>
+<span id="cb4-374"><a href="#cb4-374" tabindex="-1"></a><span class="co">#&gt; 111                1 1185269159      17886   2017-06-09               3</span></span>
+<span id="cb4-375"><a href="#cb4-375" tabindex="-1"></a><span class="co">#&gt; 112                1   81457940      17886   2017-06-09               3</span></span>
+<span id="cb4-376"><a href="#cb4-376" tabindex="-1"></a><span class="co">#&gt; 113                1  292650423      17886   2017-06-09               3</span></span>
+<span id="cb4-377"><a href="#cb4-377" tabindex="-1"></a><span class="co">#&gt; 114                1 1244239760      17886   2017-06-09               3</span></span>
+<span id="cb4-378"><a href="#cb4-378" tabindex="-1"></a><span class="co">#&gt; 115                1 1093669899      17886   2017-06-09               3</span></span>
+<span id="cb4-379"><a href="#cb4-379" tabindex="-1"></a><span class="co">#&gt; 116                1 1237461468      17886   2017-06-09               3</span></span>
+<span id="cb4-380"><a href="#cb4-380" tabindex="-1"></a><span class="co">#&gt; 117                1 4611531493      17886   2017-06-09               3</span></span>
+<span id="cb4-381"><a href="#cb4-381" tabindex="-1"></a><span class="co">#&gt; 118                1   24630245      21077   2017-10-13               3</span></span>
+<span id="cb4-382"><a href="#cb4-382" tabindex="-1"></a><span class="co">#&gt; 119                1  184972983      25952   2018-03-26               3</span></span>
+<span id="cb4-383"><a href="#cb4-383" tabindex="-1"></a><span class="co">#&gt; 120                1 1985795461      25952   2018-03-26               3</span></span>
+<span id="cb4-384"><a href="#cb4-384" tabindex="-1"></a><span class="co">#&gt; 121                1  554267042      25952   2018-03-26               3</span></span>
+<span id="cb4-385"><a href="#cb4-385" tabindex="-1"></a><span class="co">#&gt; 122                1  226542146      25952   2018-03-26               3</span></span>
+<span id="cb4-386"><a href="#cb4-386" tabindex="-1"></a><span class="co">#&gt; 123                1 1976644381      25952   2018-03-26               3</span></span>
+<span id="cb4-387"><a href="#cb4-387" tabindex="-1"></a><span class="co">#&gt; 124                1 2084960359      25952   2018-03-26               3</span></span>
+<span id="cb4-388"><a href="#cb4-388" tabindex="-1"></a><span class="co">#&gt; 125                1 1886564537      25952   2018-03-26               3</span></span>
+<span id="cb4-389"><a href="#cb4-389" tabindex="-1"></a><span class="co">#&gt; 126                1 2321264233      25952   2018-03-26               3</span></span>
+<span id="cb4-390"><a href="#cb4-390" tabindex="-1"></a><span class="co">#&gt; 127                1   53661203      25952   2018-03-26               3</span></span>
+<span id="cb4-391"><a href="#cb4-391" tabindex="-1"></a><span class="co">#&gt; 128                1  581869073      25952   2018-03-26               3</span></span>
+<span id="cb4-392"><a href="#cb4-392" tabindex="-1"></a><span class="co">#&gt;             format_mimetype format_extension                      format_name</span></span>
+<span id="cb4-393"><a href="#cb4-393" tabindex="-1"></a><span class="co">#&gt; 1                 video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-394"><a href="#cb4-394" tabindex="-1"></a><span class="co">#&gt; 2                 video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-395"><a href="#cb4-395" tabindex="-1"></a><span class="co">#&gt; 3                 video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-396"><a href="#cb4-396" tabindex="-1"></a><span class="co">#&gt; 4           application/pdf              pdf                Portable document</span></span>
+<span id="cb4-397"><a href="#cb4-397" tabindex="-1"></a><span class="co">#&gt; 5                 video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-398"><a href="#cb4-398" tabindex="-1"></a><span class="co">#&gt; 6                 video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-399"><a href="#cb4-399" tabindex="-1"></a><span class="co">#&gt; 7                 video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-400"><a href="#cb4-400" tabindex="-1"></a><span class="co">#&gt; 8           application/pdf              pdf                Portable document</span></span>
+<span id="cb4-401"><a href="#cb4-401" tabindex="-1"></a><span class="co">#&gt; 9                 video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-402"><a href="#cb4-402" tabindex="-1"></a><span class="co">#&gt; 10                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-403"><a href="#cb4-403" tabindex="-1"></a><span class="co">#&gt; 11          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-404"><a href="#cb4-404" tabindex="-1"></a><span class="co">#&gt; 12                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-405"><a href="#cb4-405" tabindex="-1"></a><span class="co">#&gt; 13          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-406"><a href="#cb4-406" tabindex="-1"></a><span class="co">#&gt; 14                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-407"><a href="#cb4-407" tabindex="-1"></a><span class="co">#&gt; 15                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-408"><a href="#cb4-408" tabindex="-1"></a><span class="co">#&gt; 16          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-409"><a href="#cb4-409" tabindex="-1"></a><span class="co">#&gt; 17                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-410"><a href="#cb4-410" tabindex="-1"></a><span class="co">#&gt; 18                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-411"><a href="#cb4-411" tabindex="-1"></a><span class="co">#&gt; 19          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-412"><a href="#cb4-412" tabindex="-1"></a><span class="co">#&gt; 20          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-413"><a href="#cb4-413" tabindex="-1"></a><span class="co">#&gt; 21                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-414"><a href="#cb4-414" tabindex="-1"></a><span class="co">#&gt; 22          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-415"><a href="#cb4-415" tabindex="-1"></a><span class="co">#&gt; 23          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-416"><a href="#cb4-416" tabindex="-1"></a><span class="co">#&gt; 24          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-417"><a href="#cb4-417" tabindex="-1"></a><span class="co">#&gt; 25          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-418"><a href="#cb4-418" tabindex="-1"></a><span class="co">#&gt; 26                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-419"><a href="#cb4-419" tabindex="-1"></a><span class="co">#&gt; 27          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-420"><a href="#cb4-420" tabindex="-1"></a><span class="co">#&gt; 28                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-421"><a href="#cb4-421" tabindex="-1"></a><span class="co">#&gt; 29                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-422"><a href="#cb4-422" tabindex="-1"></a><span class="co">#&gt; 30          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-423"><a href="#cb4-423" tabindex="-1"></a><span class="co">#&gt; 31          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-424"><a href="#cb4-424" tabindex="-1"></a><span class="co">#&gt; 32          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-425"><a href="#cb4-425" tabindex="-1"></a><span class="co">#&gt; 33                image/png              png        Portable network graphics</span></span>
+<span id="cb4-426"><a href="#cb4-426" tabindex="-1"></a><span class="co">#&gt; 34          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-427"><a href="#cb4-427" tabindex="-1"></a><span class="co">#&gt; 35          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-428"><a href="#cb4-428" tabindex="-1"></a><span class="co">#&gt; 36                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-429"><a href="#cb4-429" tabindex="-1"></a><span class="co">#&gt; 37  application/vnd.datavyu              opf                          Datavyu</span></span>
+<span id="cb4-430"><a href="#cb4-430" tabindex="-1"></a><span class="co">#&gt; 38                 text/csv              csv           Comma-separated values</span></span>
+<span id="cb4-431"><a href="#cb4-431" tabindex="-1"></a><span class="co">#&gt; 39                 text/csv              csv           Comma-separated values</span></span>
+<span id="cb4-432"><a href="#cb4-432" tabindex="-1"></a><span class="co">#&gt; 40          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-433"><a href="#cb4-433" tabindex="-1"></a><span class="co">#&gt; 41          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-434"><a href="#cb4-434" tabindex="-1"></a><span class="co">#&gt; 42          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-435"><a href="#cb4-435" tabindex="-1"></a><span class="co">#&gt; 43                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-436"><a href="#cb4-436" tabindex="-1"></a><span class="co">#&gt; 44                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-437"><a href="#cb4-437" tabindex="-1"></a><span class="co">#&gt; 45                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-438"><a href="#cb4-438" tabindex="-1"></a><span class="co">#&gt; 46                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-439"><a href="#cb4-439" tabindex="-1"></a><span class="co">#&gt; 47          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-440"><a href="#cb4-440" tabindex="-1"></a><span class="co">#&gt; 48          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-441"><a href="#cb4-441" tabindex="-1"></a><span class="co">#&gt; 49                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-442"><a href="#cb4-442" tabindex="-1"></a><span class="co">#&gt; 50          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-443"><a href="#cb4-443" tabindex="-1"></a><span class="co">#&gt; 51          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-444"><a href="#cb4-444" tabindex="-1"></a><span class="co">#&gt; 52          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-445"><a href="#cb4-445" tabindex="-1"></a><span class="co">#&gt; 53                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-446"><a href="#cb4-446" tabindex="-1"></a><span class="co">#&gt; 54                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-447"><a href="#cb4-447" tabindex="-1"></a><span class="co">#&gt; 55          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-448"><a href="#cb4-448" tabindex="-1"></a><span class="co">#&gt; 56                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-449"><a href="#cb4-449" tabindex="-1"></a><span class="co">#&gt; 57                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-450"><a href="#cb4-450" tabindex="-1"></a><span class="co">#&gt; 58                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-451"><a href="#cb4-451" tabindex="-1"></a><span class="co">#&gt; 59          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-452"><a href="#cb4-452" tabindex="-1"></a><span class="co">#&gt; 60          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-453"><a href="#cb4-453" tabindex="-1"></a><span class="co">#&gt; 61          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-454"><a href="#cb4-454" tabindex="-1"></a><span class="co">#&gt; 62          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-455"><a href="#cb4-455" tabindex="-1"></a><span class="co">#&gt; 63                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-456"><a href="#cb4-456" tabindex="-1"></a><span class="co">#&gt; 64          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-457"><a href="#cb4-457" tabindex="-1"></a><span class="co">#&gt; 65          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-458"><a href="#cb4-458" tabindex="-1"></a><span class="co">#&gt; 66          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-459"><a href="#cb4-459" tabindex="-1"></a><span class="co">#&gt; 67                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-460"><a href="#cb4-460" tabindex="-1"></a><span class="co">#&gt; 68          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-461"><a href="#cb4-461" tabindex="-1"></a><span class="co">#&gt; 69          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-462"><a href="#cb4-462" tabindex="-1"></a><span class="co">#&gt; 70                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-463"><a href="#cb4-463" tabindex="-1"></a><span class="co">#&gt; 71          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-464"><a href="#cb4-464" tabindex="-1"></a><span class="co">#&gt; 72                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-465"><a href="#cb4-465" tabindex="-1"></a><span class="co">#&gt; 73                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-466"><a href="#cb4-466" tabindex="-1"></a><span class="co">#&gt; 74                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-467"><a href="#cb4-467" tabindex="-1"></a><span class="co">#&gt; 75                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-468"><a href="#cb4-468" tabindex="-1"></a><span class="co">#&gt; 76          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-469"><a href="#cb4-469" tabindex="-1"></a><span class="co">#&gt; 77          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-470"><a href="#cb4-470" tabindex="-1"></a><span class="co">#&gt; 78          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-471"><a href="#cb4-471" tabindex="-1"></a><span class="co">#&gt; 79          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-472"><a href="#cb4-472" tabindex="-1"></a><span class="co">#&gt; 80                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-473"><a href="#cb4-473" tabindex="-1"></a><span class="co">#&gt; 81                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-474"><a href="#cb4-474" tabindex="-1"></a><span class="co">#&gt; 82          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-475"><a href="#cb4-475" tabindex="-1"></a><span class="co">#&gt; 83                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-476"><a href="#cb4-476" tabindex="-1"></a><span class="co">#&gt; 84                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-477"><a href="#cb4-477" tabindex="-1"></a><span class="co">#&gt; 85                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-478"><a href="#cb4-478" tabindex="-1"></a><span class="co">#&gt; 86                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-479"><a href="#cb4-479" tabindex="-1"></a><span class="co">#&gt; 87                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-480"><a href="#cb4-480" tabindex="-1"></a><span class="co">#&gt; 88                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-481"><a href="#cb4-481" tabindex="-1"></a><span class="co">#&gt; 89                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-482"><a href="#cb4-482" tabindex="-1"></a><span class="co">#&gt; 90                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-483"><a href="#cb4-483" tabindex="-1"></a><span class="co">#&gt; 91                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-484"><a href="#cb4-484" tabindex="-1"></a><span class="co">#&gt; 92                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-485"><a href="#cb4-485" tabindex="-1"></a><span class="co">#&gt; 93                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-486"><a href="#cb4-486" tabindex="-1"></a><span class="co">#&gt; 94          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-487"><a href="#cb4-487" tabindex="-1"></a><span class="co">#&gt; 95          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-488"><a href="#cb4-488" tabindex="-1"></a><span class="co">#&gt; 96          application/pdf              pdf                Portable document</span></span>
+<span id="cb4-489"><a href="#cb4-489" tabindex="-1"></a><span class="co">#&gt; 97                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-490"><a href="#cb4-490" tabindex="-1"></a><span class="co">#&gt; 98                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-491"><a href="#cb4-491" tabindex="-1"></a><span class="co">#&gt; 99                video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-492"><a href="#cb4-492" tabindex="-1"></a><span class="co">#&gt; 100               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-493"><a href="#cb4-493" tabindex="-1"></a><span class="co">#&gt; 101               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-494"><a href="#cb4-494" tabindex="-1"></a><span class="co">#&gt; 102               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-495"><a href="#cb4-495" tabindex="-1"></a><span class="co">#&gt; 103               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-496"><a href="#cb4-496" tabindex="-1"></a><span class="co">#&gt; 104               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-497"><a href="#cb4-497" tabindex="-1"></a><span class="co">#&gt; 105               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-498"><a href="#cb4-498" tabindex="-1"></a><span class="co">#&gt; 106               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-499"><a href="#cb4-499" tabindex="-1"></a><span class="co">#&gt; 107               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-500"><a href="#cb4-500" tabindex="-1"></a><span class="co">#&gt; 108               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-501"><a href="#cb4-501" tabindex="-1"></a><span class="co">#&gt; 109               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-502"><a href="#cb4-502" tabindex="-1"></a><span class="co">#&gt; 110               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-503"><a href="#cb4-503" tabindex="-1"></a><span class="co">#&gt; 111               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-504"><a href="#cb4-504" tabindex="-1"></a><span class="co">#&gt; 112         application/pdf              pdf                Portable document</span></span>
+<span id="cb4-505"><a href="#cb4-505" tabindex="-1"></a><span class="co">#&gt; 113              audio/mpeg              mp3 MPEG-1 or MPEG-2 audio layer III</span></span>
+<span id="cb4-506"><a href="#cb4-506" tabindex="-1"></a><span class="co">#&gt; 114               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-507"><a href="#cb4-507" tabindex="-1"></a><span class="co">#&gt; 115               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-508"><a href="#cb4-508" tabindex="-1"></a><span class="co">#&gt; 116               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-509"><a href="#cb4-509" tabindex="-1"></a><span class="co">#&gt; 117               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-510"><a href="#cb4-510" tabindex="-1"></a><span class="co">#&gt; 118         application/pdf              pdf                Portable document</span></span>
+<span id="cb4-511"><a href="#cb4-511" tabindex="-1"></a><span class="co">#&gt; 119               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-512"><a href="#cb4-512" tabindex="-1"></a><span class="co">#&gt; 120               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-513"><a href="#cb4-513" tabindex="-1"></a><span class="co">#&gt; 121               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-514"><a href="#cb4-514" tabindex="-1"></a><span class="co">#&gt; 122              audio/mpeg              mp3 MPEG-1 or MPEG-2 audio layer III</span></span>
+<span id="cb4-515"><a href="#cb4-515" tabindex="-1"></a><span class="co">#&gt; 123               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-516"><a href="#cb4-516" tabindex="-1"></a><span class="co">#&gt; 124               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-517"><a href="#cb4-517" tabindex="-1"></a><span class="co">#&gt; 125               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-518"><a href="#cb4-518" tabindex="-1"></a><span class="co">#&gt; 126               video/mp4              mp4                     MPEG-4 video</span></span>
+<span id="cb4-519"><a href="#cb4-519" tabindex="-1"></a><span class="co">#&gt; 127         application/pdf              pdf                Portable document</span></span>
+<span id="cb4-520"><a href="#cb4-520" tabindex="-1"></a><span class="co">#&gt; 128               video/mp4              mp4                     MPEG-4 video</span></span></code></pre></div>
 <p>If we log-in using the commands described in <a href="authorized-users.Rmd">authorized users</a>, and provide the
 function with a valid (non-NULL) <code>httr2</code> request parameter,
 the following function call would show files and data that are
@@ -1677,33 +1678,38 @@ dataset. The <code>list_volume_owners()</code> function uses volume 1 as
 the default.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>databraryr<span class="sc">::</span><span class="fu">list_volume_owners</span>()</span>
 <span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 2</span></span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="co">#&gt;   name             person_id</span></span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;                &lt;int&gt;</span></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co">#&gt; 1 Adolph, Karen            5</span></span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co">#&gt; 2 Gilmore, Rick O.         6</span></span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co">#&gt; 3 Staff                  308</span></span></code></pre></div>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="co">#&gt;   owner_name       party_id</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;               &lt;int&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co">#&gt; 1 Adolph, Karen           5</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co">#&gt; 2 Gilmore, Rick O.        6</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co">#&gt; 3 Staff                 308</span></span></code></pre></div>
 <p>The command (and many like it) can be “vectorized” using the
 <code>purrr</code> package. This let’s us generate a tibble with the
 owners of the first fifteen volumes.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">map</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>, databraryr<span class="sc">::</span>list_volume_owners) <span class="sc">|&gt;</span> </span>
 <span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">list_rbind</span>()</span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 14 × 2</span></span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co">#&gt;    name                     person_id</span></span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                        &lt;int&gt;</span></span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co">#&gt;  1 Adolph, Karen                    5</span></span>
-<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="co">#&gt;  2 Gilmore, Rick O.                 6</span></span>
-<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co">#&gt;  3 Staff                          308</span></span>
-<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="co">#&gt;  4 Gilmore, Rick O.                 6</span></span>
-<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="co">#&gt;  5 Adolph, Karen                    5</span></span>
-<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co">#&gt;  6 Adolph, Karen                    5</span></span>
-<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a><span class="co">#&gt;  7 Adolph, Karen                    5</span></span>
-<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a><span class="co">#&gt;  8 Tamis-LeMonda, Catherine        11</span></span>
-<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a><span class="co">#&gt;  9 Adolph, Karen                    5</span></span>
-<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a><span class="co">#&gt; 10 Gordon, Peter                   20</span></span>
-<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a><span class="co">#&gt; 11 Karasik, Lana                   32</span></span>
-<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a><span class="co">#&gt; 12 Tamis-LeMonda, Catherine        11</span></span>
-<span id="cb13-18"><a href="#cb13-18" tabindex="-1"></a><span class="co">#&gt; 13 Adolph, Karen                    5</span></span>
-<span id="cb13-19"><a href="#cb13-19" tabindex="-1"></a><span class="co">#&gt; 14 Messinger, Daniel               70</span></span></code></pre></div>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="co">#&gt; Cannot access requested resource on Databrary. Exiting.</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co">#&gt; Cannot access requested resource on Databrary. Exiting.</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co">#&gt; Cannot access requested resource on Databrary. Exiting.</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co">#&gt; Cannot access requested resource on Databrary. Exiting.</span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="co">#&gt; Cannot access requested resource on Databrary. Exiting.</span></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co">#&gt; # A tibble: 14 × 2</span></span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="co">#&gt;    owner_name               party_id</span></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                       &lt;int&gt;</span></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co">#&gt;  1 Adolph, Karen                   5</span></span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a><span class="co">#&gt;  2 Gilmore, Rick O.                6</span></span>
+<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a><span class="co">#&gt;  3 Staff                         308</span></span>
+<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a><span class="co">#&gt;  4 Gilmore, Rick O.                6</span></span>
+<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a><span class="co">#&gt;  5 Adolph, Karen                   5</span></span>
+<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a><span class="co">#&gt;  6 Adolph, Karen                   5</span></span>
+<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a><span class="co">#&gt;  7 Adolph, Karen                   5</span></span>
+<span id="cb13-18"><a href="#cb13-18" tabindex="-1"></a><span class="co">#&gt;  8 Tamis-LeMonda, Catherine       11</span></span>
+<span id="cb13-19"><a href="#cb13-19" tabindex="-1"></a><span class="co">#&gt;  9 Adolph, Karen                   5</span></span>
+<span id="cb13-20"><a href="#cb13-20" tabindex="-1"></a><span class="co">#&gt; 10 Gordon, Peter                  20</span></span>
+<span id="cb13-21"><a href="#cb13-21" tabindex="-1"></a><span class="co">#&gt; 11 Karasik, Lana                  32</span></span>
+<span id="cb13-22"><a href="#cb13-22" tabindex="-1"></a><span class="co">#&gt; 12 Tamis-LeMonda, Catherine       11</span></span>
+<span id="cb13-23"><a href="#cb13-23" tabindex="-1"></a><span class="co">#&gt; 13 Adolph, Karen                   5</span></span>
+<span id="cb13-24"><a href="#cb13-24" tabindex="-1"></a><span class="co">#&gt; 14 Messinger, Daniel              70</span></span></code></pre></div>
 <p>As of 0.6.0, the <code>get_volume_by_id()</code> returns a list of
 all data about a volume that is accessible to a particular user. The
 default is volume 1.</p>
@@ -1794,8 +1800,8 @@ to the downloaded files.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>vol1_assets <span class="sc">|&gt;</span> </span>
 <span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(format_extension <span class="sc">==</span> <span class="st">&quot;csv&quot;</span>) <span class="sc">|&gt;</span></span>
 <span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>  databraryr<span class="sc">::</span><span class="fu">download_session_assets_fr_df</span>()</span>
-<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a><span class="co">#&gt; [1] &quot;/var/folders/n3/6wm9hw792y344j61fqh2rw94mcvkj6/T//RtmpCkOyrI/9807/databrary-institutions-investigators.csv&quot;</span></span>
-<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="co">#&gt; [2] &quot;/var/folders/n3/6wm9hw792y344j61fqh2rw94mcvkj6/T//RtmpCkOyrI/9807/volumes-citations-monthly.csv&quot;</span></span></code></pre></div>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a><span class="co">#&gt; [1] &quot;/var/folders/n3/6wm9hw792y344j61fqh2rw94mcvkj6/T//RtmpkbISZX/9807/databrary-institutions-investigators.csv&quot;</span></span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="co">#&gt; [2] &quot;/var/folders/n3/6wm9hw792y344j61fqh2rw94mcvkj6/T//RtmpkbISZX/9807/volumes-citations-monthly.csv&quot;</span></span></code></pre></div>
 </div>
 
 

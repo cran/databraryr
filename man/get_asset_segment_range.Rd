@@ -10,7 +10,7 @@ get_asset_segment_range(
   asset_id = 1,
   convert_JSON = TRUE,
   segment_only = TRUE,
-  vb = FALSE,
+  vb = options::opt("vb"),
   rq = NULL
 )
 }
@@ -26,7 +26,7 @@ get_asset_segment_range(
 \item{segment_only}{A Boolean value. If TRUE, returns only the segment values. Otherwise returns
 a data frame with two fields, segment and permission. Default is TRUE.}
 
-\item{vb}{A Boolean value. If TRUE provides verbose output.}
+\item{vb}{Show verbose messages. (Defaults to \code{FALSE}, overwritable using option 'databraryr.vb' or environment variable 'R_DATABRARYR_VB')}
 
 \item{rq}{An \code{httr2} request object. Default is NULL.}
 }

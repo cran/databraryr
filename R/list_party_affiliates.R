@@ -1,10 +1,16 @@
+#' @eval options::as_params()
+#' @name options_params
+#' 
+NULL
+
 #' List Affiliates For A Party
 #'
 #' @param party_id Target party ID.
-#' @param vb A Boolean value. If TRUE provides verbose output.
 #' @param rq An `httr2` request object. Defaults to NULL.
 #' 
 #' @returns A data frame with information about a party's affiliates.
+#' 
+#' @inheritParams options_params
 #' 
 #' @examples
 #' \donttest{
@@ -12,7 +18,7 @@
 #' }
 #' @export
 list_party_affiliates <- function(party_id = 6,
-                                  vb = FALSE,
+                                  vb = options::opt("vb"),
                                   rq = NULL) {
   # Check parameters
   assertthat::assert_that(length(party_id) == 1)

@@ -7,7 +7,7 @@
 list_volume_session_assets(
   vol_id = 1,
   session_id = 9807,
-  vb = FALSE,
+  vb = options::opt("vb"),
   rq = NULL
 )
 }
@@ -16,7 +16,7 @@ list_volume_session_assets(
 
 \item{session_id}{The session number in the selected volume.}
 
-\item{vb}{A boolean value.}
+\item{vb}{Show verbose messages. (Defaults to \code{FALSE}, overwritable using option 'databraryr.vb' or environment variable 'R_DATABRARYR_VB')}
 
 \item{rq}{An \code{httr2} request object.}
 }

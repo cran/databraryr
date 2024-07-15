@@ -4,12 +4,12 @@
 \alias{list_party_sponsors}
 \title{List Sponsors For A Party}
 \usage{
-list_party_sponsors(party_id = 6, vb = FALSE, rq = NULL)
+list_party_sponsors(party_id = 6, vb = options::opt("vb"), rq = NULL)
 }
 \arguments{
 \item{party_id}{Target party ID.}
 
-\item{vb}{A Boolean value. If TRUE provides verbose output.}
+\item{vb}{Show verbose messages. (Defaults to \code{FALSE}, overwritable using option 'databraryr.vb' or environment variable 'R_DATABRARYR_VB')}
 
 \item{rq}{An \code{httr2}-style request object. If NULL, then a new request will
 be generated using \code{make_default_request()}.}

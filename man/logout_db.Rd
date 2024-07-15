@@ -4,10 +4,10 @@
 \alias{logout_db}
 \title{Log Out of Databrary.org.}
 \usage{
-logout_db(vb = FALSE, rq = NULL)
+logout_db(vb = options::opt("vb"), rq = NULL)
 }
 \arguments{
-\item{vb}{A boolean value. If TRUE provides verbose output.}
+\item{vb}{Show verbose messages. (Defaults to \code{FALSE}, overwritable using option 'databraryr.vb' or environment variable 'R_DATABRARYR_VB')}
 
 \item{rq}{An \code{httr2} request object. Defaults to NULL.}
 }

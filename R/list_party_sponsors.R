@@ -1,11 +1,17 @@
+#' @eval options::as_params()
+#' @name options_params
+#' 
+NULL
+
 #' List Sponsors For A Party
 #'
 #' @param party_id Target party ID.
-#' @param vb A Boolean value. If TRUE provides verbose output.
 #' @param rq An `httr2`-style request object. If NULL, then a new request will
 #' be generated using `make_default_request()`.
 #'
 #' @returns A data frame with information about a party's sponsors.
+#' 
+#' @inheritParams options_params
 #'
 #' @examples
 #' \donttest{
@@ -16,7 +22,7 @@
 #'
 #' @export
 list_party_sponsors <- function(party_id = 6,
-                                vb = FALSE,
+                                vb = options::opt("vb"),
                                 rq = NULL) {
   # Check parameters
   assertthat::assert_that(length(party_id) == 1)
@@ -34,13 +40,13 @@ list_party_sponsors <- function(party_id = 6,
       message("NULL request object. Will generate default.")
       message("Not logged in. Only public information will be returned.")  
     }
-    rq <- make_default_request()
+    rq <- databraryr::make_default_request()
   }
   
   if (vb)
     message(paste0("Getting sponsors for party ", party_id, "."))
   
-  g <- get_party_by_id(party_id = party_id, vb = vb, rq = rq)
+  g <- databraryr::get_party_by_id(party_id = party_id, vb = vb, rq = rq)
   
   if (!is.null(g)) {
     if (vb)

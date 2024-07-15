@@ -1,16 +1,22 @@
+#' @eval options::as_params()
+#' @name options_params
+#' 
+NULL
+
 #' Log Out of Databrary.org.
 #'
-#' @param vb A boolean value. If TRUE provides verbose output.
 #' @param rq An `httr2` request object. Defaults to NULL.
 #' 
 #' @returns TRUE if logging out succeeds, FALSE otherwise.
+#' 
+#' @inheritParams options_params
 #' 
 #' @examples
 #' \donttest{
 #' logout_db()
 #' }
 #' @export
-logout_db <- function(vb = FALSE, rq = NULL){
+logout_db <- function(vb = options::opt("vb"), rq = NULL){
 
   assertthat::assert_that(is.logical(vb))
   

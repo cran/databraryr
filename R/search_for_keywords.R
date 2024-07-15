@@ -1,10 +1,16 @@
+#' @eval options::as_params()
+#' @name options_params
+#' 
+NULL
+
 #' Search For Keywords in Databrary Volumes.
 #'
 #' @param search_string String to search.
-#' @param vb A Boolean value. If TRUE provides verbose output.
 #' @param rq An `httr2` request object. Default is NULL.
 #'
 #' @returns A list with the volumes that contain the keyword.
+#' 
+#' @inheritParams options_params
 #'
 #' @examples
 #' \dontrun{
@@ -15,7 +21,7 @@
 #' @export
 search_for_keywords <-
   function(search_string = "locomotion",
-           vb = FALSE,
+           vb = options::opt("vb"),
            rq = NULL) {
     # Check parameters
     assertthat::assert_that(length(search_string) == 1)
@@ -37,6 +43,7 @@ search_for_keywords <-
     rq <- rq %>%
       httr2::req_url(sprintf(QUERY_KEYWORDS, search_string))
     
+    if (vb) message("Retrieving data for search string '", search_string, "'.")
     resp <- tryCatch(
       httr2::req_perform(rq),
       httr2_error = function(cnd) {
@@ -50,10 +57,11 @@ search_for_keywords <-
     if (vb)
       message(paste0("Searching for ", search_string))
     
-    if (!is.null(resp)) {
-      httr2::resp_body_json(resp)
+    if (is.null(resp)) {
+      message("Cannot access requested resource on Databrary. Exiting.")
+      return(resp)
     } else {
-      resp
+      httr2::resp_body_json(resp)
     }
     #TODO: Reformat search data
   }

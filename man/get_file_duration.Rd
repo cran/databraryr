@@ -7,7 +7,7 @@
 get_file_duration(
   asset_id = 1,
   types_w_durations = c("-600", "-800"),
-  vb = FALSE,
+  vb = options::opt("vb"),
   rq = NULL
 )
 }
@@ -16,7 +16,7 @@ get_file_duration(
 
 \item{types_w_durations}{Asset types that have valid durations.}
 
-\item{vb}{A Boolean value. If TRUE provides verbose output.}
+\item{vb}{Show verbose messages. (Defaults to \code{FALSE}, overwritable using option 'databraryr.vb' or environment variable 'R_DATABRARYR_VB')}
 
 \item{rq}{An \code{httr2} request object. Default is NULL.}
 }

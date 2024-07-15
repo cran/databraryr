@@ -4,10 +4,10 @@
 \alias{list_asset_formats}
 \title{List Stored Assets (Files) By Type.}
 \usage{
-list_asset_formats(vb = FALSE)
+list_asset_formats(vb = options::opt("vb"))
 }
 \arguments{
-\item{vb}{A boolean value. If TRUE provides verbose output.}
+\item{vb}{Show verbose messages. (Defaults to \code{FALSE}, overwritable using option 'databraryr.vb' or environment variable 'R_DATABRARYR_VB')}
 }
 \value{
 A data frame with information about the data formats Databrary

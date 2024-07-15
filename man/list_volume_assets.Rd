@@ -4,12 +4,12 @@
 \alias{list_volume_assets}
 \title{List Assets in Databrary Volume.}
 \usage{
-list_volume_assets(vol_id = 1, vb = FALSE, rq = NULL)
+list_volume_assets(vol_id = 1, vb = options::opt("vb"), rq = NULL)
 }
 \arguments{
 \item{vol_id}{Target volume number. Default is 1.}
 
-\item{vb}{A logical value. Default is FALSE.}
+\item{vb}{Show verbose messages. (Defaults to \code{FALSE}, overwritable using option 'databraryr.vb' or environment variable 'R_DATABRARYR_VB')}
 
 \item{rq}{An \code{httr2} request object. Default is NULL.}
 }

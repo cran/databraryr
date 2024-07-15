@@ -4,12 +4,12 @@
 \alias{is_person}
 \title{Is This Party A Person?}
 \usage{
-is_person(party_id = 7, vb = FALSE, rq = NULL)
+is_person(party_id = 7, vb = options::opt("vb"), rq = NULL)
 }
 \arguments{
 \item{party_id}{Databrary party ID}
 
-\item{vb}{A boolean value. If TRUE provides verbose output.}
+\item{vb}{Show verbose messages. (Defaults to \code{FALSE}, overwritable using option 'databraryr.vb' or environment variable 'R_DATABRARYR_VB')}
 
 \item{rq}{An \code{httr2} request object.}
 }

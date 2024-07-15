@@ -4,7 +4,12 @@
 \alias{get_session_by_id}
 \title{Get Session (Slot) Data From A Databrary Volume}
 \usage{
-get_session_by_id(session_id = 9807, vol_id = 1, vb = FALSE, rq = NULL)
+get_session_by_id(
+  session_id = 9807,
+  vol_id = 1,
+  vb = options::opt("vb"),
+  rq = NULL
+)
 }
 \arguments{
 \item{session_id}{An integer indicating a valid session/slot identifier
@@ -12,7 +17,7 @@ linked to a volume. Default value is 9807, the materials folder for volume 1.}
 
 \item{vol_id}{An integer indicating the volume identifier. Default is 1.}
 
-\item{vb}{A logical value. Show verbose feedback. Default is FALSE.}
+\item{vb}{Show verbose messages. (Defaults to \code{FALSE}, overwritable using option 'databraryr.vb' or environment variable 'R_DATABRARYR_VB')}
 
 \item{rq}{An httr2 request object.}
 }

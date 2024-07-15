@@ -4,10 +4,10 @@
 \alias{assign_constants}
 \title{Download Databrary Constants From API.}
 \usage{
-assign_constants(vb = FALSE, rq = NULL)
+assign_constants(vb = options::opt("vb"), rq = NULL)
 }
 \arguments{
-\item{vb}{A Boolean value. If TRUE provides verbose output.}
+\item{vb}{Show verbose messages. (Defaults to \code{FALSE}, overwritable using option 'databraryr.vb' or environment variable 'R_DATABRARYR_VB')}
 
 \item{rq}{An \code{httr2} request object. Defaults to NULL.}
 }

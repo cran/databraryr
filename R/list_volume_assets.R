@@ -1,9 +1,16 @@
+#' @eval options::as_params()
+#' @name options_params
+#' 
+NULL
+
 #' List Assets in Databrary Volume.
 #'
 #' @param vol_id Target volume number. Default is 1.
-#' @param vb A logical value. Default is FALSE.
 #' @param rq An `httr2` request object. Default is NULL.
+#' 
 #' @returns A data frame with information about all assets in a volume.
+#' 
+#' @inheritParams options_params
 #' 
 #' @examples
 #' \donttest{
@@ -13,7 +20,7 @@
 #' }
 #' @export
 list_volume_assets <- function(vol_id = 1,
-                               vb = FALSE,
+                               vb = options::opt("vb"),
                                rq = NULL) {
   # Check parameters
   assertthat::assert_that(length(vol_id) == 1)

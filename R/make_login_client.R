@@ -1,14 +1,20 @@
+#' @eval options::as_params()
+#' @name options_params
+#' 
+NULL
+
 #' Log In To Databrary.org.
 #'
 #' @param email Databrary account email address.
 #' @param password Databrary password (not recommended as it will displayed as you type)
 #' @param store A boolean value. If TRUE store/retrieve credentials from the system keyring/keychain.
 #' @param overwrite A boolean value. If TRUE and store is TRUE, overwrite/ update stored credentials in keyring/keychain.
-#' @param vb A boolean value. If TRUE provides verbose output.
 #' @param SERVICE A character label for stored credentials in the keyring. Default is "databrary"
 #' @param rq An `httr2` request object. Defaults to NULL.
 #' 
 #' @returns Logical value indicating whether log in is successful or not.
+#' 
+#' @inheritParams options_params
 #' 
 #' @examplesIf interactive()
 #' make_login_client() # Queries user for email and password interactively.
@@ -26,7 +32,7 @@ make_login_client <- function(email = NULL,
                      password = NULL,
                      store = FALSE,
                      overwrite = FALSE,
-                     vb = FALSE,
+                     vb = options::opt("vb"),
                      SERVICE = KEYRING_SERVICE,
                      rq = NULL) {
   

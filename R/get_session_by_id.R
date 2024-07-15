@@ -1,14 +1,20 @@
+#' @eval options::as_params()
+#' @name options_params
+#' 
+NULL
+
 #' Get Session (Slot) Data From A Databrary Volume
 #'
 #' @param session_id An integer indicating a valid session/slot identifier
 #' linked to a volume. Default value is 9807, the materials folder for volume 1.
 #' @param vol_id An integer indicating the volume identifier. Default is 1.
-#' @param vb A logical value. Show verbose feedback. Default is FALSE.
 #' @param rq An httr2 request object.
 #'
 #' @returns A JSON blob with the session data. If the user has previously logged
 #' in to Databrary via `login_db()`, then session(s) that have restricted access
 #' can be downloaded, subject to the sharing release levels on those session(s).
+#'
+#' @inheritParams options_params
 #'
 #' @examples
 #' \donttest{
@@ -20,7 +26,7 @@
 get_session_by_id <-
   function(session_id = 9807,
            vol_id = 1,
-           vb = FALSE,
+           vb = options::opt("vb"),
            rq = NULL) {
     
     assertthat::assert_that(is.numeric(session_id))
@@ -40,7 +46,7 @@ get_session_by_id <-
     # Handle NULL rq
     if (is.null(rq)) {
       if (vb) {
-        message("NULL request object. Will generate default.")
+        message("\nNULL request object. Will generate default.")
         message("Not logged in. Only public information will be returned.")  
       }
       rq <- databraryr::make_default_request()
@@ -79,10 +85,11 @@ get_session_by_id <-
           httr2_error = function(cnd)
             NULL
         )
-        if (!is.null(resp)) {
-          httr2::resp_body_json(resp)
+        if (is.null(resp)) {
+          message("Cannot access requested resource on Databrary. Exiting.")
+          return(resp)
         } else {
-          resp
+          httr2::resp_body_json(resp) 
         }
       }
     } else {

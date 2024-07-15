@@ -4,10 +4,10 @@
 \alias{get_supported_file_types}
 \title{Extracts File Types Supported by Databrary.}
 \usage{
-get_supported_file_types(vb = FALSE)
+get_supported_file_types(vb = options::opt("vb"))
 }
 \arguments{
-\item{vb}{A Boolean value. If TRUE provides verbose output.}
+\item{vb}{Show verbose messages. (Defaults to \code{FALSE}, overwritable using option 'databraryr.vb' or environment variable 'R_DATABRARYR_VB')}
 }
 \value{
 A data frame with the file types permitted on Databrary.

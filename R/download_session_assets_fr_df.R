@@ -1,3 +1,8 @@
+#' @eval options::as_params()
+#' @name options_params
+#' 
+NULL
+
 #' Download Asset From A Databrary Session.
 #'
 #' @description Databrary stores file types (assets) of many types. This
@@ -14,10 +19,11 @@
 #' that are not broadly portable across file systems. Default is FALSE.
 #' @param timeout_secs An integer. The seconds an httr2 request will run before
 #' timing out. Default is 600 (10 min). This is to handle very large files.
-#' @param vb A logical value. If TRUE provides verbose output. Default is FALSE.
 #' @param rq A list in the form of an `httr2` request object. Default is NULL.
 #'
 #' @returns Full file names to the downloaded assets or NULL.
+#'
+#' @inheritParams options_params
 #'
 #' @examples
 #' \donttest{
@@ -39,7 +45,7 @@ download_session_assets_fr_df <-
            overwrite = TRUE,
            make_portable_fn = FALSE,
            timeout_secs = REQUEST_TIMEOUT_VERY_LONG,
-           vb = FALSE,
+           vb = options::opt("vb"),
            rq = NULL) {
     # Check parameters
     assertthat::assert_that(is.data.frame(session_df))

@@ -1,4 +1,14 @@
-# databraryr (development version)
+# databraryr 0.6.6
+
+## Major changes
+
+- Incorporated package-wide option management using the {options} package.
+- Added obligatory message when access to an internet resource fails. This responds to the 2024-07-04 archiving of the previous version due to a violation of CRAN's policy on packages that access internet resources.
+
+## Minor changes
+
+- Removed superceded and deprecated functions: list_affiliate(), GET_db_contents(), download_party(), get_party_as_df(), list_individual_sponsors(), list_institutional_sponsors(), list_party(), list_people(), list_sessions(), list_volume(), list_sessions_in_volume()
+- list_volume_sessions() returns text label for release level.
 
 # databraryr 0.6.5
 

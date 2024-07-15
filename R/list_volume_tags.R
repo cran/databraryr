@@ -1,16 +1,24 @@
+#' @eval options::as_params()
+#' @name options_params
+#'
+NULL
+
 #' Lists Keywords And Tags For A Volume.
 #'
 #' @param vol_id Target volume number.
-#' @param vb A Boolean value. If TRUE provides verbose output.
-#' @param rq An `httr2` request object.
-#' @return A data frame with the requested data.
+#' @param rq An `httr2` request object. Default is NULL.
+#'
+#' @returns A data frame with the requested data.
+#'
+#' @inheritParams options_params
+#'
 #' @examples
 #' \donttest{
 #' list_volume_tags()
 #' }
 #' @export
 list_volume_tags <- function(vol_id = 1,
-                             vb = FALSE,
+                             vb = options::opt("vb"),
                              rq = NULL) {
   # Check parameters
   assertthat::assert_that(length(vol_id) == 1)
@@ -27,7 +35,7 @@ list_volume_tags <- function(vol_id = 1,
   if (is.null(rq)) {
     if (vb) {
       message("NULL request object. Will generate default.")
-      message("Not logged in. Only public information will be returned.")  
+      message("Not logged in. Only public information will be returned.")
     }
     rq <- databraryr::make_default_request()
   }
@@ -41,20 +49,20 @@ list_volume_tags <- function(vol_id = 1,
     }
   )
   
-  if (!is.null(resp)) {
+  if (is.null(resp)) {
+    message("Cannot access requested resource on Databrary. Exiting.")
+    return(resp)
+  } else {
     res <- httr2::resp_body_json(resp)
     if (!(is.null(res$tags))) {
       purrr::map(res$tags, extract_vol_tag) %>%
         purrr::list_rbind() %>%
         dplyr::mutate(vol_id = vol_id)
     }
-  } else {
-    resp
   }
 }
 
 #-------------------------------------------------------------------------------
 extract_vol_tag <- function(tag_list_item) {
-  tibble::tibble(tag_id = tag_list_item$id,
-                 tag_weight = tag_list_item$weight)
+  tibble::tibble(tag_id = tag_list_item$id, tag_weight = tag_list_item$weight)
 }

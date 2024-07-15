@@ -4,10 +4,10 @@
 \alias{get_permission_levels}
 \title{Extract Databrary Permission Levels.}
 \usage{
-get_permission_levels(vb = FALSE)
+get_permission_levels(vb = options::opt("vb"))
 }
 \arguments{
-\item{vb}{A Boolean value. If TRUE provides verbose output.}
+\item{vb}{Show verbose messages. (Defaults to \code{FALSE}, overwritable using option 'databraryr.vb' or environment variable 'R_DATABRARYR_VB')}
 }
 \value{
 An array with the permission levels that can be assigned to data.

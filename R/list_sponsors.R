@@ -1,10 +1,18 @@
+#' @eval options::as_params()
+#' @name options_params
+#' 
+NULL
+
 #' List Sponsors For A Party
 #'
 #' @param party_id Target party ID.
-#' @param vb A Boolean value. If TRUE provides verbose output.
 #' @param rq An `httr2`-style request object. If NULL, then a new request will
 #' be generated using `make_default_request()`.
+#' 
 #' @returns A data frame with information about a party's sponsors.
+#' 
+#' @inheritParams options_params
+#' 
 #' @examples
 #' \donttest{
 #' \dontrun{
@@ -13,7 +21,7 @@
 #' }
 #' @export
 list_sponsors <- function(party_id = 6, 
-                          vb = FALSE,
+                          vb = options::opt("vb"),
                           rq = NULL) {
   
   # Check parameters

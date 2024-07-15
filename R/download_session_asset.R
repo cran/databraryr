@@ -1,3 +1,8 @@
+#' @eval options::as_params()
+#' @name options_params
+#' 
+NULL
+
 #' Download Asset From Databrary.
 #'
 #' @description Databrary stores file types (assets) of many types. This
@@ -11,13 +16,15 @@
 #' 
 #' @param target_dir A character string. Directory to save the downloaded file.
 #' Default is a temporary directory given by a call to `tempdir()`.
-#' @param vb A logical value. If TRUE provides verbose output. Default is FALSE.
 #' @param rq A list in the form of an `httr2` request object. Default is NULL.
 #' @param timeout_secs An integer constant. The default value, defined in 
 #' CONSTANTS.R is REQUEST_TIMEOUT. This value determines the default timeout
 #' value for the httr2 request object. When downloading large files, it can be
 #' useful to set this value to a large number.
+#' 
 #' @returns Full file name to the asset or NULL.
+#' 
+#' @inheritParams options_params
 #'
 #' @examples
 #' \donttest{
@@ -34,7 +41,7 @@ download_session_asset <- function(asset_id = 1,
                                    #target_dir = paste0("./", session_id),
                                    target_dir = tempdir(),
                                    timeout_secs = REQUEST_TIMEOUT,
-                                   vb = FALSE,
+                                   vb = options::opt("vb"),
                                    rq = NULL) {
   # Check parameters
   assertthat::assert_that(length(asset_id) == 1)
@@ -92,7 +99,7 @@ download_session_asset <- function(asset_id = 1,
   )
   
   if (is.null(resp)) {
-    if (vb) message("Exiting.")
+    message("Cannot access requested resource on Databrary. Exiting.")
     return(resp)
   }
   

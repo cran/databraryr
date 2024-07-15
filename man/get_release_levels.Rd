@@ -4,10 +4,10 @@
 \alias{get_release_levels}
 \title{Show Databrary Release Levels}
 \usage{
-get_release_levels(vb = FALSE)
+get_release_levels(vb = options::opt("vb"))
 }
 \arguments{
-\item{vb}{A Boolean value. If TRUE provides verbose output.}
+\item{vb}{Show verbose messages. (Defaults to \code{FALSE}, overwritable using option 'databraryr.vb' or environment variable 'R_DATABRARYR_VB')}
 }
 \value{
 A data frame with Databrary's release levels.
